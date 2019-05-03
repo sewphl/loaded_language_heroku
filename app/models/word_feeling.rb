@@ -1,0 +1,2 @@
+class WordFeeling < ApplicationRecord
+end
