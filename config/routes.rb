@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  #resources :artists do
-  #  resources :songs, only: [:show, :index]
-  #end
-  resources :users, :words
+  resources :users do
+    resources :words, only: [:new, :show]
+  end
+  resources :words, only: [:index, :create, :edit, :update]
+  resources :feelings, only: [:index, :show]
 end
