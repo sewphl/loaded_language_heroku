@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    ##add something in case user not found, flash message and redirect.
   end
 
   def update
@@ -27,7 +28,8 @@ class UsersController < ApplicationController
   def show
   end
 
-  def private
+  private
+  def user_params
     params.require(:user).permit(:username, :password, :email, :first_name, :last_name)
   end
 

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  get 'welcome/index' => 'welcome#index'
+  root 'script#index'
   resources :users do
     resources :words, only: [:new, :show]
   end
