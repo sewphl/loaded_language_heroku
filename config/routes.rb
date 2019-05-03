@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  map.root :controller => 'welcome', :action => :index
+  root 'welcome#index'
   resources :users do
     resources :words, only: [:new, :show]
   end
