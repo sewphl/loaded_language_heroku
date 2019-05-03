@@ -1,1 +1,5 @@
-<h3>Welcome</h3>
+<h3>Welcome
+  <% if logged_in?%>
+    <%=current_user.first_name%>
+  <%end%>
+</h3>
