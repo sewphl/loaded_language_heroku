@@ -1,7 +1,11 @@
-<%= flash[:notice]%> 
+<%= flash[:notice]%>
 
 <h3>Welcome
   <% if logged_in?%>
     <%=current_user.first_name%>
   <%end%>
 </h3>
+
+<%if logged_in?%>
+  <%= link_to "Log out", logout_path, method: :delete %>
+<%end%>

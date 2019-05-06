@@ -1,3 +1,4 @@
+require 'pry'
 class SessionsController < ApplicationController
   def new
     if logged_in?
@@ -18,7 +19,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    #binding.pry
     log_out
+    #binding.pry
     redirect_to root_url
   end
 end

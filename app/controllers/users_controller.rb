@@ -1,3 +1,4 @@
+require 'pry'
 class UsersController < ApplicationController
 
   def index
@@ -10,7 +11,9 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     @user.save
-    session[:user_id] = @user.id
+    #session[:user_id] = @user.id
+    log_in(@user)
+    ##binding.pry
     redirect_to root_path
   end
 
