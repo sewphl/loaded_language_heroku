@@ -17,14 +17,20 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if logged_in?
-      @user = current_user
-    else
+    @user = User.find(params[:id])
+    if !(logged_in? && @user == current_user)
       redirect_to signup_path
     end
   end
 
   def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:notice] = "Profile updated"
+      redirect_to @user
+    else
+      render 'edit'
+    end
   end
 
   def show

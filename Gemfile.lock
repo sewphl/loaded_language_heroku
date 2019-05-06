@@ -157,7 +157,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
-  jbuilder (~> 2.0)
+  jbuilder (~> 2.5)
   jquery-rails
   pry
   rack-flash3
