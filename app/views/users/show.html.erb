@@ -1,0 +1,18 @@
+<%=flash.notice %>
+
+<h3>Welcome <%=@user.username%></h3>
+
+<label>First Name: </label>
+<%=@user.first_name%><br>
+<label>Last Name: </label>
+<%=@user.last_name%><br>
+<label>Email: </label>
+<%=@user.email%><br>
+
+<h4>Your words</h4>
+
+
+
+
+<%=link_to "Log Out", logout_path%><br>
+<%=link_to "Home", root_path%>
