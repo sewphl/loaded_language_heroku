@@ -724,3 +724,59 @@ ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
     6: </h3>
   
 app/views/welcome/index.html.erb:3:in `_app_views_welcome_index_html_erb___4532412601650452137_70298896964840'
+Started GET "/welcome/index" for ::1 at 2019-05-03 17:29:39 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb (9.4ms)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-05-03 17:30:39 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"edit"}
+  Rendering users/show.html.erb
+  Rendered users/show.html.erb (0.8ms)
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-05-03 17:30:59 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"edit"}
+  Rendering users/show.html.erb
+  Rendered users/show.html.erb (0.9ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-05-03 17:31:00 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"edit"}
+  Rendering users/show.html.erb
+  Rendered users/show.html.erb (0.7ms)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-05-03 17:31:31 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"edit"}
+  Rendering users/show.html.erb
+  Rendered users/show.html.erb (1.5ms)
+Completed 200 OK in 124ms (Views: 117.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-05-06 09:41:16 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"edit"}
+  Rendering users/show.html.erb
+  Rendered users/show.html.erb (56.3ms)
+Completed 200 OK in 207ms (Views: 132.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for ::1 at 2019-05-06 09:42:04 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb (671.7ms)
+Completed 200 OK in 764ms (Views: 706.4ms | ActiveRecord: 22.9ms)
+
+
