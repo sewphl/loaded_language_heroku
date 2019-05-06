@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     if logged_in?
       @user = current_user
     else
-      redirect_to new_users_path
+      redirect_to signup_path
     end
   end
 
