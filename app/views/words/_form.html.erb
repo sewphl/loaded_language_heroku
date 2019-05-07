@@ -1,0 +1,8 @@
+<%= form_for(@word) do |f| %>
+  <label>Word:</label><br>
+  <%= f.hidden_field :user_id %>
+  <%= f.text_field :entry %><br>
+  <label>How loaded is it?</label><br>
+  <%= range_field :loaded_rating, :in => 0..9, :step => '1' %><br>
+  <%= f.submit action_name == 'new' ? 'Add Word' : 'Update Word'%>
+<% end %>
