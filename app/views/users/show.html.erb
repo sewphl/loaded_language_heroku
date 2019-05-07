@@ -9,17 +9,15 @@
 <label>Email: </label>
 <%=@user.email%><br>
 
-<h4>Your words</h4>
-<%= link_to "New Word", new_user_word_path(@user) %><br>
+<div>
+  <h4>Your words</h4>
 
-<p>Words:</p>
-<% @user.words.each do |w| %>
-  <div><%= w.entry %></div>
-<% end %>
+  <% @user.words.each do |w| %>
+    <div><%= link_to w.entry, user_word_path(@user, w) %></div>
+    <% end %>
+    <%= link_to "Add another word", new_user_word_path(@user) %>
+</div>
 
-
-
-
-
+<br>
 <%=link_to "Log Out", logout_path%><br>
 <%=link_to "Home", root_path%>
