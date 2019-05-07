@@ -1,1 +1,9 @@
 <%=flash.notice %>
+
+<h3>Words</h3>
+
+<ul>
+<% @words.each do |w| %>
+  <li><%= link_to w.entry, w %></li>
+<% end %>
+</ul>
