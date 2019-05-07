@@ -12,7 +12,6 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     @user.save
     log_in(@user)
-    ##binding.pry
     redirect_to root_path
   end
 
