@@ -4156,3 +4156,1780 @@ rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
 /Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
 /Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
 /Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/newword" for ::1 at 2019-05-07 13:28:46 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (73.3ms)
+  Rendered words/new.html.erb within layouts/application (92.8ms)
+Completed 200 OK in 365ms (Views: 299.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newword" for ::1 at 2019-05-07 13:53:29 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (1666.9ms)
+  Rendered words/new.html.erb within layouts/application (1801.7ms)
+Completed 500 Internal Server Error in 2038ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( words.js )` to `config/initializers/assets.rb` and restart your server):
+    1: 
+    2: <% content_for :javascript_includes do %>
+    3:   <%= javascript_include_tag "words.js" %>
+    4: <% end %>
+    5: 
+    6: <%= form_for(@word) do |f| %>
+  
+app/views/words/_form.html.erb:3:in `block in _app_views_words__form_html_erb___950257292387112581_70171959138740'
+app/views/words/_form.html.erb:2:in `_app_views_words__form_html_erb___950257292387112581_70171959138740'
+app/views/words/new.html.erb:1:in `_app_views_words_new_html_erb___4559125416354782278_70171965470440'
+Started GET "/newword" for ::1 at 2019-05-07 14:00:41 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (881.3ms)
+  Rendered words/new.html.erb within layouts/application (991.6ms)
+Completed 500 Internal Server Error in 1292ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( words.js )` to `config/initializers/assets.rb` and restart your server):
+    1: <% content_for :head do %>
+    2:   <%= javascript_include_tag 'words' %>
+    3: <% end %>
+    4: 
+    5: <%= form_for(@word) do |f| %>
+  
+app/views/words/_form.html.erb:2:in `block in _app_views_words__form_html_erb___950257292387112581_70171977450300'
+app/views/words/_form.html.erb:1:in `_app_views_words__form_html_erb___950257292387112581_70171977450300'
+app/views/words/new.html.erb:1:in `_app_views_words_new_html_erb___4559125416354782278_70171977440120'
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/newword" for ::1 at 2019-05-07 14:02:51 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (1064.9ms)
+  Rendered words/new.html.erb within layouts/application (1071.1ms)
+Completed 500 Internal Server Error in 1231ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `thing_form' for #<#<Class:0x00007fb264540128>:0x00007fb264530908>):
+     8:   <%= f.text_field :entry %><br>
+     9:   <label>How loaded is it?</label><br>
+    10:   <div id="the_slider">
+    11:     <%= thing_form.hidden_field :data1 %>
+    12:     <%= thing_form.hidden_field :data2 %>
+    13:     <%= f.submit action_name == 'new' ? 'Add Word' : 'Update Word'%>
+    14:   </div>
+  
+app/views/words/_form.html.erb:11:in `block in _app_views_words__form_html_erb___4310976545551461062_70202082161100'
+app/views/words/_form.html.erb:5:in `_app_views_words__form_html_erb___4310976545551461062_70202082161100'
+app/views/words/new.html.erb:1:in `_app_views_words_new_html_erb___2267630929265717319_70202082071200'
+Started GET "/newword" for ::1 at 2019-05-07 14:04:46 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (298.3ms)
+  Rendered words/new.html.erb within layouts/application (320.1ms)
+Completed 500 Internal Server Error in 601ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `data1' for #<Word:0x00007fb266cbac58>):
+     8:   <%= f.text_field :entry %><br>
+     9:   <label>How loaded is it?</label><br>
+    10:   <div id="the_slider">
+    11:     <%= f.hidden_field :data1 %>
+    12:     <%= f.hidden_field :data2 %>
+    13:     <%= f.submit action_name == 'new' ? 'Add Word' : 'Update Word'%>
+    14:   </div>
+  
+app/views/words/_form.html.erb:11:in `block in _app_views_words__form_html_erb___4310976545551461062_70202106240740'
+app/views/words/_form.html.erb:5:in `_app_views_words__form_html_erb___4310976545551461062_70202106240740'
+app/views/words/new.html.erb:1:in `_app_views_words_new_html_erb___2267630929265717319_70202102783020'
+Started GET "/newword" for ::1 at 2019-05-07 14:11:34 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (421.8ms)
+  Rendered words/new.html.erb within layouts/application (449.4ms)
+Completed 500 Internal Server Error in 558ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `loaded_entry' for #<Word:0x00007fb263fb4df8>
+Did you mean?  loaded_rating):
+     8:   <%= f.text_field :entry %><br>
+     9:   <label>How loaded is it?</label><br>
+    10:   <div id="the_slider">
+    11:     <%= f.hidden_field :loaded_entry %>
+    12:     <%= f.submit action_name == 'new' ? 'Add Word' : 'Update Word'%>
+    13:   </div>
+    14: <% end %>
+  
+app/views/words/_form.html.erb:11:in `block in _app_views_words__form_html_erb___4310976545551461062_70202079177160'
+app/views/words/_form.html.erb:5:in `_app_views_words__form_html_erb___4310976545551461062_70202079177160'
+app/views/words/new.html.erb:1:in `_app_views_words_new_html_erb___2267630929265717319_70202079173760'
+Started GET "/newword" for ::1 at 2019-05-07 14:12:05 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (115.3ms)
+  Rendered words/new.html.erb within layouts/application (124.9ms)
+Completed 200 OK in 620ms (Views: 614.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/words.self-45abb8e05992ebb9dfc4c8b2fdca871da7da3d46f74feacc7a238dffa75c9e76.js?body=1" for ::1 at 2019-05-07 14:12:06 -0400
+Started GET "/assets/application.self-545c38b0922de19734fbffde62792c37c2aef6a3216cfa472449173165220f7d.js?body=1" for ::1 at 2019-05-07 14:12:06 -0400
+Started GET "/newword" for ::1 at 2019-05-07 14:12:56 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (132.0ms)
+  Rendered words/new.html.erb within layouts/application (151.6ms)
+Completed 200 OK in 619ms (Views: 603.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/words.self-ef9a2058570198d5f1a1e8f0c4af0c7b7749fe8ef7484e3e1aedcc424e042553.js?body=1" for ::1 at 2019-05-07 14:12:57 -0400
+Started GET "/newword" for ::1 at 2019-05-07 14:12:59 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (20.6ms)
+  Rendered words/new.html.erb within layouts/application (54.5ms)
+Completed 200 OK in 181ms (Views: 177.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newword" for ::1 at 2019-05-07 14:15:01 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (248.5ms)
+  Rendered words/new.html.erb within layouts/application (263.7ms)
+Completed 200 OK in 759ms (Views: 708.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newword" for ::1 at 2019-05-07 14:20:40 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (141.1ms)
+  Rendered words/new.html.erb within layouts/application (164.2ms)
+Completed 500 Internal Server Error in 581ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap-slider' with type 'application/javascript'
+Checked in these paths: 
+  /Users/sharonalajajian/Desktop/flatiron/rails_portfolio_loaded_language/app/assets/javascripts
+  /Users/sharonalajajian/Desktop/flatiron/rails_portfolio_loaded_language/app/assets/stylesheets
+  /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/actionview-5.2.3/lib/assets/compiled
+  /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts):
+    10: 
+    11:     <%= csrf_meta_tags %>
+    12:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    13:     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    14:     <%= yield(:head) %>
+    15:   </head>
+    16:   <body>
+  
+app/assets/javascripts/application.js:5
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__2725212271684861625_70202118669440'
+Started GET "/newword" for ::1 at 2019-05-07 14:22:08 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (102.1ms)
+  Rendered words/new.html.erb within layouts/application (196.2ms)
+Completed 500 Internal Server Error in 478ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap-slider' with type 'application/javascript'
+Checked in these paths: 
+  /Users/sharonalajajian/Desktop/flatiron/rails_portfolio_loaded_language/app/assets/javascripts
+  /Users/sharonalajajian/Desktop/flatiron/rails_portfolio_loaded_language/app/assets/stylesheets
+  /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/actionview-5.2.3/lib/assets/compiled
+  /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts):
+    10: 
+    11:     <%= csrf_meta_tags %>
+    12:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    13:     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    14:     <%= yield(:head) %>
+    15:   </head>
+    16:   <body>
+  
+app/assets/javascripts/application.js:5
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__2725212271684861625_70202117264300'
+Started GET "/newword" for ::1 at 2019-05-07 14:23:14 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (48.7ms)
+  Rendered words/new.html.erb within layouts/application (66.0ms)
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'application/javascript'
+Checked in these paths: 
+  /Users/sharonalajajian/Desktop/flatiron/rails_portfolio_loaded_language/app/assets/javascripts
+  /Users/sharonalajajian/Desktop/flatiron/rails_portfolio_loaded_language/app/assets/stylesheets
+  /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/actionview-5.2.3/lib/assets/compiled
+  /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts):
+    10: 
+    11:     <%= csrf_meta_tags %>
+    12:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    13:     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    14:     <%= yield(:head) %>
+    15:   </head>
+    16:   <body>
+  
+app/assets/javascripts/application.js:5
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__2725212271684861625_70202107153480'
+Started GET "/newword" for ::1 at 2019-05-07 14:23:31 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (17.5ms)
+  Rendered words/new.html.erb within layouts/application (26.6ms)
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'application/javascript'
+Checked in these paths: 
+  /Users/sharonalajajian/Desktop/flatiron/rails_portfolio_loaded_language/app/assets/javascripts
+  /Users/sharonalajajian/Desktop/flatiron/rails_portfolio_loaded_language/app/assets/stylesheets
+  /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/actionview-5.2.3/lib/assets/compiled
+  /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts):
+    10: 
+    11:     <%= csrf_meta_tags %>
+    12:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    13:     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    14:     <%= yield(:head) %>
+    15:   </head>
+    16:   <body>
+  
+app/assets/javascripts/application.js:5
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__2725212271684861625_70202119177240'
+Started GET "/newword" for ::1 at 2019-05-07 14:24:31 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (54.2ms)
+  Rendered words/new.html.erb within layouts/application (78.8ms)
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'application/javascript'
+Checked in these paths: 
+  /Users/sharonalajajian/Desktop/flatiron/rails_portfolio_loaded_language/app/assets/javascripts
+  /Users/sharonalajajian/Desktop/flatiron/rails_portfolio_loaded_language/app/assets/stylesheets
+  /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/actionview-5.2.3/lib/assets/compiled
+  /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts):
+    10: 
+    11:     <%= csrf_meta_tags %>
+    12:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    13:     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    14:     <%= yield(:head) %>
+    15:   </head>
+    16:   <body>
+  
+app/assets/javascripts/application.js:5
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb__2725212271684861625_70202117786640'
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/newword" for ::1 at 2019-05-07 14:25:12 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (2532.8ms)
+  Rendered words/new.html.erb within layouts/application (2545.4ms)
+Completed 200 OK in 4937ms (Views: 4820.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.self-dca589d2d29cbc4e094c039f6f2f594a3b4c57a58376541c90e677a20a741e3b.css?body=1" for ::1 at 2019-05-07 14:25:18 -0400
+Started GET "/assets/words.self-7305816dfba05c15f00c9ca7519d8840e1cafadd458d9167baca699f78c878ba.js?body=1" for ::1 at 2019-05-07 14:25:18 -0400
+Started GET "/assets/bootstrap/affix.self-ffef5831dcf7a4d43a9620f0786e3be0130548db46f747ca2a904ac5a863fd18.js?body=1" for ::1 at 2019-05-07 14:25:18 -0400
+Started GET "/assets/bootstrap/alert.self-08f6e94a49ab0a922ef14d42862fcfb04b20b7fb57d3d2d3c868522cab811d6b.js?body=1" for ::1 at 2019-05-07 14:25:18 -0400
+Started GET "/assets/bootstrap/button.self-a5a9eae6660da739d4ae35473360346363ddd4af777c77d4cef8d01771bf25a2.js?body=1" for ::1 at 2019-05-07 14:25:18 -0400
+Started GET "/assets/bootstrap/collapse.self-d51cbeaf7f5ada1eb58a677ebeae512e315a02f545d5c7b252e7a79202913b32.js?body=1" for ::1 at 2019-05-07 14:25:18 -0400
+Started GET "/assets/bootstrap/carousel.self-5db2d16d5e04db4950c1aebd2496045acf0c3cc889e5ad0647589fbc85d463e6.js?body=1" for ::1 at 2019-05-07 14:25:18 -0400
+Started GET "/assets/bootstrap/dropdown.self-cd540439aa8dbb7db30618794daa83f0dd6bb0f84a763bd1b2bc69449be68712.js?body=1" for ::1 at 2019-05-07 14:25:18 -0400
+Started GET "/assets/bootstrap/tab.self-52433fba05f8c09386efdfd67dc876623a9f630e72cdebc232c5de7e8f9789b5.js?body=1" for ::1 at 2019-05-07 14:25:18 -0400
+Started GET "/assets/bootstrap/transition.self-0c6ebea816a743abc763e631df1641c3400ff38e647776d0faba7d31b414ce4f.js?body=1" for ::1 at 2019-05-07 14:25:18 -0400
+Started GET "/assets/bootstrap/popover.self-36391474d61036c11b65bbb21b5847f57e6b195d8cb278b669accb3ac73e9626.js?body=1" for ::1 at 2019-05-07 14:25:19 -0400
+Started GET "/assets/bootstrap/scrollspy.self-7496072b8c0dd40f5d88076e7e3788487ec5b0aa9f9a04e71434194cb6250f08.js?body=1" for ::1 at 2019-05-07 14:25:18 -0400
+Started GET "/assets/bootstrap/tooltip.self-198806da8d1c06616d7e9d7be92d96eadca8159640a7dc21eb3121cb2b8a215a.js?body=1" for ::1 at 2019-05-07 14:25:18 -0400
+Started GET "/assets/bootstrap/modal.self-2b3f3fdebdb4f9ee9737d99cfc4cf2dc2ba54c83f2164c7836ef0b4d81f34b1f.js?body=1" for ::1 at 2019-05-07 14:25:18 -0400
+Started GET "/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" for ::1 at 2019-05-07 14:25:19 -0400
+Started GET "/assets/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2019-05-07 14:25:19 -0400
+Started POST "/words" for ::1 at 2019-05-07 14:25:32 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gp1ZxH75vdefQ7w4RrxO2MA8nckHK5QMcRJUTLuf0gbkJMHSYDz7vD56aaKntSO9efoDaakJIRckTtYjudzIrA==", "word"=>{"user_id"=>"", "entry"=>"moon"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"91"}, "commit"=>"Add Word"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Create (17.8ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["entry", "moon"], ["created_at", "2019-05-07 18:25:32.123821"], ["updated_at", "2019-05-07 18:25:32.123821"]]
+  [1m[35m (53.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/words/2
+Completed 302 Found in 148ms (ActiveRecord: 72.0ms)
+
+
+Started GET "/words/2" for ::1 at 2019-05-07 14:25:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/words/2"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  [1m[36mWord Load (42.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mWord Destroy (31.2ms)[0m  [1m[31mDELETE FROM "words" WHERE "words"."id" = ?[0m  [["id", 2]]
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/newword" for ::1 at 2019-05-07 14:26:32 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (33.7ms)
+  Rendered words/new.html.erb within layouts/application (43.9ms)
+Completed 200 OK in 528ms (Views: 379.7ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 14:26:39 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rnvWiAInbVhFKzKu+CVuuHsmWVRC/eYO7f61yqSNndRQwk6eHOIrM+QS5zQZLAPdwuDH9OzfUxW4ojelps6Hfg==", "word"=>{"user_id"=>"", "entry"=>"moon"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"100"}, "commit"=>"Add Word"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (4.1ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "moon"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/words
+Completed 302 Found in 103ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/words" for ::1 at 2019-05-07 14:26:39 -0400
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  Rendered words/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 414ms (Views: 399.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/words" for ::1 at 2019-05-07 14:33:12 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rnvWiAInbVhFKzKu+CVuuHsmWVRC/eYO7f61yqSNndRQwk6eHOIrM+QS5zQZLAPdwuDH9OzfUxW4ojelps6Hfg==", "word"=>{"user_id"=>"", "entry"=>"moon"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"100"}, "commit"=>"Add Word"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "moon"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/words
+Completed 302 Found in 165ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/words" for ::1 at 2019-05-07 14:33:14 -0400
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  Rendered words/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 279ms (Views: 253.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 14:34:44 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rnvWiAInbVhFKzKu+CVuuHsmWVRC/eYO7f61yqSNndRQwk6eHOIrM+QS5zQZLAPdwuDH9OzfUxW4ojelps6Hfg==", "word"=>{"user_id"=>"", "entry"=>"moon"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"100"}, "commit"=>"Add Word"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "moon"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/words
+Completed 302 Found in 55ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/words" for ::1 at 2019-05-07 14:34:45 -0400
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  Rendered words/index.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 265ms (Views: 256.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 14:35:45 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rnvWiAInbVhFKzKu+CVuuHsmWVRC/eYO7f61yqSNndRQwk6eHOIrM+QS5zQZLAPdwuDH9OzfUxW4ojelps6Hfg==", "word"=>{"user_id"=>"", "entry"=>"moon"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"100"}, "commit"=>"Add Word"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "moon"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/words
+Completed 302 Found in 118ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/words" for ::1 at 2019-05-07 14:35:45 -0400
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  Rendered words/index.html.erb within layouts/application (376.8ms)
+Completed 500 Internal Server Error in 418ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `message' for #<ActionDispatch::Flash::FlashHash:0x00007fcf2e92de98>):
+    1: <%=flash.message %>
+  
+app/views/words/index.html.erb:1:in `_app_views_words_index_html_erb___628782623083545451_70263908150380'
+Started GET "/newword" for ::1 at 2019-05-07 14:38:43 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (171.5ms)
+  Rendered words/new.html.erb within layouts/application (284.8ms)
+Completed 200 OK in 1327ms (Views: 906.6ms | ActiveRecord: 50.2ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 14:38:50 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CPC0BbcT9DA6VTQtBdOXaSKtxOVL8bMK09vbONK9Oi72SSwTqdayW5ts4bfk2voMm2taReXTBhGGh1lX0P4ghA==", "word"=>{"user_id"=>"", "entry"=>"moon"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"50"}, "commit"=>"Add Word"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "moon"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/words
+Completed 302 Found in 67ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/words" for ::1 at 2019-05-07 14:38:50 -0400
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  Rendered words/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 377ms (Views: 373.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newword" for ::1 at 2019-05-07 14:40:26 -0400
+  
+SyntaxError (/Users/sharonalajajian/Desktop/flatiron/rails_portfolio_loaded_language/app/controllers/words_controller.rb:50: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/words_controller.rb:50: syntax error, unexpected end-of-input, expecting end
+Started GET "/newword" for ::1 at 2019-05-07 14:40:38 -0400
+Processing by WordsController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 114ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2019-05-07 14:40:39 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (319.8ms)
+Completed 200 OK in 725ms (Views: 702.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/newword" for ::1 at 2019-05-07 14:40:48 -0400
+Processing by WordsController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-07 14:40:48 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (30.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 258ms (Views: 224.7ms | ActiveRecord: 30.3ms)
+
+
+  [1m[36mWord Load (10.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" LIMIT ?[0m  [["LIMIT", 11]]
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/newword" for ::1 at 2019-05-07 14:41:37 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 111ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/" for ::1 at 2019-05-07 14:41:38 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (135.4ms)
+Completed 200 OK in 1844ms (Views: 1818.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/newword" for ::1 at 2019-05-07 14:42:01 -0400
+Processing by WordsController#new as HTML
+Redirected to http://localhost:3000/words
+Completed 302 Found in 94ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/words" for ::1 at 2019-05-07 14:42:01 -0400
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  Rendered words/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 329ms (Views: 313.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newword" for ::1 at 2019-05-07 14:42:56 -0400
+Processing by WordsController#new as HTML
+Redirected to http://localhost:3000/words
+Completed 302 Found in 140ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/words" for ::1 at 2019-05-07 14:42:56 -0400
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  Rendered words/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 317ms (Views: 305.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newword" for ::1 at 2019-05-07 14:43:16 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (66.1ms)
+  Rendered words/new.html.erb within layouts/application (70.4ms)
+Completed 200 OK in 345ms (Views: 297.6ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 14:43:22 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xvEApDVUbYQ1+DgAszZBlkL679GfSfIh77nYSemcsWU4SJiyK5Er75TB7ZpSPyzz+zxxcTFrRzq65Vom69+rzw==", "word"=>{"user_id"=>"", "entry"=>"moon"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"100"}, "commit"=>"Add Word"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "moon"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/words
+Completed 302 Found in 70ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/words" for ::1 at 2019-05-07 14:43:22 -0400
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  Rendered words/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 303ms (Views: 288.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newword" for ::1 at 2019-05-07 14:43:55 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (13.7ms)
+  Rendered words/new.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 304ms (Views: 220.6ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 14:44:00 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MEts5sH1iK87b928gxPWbskliWok+nHSTPxXgeTdL53O8vTw3zDOxJpWCCZiGrsLcOMXyorYxMkZoNXu5p41Nw==", "word"=>{"user_id"=>"", "entry"=>"moon"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"100"}, "commit"=>"Add Word"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "moon"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/words
+Completed 302 Found in 22ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/words" for ::1 at 2019-05-07 14:44:00 -0400
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  Rendered words/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 295ms (Views: 289.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newword" for ::1 at 2019-05-07 14:44:11 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (29.4ms)
+  Rendered words/new.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 289ms (Views: 285.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 14:44:17 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QHYHlIkqoOyOFIbuz1vubR93Oxl08iqt36WV9jKXeBS+z5+Cl+/mhy8tU3QuUoMIprGludrQn7aK+ReZMNRivg==", "word"=>{"user_id"=>"", "entry"=>"sky"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"100"}, "commit"=>"Add Word"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "sky"], ["LIMIT", 1]]
+  [1m[36mWord Create (1.6ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["entry", "sky"], ["created_at", "2019-05-07 18:44:17.057191"], ["updated_at", "2019-05-07 18:44:17.057191"]]
+  [1m[35m (118.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/words/3
+Completed 302 Found in 135ms (ActiveRecord: 120.7ms)
+
+
+Started GET "/words/3" for ::1 at 2019-05-07 14:44:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/words/3"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started POST "/words" for ::1 at 2019-05-07 14:46:13 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QHYHlIkqoOyOFIbuz1vubR93Oxl08iqt36WV9jKXeBS+z5+Cl+/mhy8tU3QuUoMIprGludrQn7aK+ReZMNRivg==", "word"=>{"user_id"=>"", "entry"=>"sky"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"100"}, "commit"=>"Add Word"}
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "sky"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/words
+Completed 302 Found in 50ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/words" for ::1 at 2019-05-07 14:46:13 -0400
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  Rendered words/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 134ms (Views: 131.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newword" for ::1 at 2019-05-07 14:46:17 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (24.5ms)
+  Rendered words/new.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 313ms (Views: 310.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 14:46:24 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZKoe80WsyxLGUEG0lr6E/leQTLbPNq0Rxp2BlQVsyWKaE4blW2mNeWdplC53t+mb7lbSFmEUGAqTwQP6By/TyA==", "word"=>{"user_id"=>"", "entry"=>"delight"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"87"}, "commit"=>"Add Word"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "delight"], ["LIMIT", 1]]
+  [1m[36mWord Create (1.9ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["entry", "delight"], ["created_at", "2019-05-07 18:46:24.080283"], ["updated_at", "2019-05-07 18:46:24.080283"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/words/4
+Completed 302 Found in 18ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/words/4" for ::1 at 2019-05-07 14:46:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/words/4"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  [1m[36mWord Load (11.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mWord Destroy (36.0ms)[0m  [1m[31mDELETE FROM "words" WHERE "words"."id" = ?[0m  [["id", 1]]
+  [1m[36mWord Load (0.8ms)[0m  [1m[34mSELECT  "words".* FROM "words" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/words/4" for ::1 at 2019-05-07 14:52:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/words/4"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/words" for ::1 at 2019-05-07 14:54:41 -0400
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  Rendered words/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 969ms (Views: 781.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/newword" for ::1 at 2019-05-07 14:54:52 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (88.0ms)
+  Rendered words/new.html.erb within layouts/application (110.4ms)
+Completed 200 OK in 2590ms (Views: 2050.8ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 14:55:06 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wuPkMv7AtBgRqsNvvgjGnAG+DXkeT9kJ2hXFkY3xfww8Wnwk4AXyc7CTFvVfAav5uHiT2bBtbBKPSUf+j7Jlpg==", "word"=>{"user_id"=>"", "entry"=>"vein"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"78"}, "commit"=>"Add Word"}
+  [1m[35m (17.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (12.3ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "vein"], ["LIMIT", 1]]
+  [1m[36mWord Create (28.5ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["entry", "vein"], ["created_at", "2019-05-07 18:55:06.878067"], ["updated_at", "2019-05-07 18:55:06.878067"]]
+  [1m[35m (36.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/words/5
+Completed 302 Found in 447ms (ActiveRecord: 94.3ms)
+
+
+Started GET "/words/5" for ::1 at 2019-05-07 14:55:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/words/5"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started POST "/words" for ::1 at 2019-05-07 14:55:49 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wuPkMv7AtBgRqsNvvgjGnAG+DXkeT9kJ2hXFkY3xfww8Wnwk4AXyc7CTFvVfAav5uHiT2bBtbBKPSUf+j7Jlpg==", "word"=>{"user_id"=>"", "entry"=>"rain"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"100"}, "commit"=>"Add Word"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "rain"], ["LIMIT", 1]]
+  [1m[36mWord Create (4.2ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["entry", "rain"], ["created_at", "2019-05-07 18:55:49.700499"], ["updated_at", "2019-05-07 18:55:49.700499"]]
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/words/6
+Completed 302 Found in 104ms (ActiveRecord: 21.9ms)
+
+
+Started GET "/words/6" for ::1 at 2019-05-07 14:55:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/words/6"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  [1m[36mWord Load (8.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/newword" for ::1 at 2019-05-07 15:00:36 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (35.5ms)
+  Rendered words/new.html.erb within layouts/application (41.5ms)
+Completed 200 OK in 538ms (Views: 403.8ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 15:00:49 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aPcSQZjVmB8WqpRgO6IY7osOE8C044LWAVI3XJvL4B6WTopXhhDedLeTQfraq3WLMsiNYBrBN81UDrUzmYj6tA==", "word"=>{"user_id"=>"", "entry"=>"drain"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"89"}, "commit"=>"Add Word"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "drain"], ["LIMIT", 1]]
+  [1m[36mWord Create (1.3ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["entry", "drain"], ["created_at", "2019-05-07 19:00:49.735098"], ["updated_at", "2019-05-07 19:00:49.735098"]]
+  [1m[35m (117.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/words/7
+Completed 302 Found in 239ms (ActiveRecord: 119.7ms)
+
+
+Started GET "/words/7" for ::1 at 2019-05-07 15:00:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/words/7"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/new_user_word" for ::1 at 2019-05-07 15:03:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/new_user_word"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/words/new" for ::1 at 2019-05-07 15:04:07 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (102.1ms)
+  Rendered words/new.html.erb within layouts/application (114.4ms)
+Completed 200 OK in 1309ms (Views: 1168.3ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 15:04:17 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eSVZU2OiRsxa+PUM5ySy9O7B/P40AInTVpmbTo3OBWWHnMFFfWcAp/vBIJYGLd+RVwdiXpoiPMgDxRkhj40fzw==", "word"=>{"user_id"=>"", "entry"=>"dry"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"72"}, "commit"=>"Add Word"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (25.3ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "dry"], ["LIMIT", 1]]
+  [1m[36mWord Create (26.4ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["entry", "dry"], ["created_at", "2019-05-07 19:04:17.132752"], ["updated_at", "2019-05-07 19:04:17.132752"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/words/8
+Completed 302 Found in 104ms (ActiveRecord: 56.9ms)
+
+
+Started GET "/words/8" for ::1 at 2019-05-07 15:04:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/words/8"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/users/4" for ::1 at 2019-05-07 15:08:43 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (4) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mWord Load (1.2ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered users/show.html.erb within layouts/application (696.9ms)
+Completed 200 OK in 1674ms (Views: 1037.4ms | ActiveRecord: 43.2ms)
+
+
+Started GET "/users/4/words/new" for ::1 at 2019-05-07 15:08:51 -0400
+Processing by WordsController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (35.6ms)
+  Rendered words/new.html.erb within layouts/application (39.6ms)
+Completed 200 OK in 229ms (Views: 225.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/words/new" for ::1 at 2019-05-07 15:10:05 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (154.1ms)
+  Rendered words/new.html.erb within layouts/application (183.0ms)
+Completed 200 OK in 639ms (Views: 588.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/words/new" for ::1 at 2019-05-07 15:12:05 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (192.6ms)
+  Rendered words/new.html.erb within layouts/application (243.4ms)
+Completed 200 OK in 870ms (Views: 786.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 15:12:10 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rPmgOzr2k4IcdcSbakfzME7sqpsw0rxzNtRidLm+iS1SQDgtJDPV6b1MEQGLTp5V9yo0O57wCWhjiOAbu/2Thw==", "word"=>{"user_id"=>"", "entry"=>""}, "loaded_rating"=>{"{:in=>1..100}"=>"73"}, "commit"=>"Add Word"}
+  [1m[35m (22.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (8.5ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", ""], ["LIMIT", 1]]
+  [1m[36mWord Create (2.2ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["entry", ""], ["created_at", "2019-05-07 19:12:11.117677"], ["updated_at", "2019-05-07 19:12:11.117677"]]
+  [1m[35m (105.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/words/9
+Completed 302 Found in 530ms (ActiveRecord: 139.1ms)
+
+
+Started GET "/words/9" for ::1 at 2019-05-07 15:12:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/words/9"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started POST "/words" for ::1 at 2019-05-07 15:12:18 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rPmgOzr2k4IcdcSbakfzME7sqpsw0rxzNtRidLm+iS1SQDgtJDPV6b1MEQGLTp5V9yo0O57wCWhjiOAbu/2Thw==", "word"=>{"user_id"=>"", "entry"=>"fly"}, "loaded_rating"=>{"{:in=>1..100}"=>"73"}, "commit"=>"Add Word"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "fly"], ["LIMIT", 1]]
+  [1m[36mWord Create (1.9ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["entry", "fly"], ["created_at", "2019-05-07 19:12:19.046020"], ["updated_at", "2019-05-07 19:12:19.046020"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/words/10
+Completed 302 Found in 27ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/words/10" for ::1 at 2019-05-07 15:12:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/words/10"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  [1m[36mWord Load (33.8ms)[0m  [1m[34mSELECT  "words".* FROM "words" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/words" for ::1 at 2019-05-07 15:13:59 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rPmgOzr2k4IcdcSbakfzME7sqpsw0rxzNtRidLm+iS1SQDgtJDPV6b1MEQGLTp5V9yo0O57wCWhjiOAbu/2Thw==", "word"=>{"user_id"=>"", "entry"=>"flight"}, "loaded_rating"=>{"{:in=>1..100}"=>"73"}, "commit"=>"Add Word"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "flight"], ["LIMIT", 1]]
+  [1m[36mWord Create (4.7ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["entry", "flight"], ["created_at", "2019-05-07 19:14:02.281486"], ["updated_at", "2019-05-07 19:14:02.281486"]]
+  [1m[35m (219.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/words/11
+Completed 302 Found in 803ms (ActiveRecord: 227.9ms)
+
+
+Started GET "/words/11" for ::1 at 2019-05-07 15:14:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/words/11"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  [1m[36mWord Load (32.4ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Started GET "/words/new" for ::1 at 2019-05-07 15:21:46 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (79.8ms)
+  Rendered words/new.html.erb within layouts/application (113.3ms)
+Completed 200 OK in 927ms (Views: 645.3ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/words/new" for ::1 at 2019-05-07 15:24:27 -0400
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (89.6ms)
+  Rendered words/new.html.erb within layouts/application (115.3ms)
+Completed 200 OK in 896ms (Views: 584.4ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 15:25:07 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cA4MWtpUdoTeGWZ6j1ojYpC//W43LF/psTjthCaDqTKOt5RMxJEw738gs+BuU04HKXljzpkO6vLkZG/rJMCzmA==", "word"=>{"user_id"=>"", "entry"=>"vinyl"}, "loaded_rating"=>{"{:in=>1..100}"=>"78"}, "commit"=>"Add Word"}
+  [1m[35m (15.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (10.4ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "vinyl"], ["LIMIT", 1]]
+  [1m[36mWord Create (7.6ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["entry", "vinyl"], ["created_at", "2019-05-07 19:25:07.661950"], ["updated_at", "2019-05-07 19:25:07.661950"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/words/12
+Completed 302 Found in 395ms (ActiveRecord: 40.5ms)
+
+
+Started GET "/words/12" for ::1 at 2019-05-07 15:25:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/words/12"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/newword" for ::1 at 2019-05-07 15:28:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/newword"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/words/new" for ::1 at 2019-05-07 15:28:27 -0400
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/words/new" for ::1 at 2019-05-07 15:44:02 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (1076.0ms)
+  Rendered words/new.html.erb within layouts/application (1086.1ms)
+Completed 200 OK in 1704ms (Views: 1495.2ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 15:44:54 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f83GBSrvt51UNt1zPNR9a12XZy6wIoYj3KBlXDcxmaCBdF4TNCrx9vUPCOnd3RAO5FH5jh4AMziJ/OczNXKDCg==", "word"=>{"user_id"=>"4", "entry"=>"neon"}, "loaded_rating"=>{"{:in=>1..100}"=>"61"}, "commit"=>"Add Word"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (3.9ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "neon"], ["LIMIT", 1]]
+  [1m[36mWord Create (2.2ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["entry", "neon"], ["created_at", "2019-05-07 19:44:54.706202"], ["updated_at", "2019-05-07 19:44:54.706202"], ["user_id", 4]]
+  [1m[35m (35.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/words/13
+Completed 302 Found in 234ms (ActiveRecord: 41.8ms)
+
+
+Started GET "/words/13" for ::1 at 2019-05-07 15:44:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/words/13"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/words/new" for ::1 at 2019-05-07 15:45:55 -0400
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 400 Bad Request in 93ms (ActiveRecord: 3.8ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: word):
+  
+app/controllers/words_controller.rb:57:in `word_params'
+app/controllers/words_controller.rb:21:in `new'
+Started GET "/words/new" for ::1 at 2019-05-07 15:48:03 -0400
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 400 Bad Request in 164ms (ActiveRecord: 5.1ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: word):
+  
+app/controllers/words_controller.rb:57:in `word_params'
+app/controllers/words_controller.rb:21:in `new'
+Started GET "/words/new" for ::1 at 2019-05-07 15:48:33 -0400
+Processing by WordsController#new as HTML
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/words/new" for ::1 at 2019-05-07 16:03:00 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (862.2ms)
+  Rendered words/new.html.erb within layouts/application (867.3ms)
+Completed 200 OK in 1489ms (Views: 1377.8ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 16:03:14 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3qQjpusvG5cEyvdPMDe1MIkrblADVrngOqFR8jropEkgHbuw9epd/KXzItXRPthVMO3w8K10DPtv/dOdOKu+4w==", "word"=>{"user_id"=>"", "entry"=>"shoe"}, "loaded_rating"=>{"{:in=>1..100}"=>"61"}, "commit"=>"Add Word"}
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/words/new" for ::1 at 2019-05-07 16:04:08 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (1258.0ms)
+  Rendered words/new.html.erb within layouts/application (1282.9ms)
+Completed 200 OK in 1869ms (Views: 1618.8ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 16:04:37 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XQ9zD6Bb4pTKsvPSxJgmGKDBiCey7BhUyBz4zTcVsBmjtusZvp6k/2uLJkglkUt9GQcWhxzOrU+dQHqiNVaqsw==", "word"=>{"user_id"=>"4", "entry"=>"safe"}, "loaded_rating"=>{"{:in=>1..100}"=>"69"}, "commit"=>"Add Word"}
+  [1m[35m (1.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (5.1ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "safe"], ["LIMIT", 1]]
+  [1m[36mWord Create (15.2ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["entry", "safe"], ["created_at", "2019-05-07 20:04:53.331539"], ["updated_at", "2019-05-07 20:04:53.331539"], ["user_id", 4]]
+  [1m[35m (92.6ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/words/new" for ::1 at 2019-05-07 16:07:02 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (1077.9ms)
+  Rendered words/new.html.erb within layouts/application (1082.7ms)
+Completed 200 OK in 1669ms (Views: 1399.1ms | ActiveRecord: 18.1ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 16:07:13 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZIIHbRBaojoTDu3g6lQ4l3rx6tTrqUrw6ZHXYk8EIbGaO597Dp/kUbI3OHoLXVXywzd0dEWL/+u8zVUNTUc7Gw==", "word"=>{"user_id"=>"4", "entry"=>"soda"}, "loaded_rating"=>{"{:in=>0..9, :step=>\"1\"}"=>"37"}, "commit"=>"Add Word"}
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/words/new" for ::1 at 2019-05-07 16:12:16 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (1303.5ms)
+  Rendered words/new.html.erb within layouts/application (1310.8ms)
+Completed 200 OK in 2262ms (Views: 1939.2ms | ActiveRecord: 17.3ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 16:12:24 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XtgeeLZd+DKbfjZ9Gs5BeVVbluAX6AOkyuIZAF3uHqygYYZuqJi+WTpH4+f7xywc7J0IQLnKtr+fvptvX60EBg==", "word"=>{"user_id"=>"4", "entry"=>"vacant"}, "loaded_rating"=>{"{:in=>0..9}"=>"66"}, "commit"=>"Add Word"}
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at bin/rails:4)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from block in execute at /Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeLoadedRatingToBeIntegerInWords (20190507201756)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190507201756"]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (8.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/words/new" for ::1 at 2019-05-07 16:19:44 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (1367.6ms)
+  Rendered words/new.html.erb within layouts/application (1375.6ms)
+Completed 200 OK in 2070ms (Views: 1795.6ms | ActiveRecord: 14.0ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 16:19:55 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aX6HndZj8snrlPsrQugvEuouoKOWETY+ckgvei903QmXxx+LyKa0okqtLrGj4UJ3U+g+AzgzgyUnFK0VLTfHow==", "word"=>{"user_id"=>"4", "entry"=>"blow"}, "loaded_rating"=>{"{:in=>0..9}"=>"85"}, "commit"=>"Add Word"}
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/words/new" for ::1 at 2019-05-07 16:21:51 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (1873.2ms)
+  Rendered words/new.html.erb within layouts/application (1881.4ms)
+Completed 200 OK in 3264ms (Views: 2822.1ms | ActiveRecord: 61.5ms)
+
+
+Started GET "/assets/words.self-a4ea3391306ba4bcfdfc8db8ca0dedf2647c25cd9713bce9e18fac334bf45a33.js?body=1" for ::1 at 2019-05-07 16:21:57 -0400
+Started POST "/words" for ::1 at 2019-05-07 16:22:07 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VfZ0ln65fSWmKUlLO4kLEVyIR4bm2USR1ddQ2652cQqrT+yAYHw7TgcQnNHagGZ05U7ZJkj78YqAi9K0rDVroA==", "word"=>{"user_id"=>"4", "entry"=>"lie"}, "loaded_rating"=>{"{:in=>0..9}"=>"78"}, "commit"=>"Add Word"}
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/words/new" for ::1 at 2019-05-07 16:25:38 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (1191.5ms)
+  Rendered words/new.html.erb within layouts/application (1196.8ms)
+Completed 200 OK in 1819ms (Views: 1549.8ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 16:25:50 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UdIPpzC8LsxUeVEi45XaG1brNpabgGwjvqNVy7ZgWguva5exLnlop/VAhLgCnLd+7y2oNjWi2Tjr/9ektCNAoQ==", "word"=>{"user_id"=>"4", "entry"=>"butter", "loaded_rating"=>"4"}, "commit"=>"Add Word"}
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (3.8ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "butter"], ["LIMIT", 1]]
+  [1m[36mWord Create (3.6ms)[0m  [1m[32mINSERT INTO "words" ("entry", "loaded_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["entry", "butter"], ["loaded_rating", 4.0], ["created_at", "2019-05-07 20:26:43.100693"], ["updated_at", "2019-05-07 20:26:43.100693"], ["user_id", 4]]
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? AND "words"."id" != ? LIMIT ?[0m  [["entry", "butter"], ["id", 15], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from require at bin/rails:4)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from block in execute at /Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeLoadedRatingToBeFloatInWords (20190507202805)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "awords" ("id" integer NOT NULL PRIMARY KEY, "entry" varchar DEFAULT NULL, "loaded_rating" float DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "awords" ("id","entry","loaded_rating","created_at","updated_at","user_id")
+                     SELECT "id","entry","loaded_rating","created_at","updated_at","user_id" FROM "words"[0m
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE "words"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "words" ("id" integer NOT NULL PRIMARY KEY, "entry" varchar DEFAULT NULL, "loaded_rating" float DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "words" ("id","entry","loaded_rating","created_at","updated_at","user_id")
+                     SELECT "id","entry","loaded_rating","created_at","updated_at","user_id" FROM "awords"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "awords"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190507202805"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/words/new" for ::1 at 2019-05-07 16:31:35 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (1078.9ms)
+  Rendered words/new.html.erb within layouts/application (1087.3ms)
+Completed 200 OK in 1676ms (Views: 1427.5ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 16:31:43 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J7kl6sDEgXVeJxgVuiHEnJKfiBk9/UVlzomVEizzeHnZAL383gHHHv8ezY9bKKn5K1kWuZPf8H6b1Rd9LrBi0w==", "word"=>{"user_id"=>"4", "entry"=>"purple", "loaded_rating"=>"7"}, "commit"=>"Add Word"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "purple"], ["LIMIT", 1]]
+  [1m[36mWord Create (92.5ms)[0m  [1m[32mINSERT INTO "words" ("entry", "loaded_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["entry", "purple"], ["loaded_rating", 7.0], ["created_at", "2019-05-07 20:31:50.937727"], ["updated_at", "2019-05-07 20:31:50.937727"], ["user_id", 4]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/words/new" for ::1 at 2019-05-07 16:33:14 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (1317.1ms)
+  Rendered words/new.html.erb within layouts/application (1341.6ms)
+Completed 200 OK in 1907ms (Views: 1704.0ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 16:33:27 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NucEmyIcaZ5QC2LBE+FhA5/1KvilrTNMNyfExhQZC+vIXpyNPNkv9fEyt1vy6AxmJjO0WAuPhldie0apFloRQQ==", "word"=>{"user_id"=>"4", "entry"=>"axis", "loaded_rating"=>"4.2"}, "commit"=>"Add Word"}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "axis"], ["LIMIT", 1]]
+  [1m[36mWord Create (48.9ms)[0m  [1m[32mINSERT INTO "words" ("entry", "loaded_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["entry", "axis"], ["loaded_rating", 4.2], ["created_at", "2019-05-07 20:33:33.729300"], ["updated_at", "2019-05-07 20:33:33.729300"], ["user_id", 4]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/words/new" for ::1 at 2019-05-07 16:35:03 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (1155.0ms)
+  Rendered words/new.html.erb within layouts/application (1170.0ms)
+Completed 200 OK in 1719ms (Views: 1514.9ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 16:35:14 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6xfcWyxfbO2KauLReCRHPnkgxvXvBtokVe1J/vcXhogVrkRNMpoqhitTN0uZLSpbwOZYVUEkbz8AscuR9VScIg==", "word"=>{"user_id"=>"4", "entry"=>"ten", "loaded_rating"=>"3.5"}, "commit"=>"Add Word"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "ten"], ["LIMIT", 1]]
+  [1m[36mWord Create (25.6ms)[0m  [1m[32mINSERT INTO "words" ("entry", "loaded_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["entry", "ten"], ["loaded_rating", 3.5], ["created_at", "2019-05-07 20:35:14.827331"], ["updated_at", "2019-05-07 20:35:14.827331"], ["user_id", 4]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? AND "words"."id" != ? LIMIT ?[0m  [["entry", "ten"], ["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 335ms (ActiveRecord: 43.1ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"words"}, missing required keys: [:id, :user_id]):
+  
+app/controllers/words_controller.rb:25:in `create'
+  [1m[36mWord Load (105.7ms)[0m  [1m[34mSELECT  "words".* FROM "words" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mWord Load (20.7ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mWord Load (22.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mWord Destroy (282.3ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mWord Load (0.9ms)[0m  [1m[34mSELECT  "words".* FROM "words" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/words/new" for ::1 at 2019-05-07 16:36:54 -0400
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (160.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (110.2ms)
+  Rendered words/new.html.erb within layouts/application (123.1ms)
+Completed 200 OK in 1066ms (Views: 850.3ms | ActiveRecord: 160.2ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 16:37:04 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4XqKLstcOeMoYlIXhWDR5eBVLW7YzqIll/j9iO0BWXAfwxI41Zl/iIlbh41kabyAWZOzznbsFz7CpH/n70JD2g==", "word"=>{"user_id"=>"4", "entry"=>"moon", "loaded_rating"=>"6.9"}, "commit"=>"Add Word"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "moon"], ["LIMIT", 1]]
+  [1m[36mWord Create (18.5ms)[0m  [1m[32mINSERT INTO "words" ("entry", "loaded_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["entry", "moon"], ["loaded_rating", 6.9], ["created_at", "2019-05-07 20:37:04.615327"], ["updated_at", "2019-05-07 20:37:04.615327"], ["user_id", 4]]
+  [1m[35m (391.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? AND "words"."id" != ? LIMIT ?[0m  [["entry", "moon"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 520ms (ActiveRecord: 412.9ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"words"}, missing required keys: [:id, :user_id]):
+  
+app/controllers/words_controller.rb:25:in `create'
+  [1m[36mWord Load (4.7ms)[0m  [1m[34mSELECT  "words".* FROM "words" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/words/new" for ::1 at 2019-05-07 16:41:34 -0400
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (164.4ms)
+  Rendered words/new.html.erb within layouts/application (198.5ms)
+Completed 200 OK in 1120ms (Views: 600.1ms | ActiveRecord: 13.6ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 16:41:47 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q8HisKI6jCwJ4Je+TEULlAcdCe3tj7sEoJxa8v5qJtFVeHqmvP/KR6jZQiStTGbxvtuXTUOtDh/1wNid/Ck8ew==", "word"=>{"user_id"=>"4", "entry"=>"bruise", "loaded_rating"=>"7.8"}, "commit"=>"Add Word"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "bruise"], ["LIMIT", 1]]
+  [1m[36mWord Create (129.8ms)[0m  [1m[32mINSERT INTO "words" ("entry", "loaded_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["entry", "bruise"], ["loaded_rating", 7.8], ["created_at", "2019-05-07 20:41:47.654011"], ["updated_at", "2019-05-07 20:41:47.654011"], ["user_id", 4]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? AND "words"."id" != ? LIMIT ?[0m  [["entry", "bruise"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 528ms (ActiveRecord: 136.0ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"words"}, missing required keys: [:id, :user_id]):
+  
+app/controllers/words_controller.rb:25:in `create'
+Started GET "/words/new" for ::1 at 2019-05-07 16:42:23 -0400
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (60.5ms)
+  Rendered words/new.html.erb within layouts/application (71.3ms)
+Completed 200 OK in 633ms (Views: 481.8ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 16:42:45 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G7H9BFai9orCRMhT7wlP4zNmG249bPV+Pf7zbnYO5TDlCGUSSGew4WN9HckOACKGiqCFzpNOQGVoonEBdE3/mg==", "word"=>{"user_id"=>"4", "entry"=>"blue", "loaded_rating"=>"6.7"}, "commit"=>"Add Word"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "blue"], ["LIMIT", 1]]
+  [1m[36mWord Create (8.4ms)[0m  [1m[32mINSERT INTO "words" ("entry", "loaded_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["entry", "blue"], ["loaded_rating", 6.7], ["created_at", "2019-05-07 20:42:45.190667"], ["updated_at", "2019-05-07 20:42:45.190667"], ["user_id", 4]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? AND "words"."id" != ? LIMIT ?[0m  [["entry", "blue"], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/words/3
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to 
+Redirected to 
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/words/new" for ::1 at 2019-05-07 16:46:57 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (1073.3ms)
+  Rendered words/new.html.erb within layouts/application (1082.1ms)
+Completed 200 OK in 1701ms (Views: 1498.6ms | ActiveRecord: 15.4ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 16:47:07 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1qohV0fY4kgPQLtJkcrHHb2/nwk4NQ7J5b4m18haG70oE7lBWR2kI655btNww6p4BHkBqZYXu9Kw4qS4yhkBFw==", "word"=>{"user_id"=>"4", "entry"=>"drain", "loaded_rating"=>"6.9"}, "commit"=>"Add Word"}
+  [1m[36mUser Load (15.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "drain"], ["LIMIT", 1]]
+  [1m[36mWord Create (1.4ms)[0m  [1m[32mINSERT INTO "words" ("entry", "loaded_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["entry", "drain"], ["loaded_rating", 6.9], ["created_at", "2019-05-07 20:47:07.961585"], ["updated_at", "2019-05-07 20:47:07.961585"], ["user_id", 4]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? AND "words"."id" != ? LIMIT ?[0m  [["entry", "drain"], ["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/4/words/4
+Completed 302 Found in 265ms (ActiveRecord: 28.7ms)
+
+
+Started GET "/users/4/words/4" for ::1 at 2019-05-07 16:47:08 -0400
+Processing by WordsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"4"}
+  [1m[36mWord Load (1.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 466ms (Views: 458.3ms | ActiveRecord: 1.6ms)
+
+
