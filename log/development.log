@@ -6222,3 +6222,76 @@ Processing by WordsController#index as HTML
 Completed 200 OK in 836ms (Views: 812.4ms | ActiveRecord: 1.9ms)
 
 
+Started GET "/words" for ::1 at 2019-05-07 17:13:22 -0400
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (5.1ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendered words/index.html.erb within layouts/application (110.6ms)
+Completed 200 OK in 457ms (Views: 449.0ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/words/5" for ::1 at 2019-05-07 17:13:26 -0400
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mWord Load (0.7ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 275ms (Views: 267.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/words/new" for ::1 at 2019-05-07 17:13:43 -0400
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (64.3ms)
+  Rendered words/new.html.erb within layouts/application (93.0ms)
+Completed 200 OK in 923ms (Views: 478.8ms | ActiveRecord: 7.6ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 17:13:49 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IKOcfXpjFuxkUVN5/5TvZfVnm2tzYk8pZequXNwcvijeGgRrZKZQh8VohuMenYIATKEFy91A+jIwtiwz3l+kgg==", "word"=>{"user_id"=>"4", "entry"=>"moon", "loaded_rating"=>"5"}, "commit"=>"Add Word"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "moon"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/words
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "moon"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 490ms (ActiveRecord: 3.7ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"words", :id=>nil, :user_id=>"4"}, missing required keys: [:id]):
+  
+app/controllers/words_controller.rb:25:in `create'
+  [1m[36mWord Load (52.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/words/new" for ::1 at 2019-05-07 17:16:04 -0400
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (8.3ms)
+  Rendered words/new.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 852ms (Views: 363.2ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/words" for ::1 at 2019-05-07 17:16:11 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3n+uS6wAOFplz5A41BMQxQXpEiMdCB5bvU143BXcVq0gxjZdssV+McT2RaI1Gn2gvC+Mg7Mqq0DoEfqzF59MBw==", "word"=>{"user_id"=>"4", "entry"=>"moon", "loaded_rating"=>"5"}, "commit"=>"Add Word"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (6.0ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "moon"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/words
+Completed 302 Found in 181ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/words" for ::1 at 2019-05-07 17:16:11 -0400
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendered words/index.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 1283ms (Views: 1270.7ms | ActiveRecord: 0.6ms)
+
+

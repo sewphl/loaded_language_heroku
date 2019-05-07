@@ -17,12 +17,14 @@ class WordsController < ApplicationController
   def create
     user = current_user
     @word = Word.create(word_params)
+    #binding.pry
     if !@word.errors.full_messages.empty?
       flash[:notice] = "That word is already in the database"
       redirect_to words_path
+    else
+      @word.update(word_params)
+      redirect_to user_word_path(user, @word)
     end
-    @word.update(word_params)
-    redirect_to user_word_path(user, @word)
   end
 
   def edit
