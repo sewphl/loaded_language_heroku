@@ -1,6 +1,5 @@
 require 'pry'
 class WordsController < ApplicationController
-
   def index
 
     @words = Word.all

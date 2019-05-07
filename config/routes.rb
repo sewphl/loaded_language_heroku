@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
 
   resources :users do
-    resources :words, only: [:new, :show]
+    resources :words, only: [:index, :new, :show]
   end
   resources :words, only: [:index, :show, :create, :edit, :update]
   resources :feelings, only: [:index, :show]

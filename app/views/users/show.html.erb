@@ -10,12 +10,8 @@
 <%=@user.email%><br>
 
 <div>
-  <h4>Your words</h4>
-
-  <% @user.words.each do |w| %>
-    <div><%= link_to w.entry, user_word_path(@user, w) %></div>
-    <% end %>
-    <%= link_to "Add another word", new_user_word_path(@user) %>
+  <%=link_to "View all of your words", user_words_path(current_user.id)%><br>
+  <%= link_to "Add another word", new_user_word_path(@user) %>
 </div>
 
 <br>
