@@ -5933,3 +5933,75 @@ Processing by WordsController#show as HTML
 Completed 200 OK in 466ms (Views: 458.3ms | ActiveRecord: 1.6ms)
 
 
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/users/4/words/4" for ::1 at 2019-05-07 16:54:34 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"4"}
+  [1m[36mWord Load (6.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 2042ms (Views: 1923.2ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/users/4/words/4" for ::1 at 2019-05-07 16:56:06 -0400
+Processing by WordsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"4"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 467ms (Views: 427.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/4/words/4" for ::1 at 2019-05-07 16:56:27 -0400
+Processing by WordsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"4"}
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 356ms (Views: 347.6ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mWord Load (35.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/users/4/words/1" for ::1 at 2019-05-07 16:57:11 -0400
+Processing by WordsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"1"}
+  [1m[36mWord Load (5.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 418ms (Views: 338.3ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/users/4/words/2" for ::1 at 2019-05-07 16:57:14 -0400
+Processing by WordsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"2"}
+  [1m[36mWord Load (1.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 453ms (Views: 447.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/4" for ::1 at 2019-05-07 16:57:18 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (4) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered users/show.html.erb within layouts/application (177.5ms)
+Completed 200 OK in 592ms (Views: 468.0ms | ActiveRecord: 8.5ms)
+
+
