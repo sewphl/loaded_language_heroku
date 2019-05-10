@@ -6672,3 +6672,78 @@ true by adding the following to your application.rb file:
   [1m[36mFeeling Create (1.0ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "surprise"], ["definition", "a brief emotional state experienced as the result of an unexpected significant event"], ["created_at", "2019-05-10 15:27:34.752235"], ["updated_at", "2019-05-10 15:27:34.752235"]]
   [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mFeeling Load (112.7ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/feelings/index" for ::1 at 2019-05-10 11:33:11 -0400
+Processing by FeelingsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mFeeling Load (78.6ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" WHERE (index) LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 603ms (ActiveRecord: 80.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "index": syntax error: SELECT  "feelings".* FROM "feelings" WHERE (index) LIMIT ?):
+  
+app/controllers/feelings_controller.rb:8:in `show'
+Started GET "/feelings/index" for ::1 at 2019-05-10 11:33:43 -0400
+Processing by FeelingsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mFeeling Load (67.6ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" WHERE (index) LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 550ms (ActiveRecord: 67.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "index": syntax error: SELECT  "feelings".* FROM "feelings" WHERE (index) LIMIT ?):
+  
+app/controllers/feelings_controller.rb:8:in `show'
+Started GET "/feelings/1" for ::1 at 2019-05-10 11:33:53 -0400
+Processing by FeelingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFeeling Load (28.8ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering feelings/show.html.erb within layouts/application
+  Rendered feelings/show.html.erb within layouts/application (82.5ms)
+Completed 200 OK in 1408ms (Views: 866.7ms | ActiveRecord: 39.7ms)
+
+
+Started GET "/feelings/" for ::1 at 2019-05-10 11:34:08 -0400
+Processing by FeelingsController#index as HTML
+  Rendering feelings/index.html.erb within layouts/application
+  [1m[36mFeeling Load (1.4ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  Rendered feelings/index.html.erb within layouts/application (196.8ms)
+Completed 200 OK in 970ms (Views: 964.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/feelings/1" for ::1 at 2019-05-10 11:34:20 -0400
+Processing by FeelingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFeeling Load (0.6ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering feelings/show.html.erb within layouts/application
+  Rendered feelings/show.html.erb within layouts/application (88.9ms)
+Completed 200 OK in 357ms (Views: 344.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/feelings/2" for ::1 at 2019-05-10 11:34:24 -0400
+Processing by FeelingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFeeling Load (1.5ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering feelings/show.html.erb within layouts/application
+  Rendered feelings/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 226ms (Views: 212.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/feelings/3" for ::1 at 2019-05-10 11:34:28 -0400
+Processing by FeelingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mFeeling Load (0.7ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" WHERE (3) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering feelings/show.html.erb within layouts/application
+  Rendered feelings/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 235ms (Views: 230.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/feelings/5" for ::1 at 2019-05-10 11:34:33 -0400
+Processing by FeelingsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mFeeling Load (0.5ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" WHERE (5) LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering feelings/show.html.erb within layouts/application
+  Rendered feelings/show.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 365ms (Views: 360.8ms | ActiveRecord: 0.5ms)
+
+

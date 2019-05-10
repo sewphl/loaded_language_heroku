@@ -1,0 +1,10 @@
+<h3>Feelings</h3>
+
+<ul>
+<% @feelings.each do |f| %>
+  <li><%= link_to f.name, f %></li>
+<% end %>
+</ul>
+
+<%=link_to "Log Out", logout_path%><br>
+<%=link_to "Home", root_path%>
