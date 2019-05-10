@@ -6604,3 +6604,71 @@ Processing by WordsController#index as HTML
 Completed 200 OK in 315ms (Views: 295.5ms | ActiveRecord: 16.5ms)
 
 
+Started GET "/users/4" for ::1 at 2019-05-07 17:33:09 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (4) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 554ms (Views: 548.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/4/words" for ::1 at 2019-05-10 10:50:19 -0400
+Processing by WordsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (6.4ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendered words/index.html.erb within layouts/application (493.7ms)
+Completed 200 OK in 2833ms (Views: 2429.7ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/words/1" for ::1 at 2019-05-10 11:00:39 -0400
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (7.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (186.8ms)
+Completed 200 OK in 2468ms (Views: 1710.8ms | ActiveRecord: 7.6ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from block in execute at /Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (2.1ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "acceptance"], ["definition", "a person's assent to the reality of a situation, recognizing a process or condition without attempting to change it or protest it"], ["created_at", "2019-05-10 15:27:34.683577"], ["updated_at", "2019-05-10 15:27:34.683577"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (1.8ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "anger"], ["definition", "an intense emotional state; involves a strong uncomfortable and hostile response to a perceived provocation, hurt or threat"], ["created_at", "2019-05-10 15:27:34.694710"], ["updated_at", "2019-05-10 15:27:34.694710"]]
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (2.3ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "fear"], ["definition", "a feeling induced by perceived danger or threat, which causes a change in metabolic and organ functions and ultimately a change in behavior, such as fleeing, hiding, or freezing from perceived traumatic events"], ["created_at", "2019-05-10 15:27:34.709910"], ["updated_at", "2019-05-10 15:27:34.709910"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (1.0ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "joy"], ["definition", "a feeling of great pleasure and happiness"], ["created_at", "2019-05-10 15:27:34.720706"], ["updated_at", "2019-05-10 15:27:34.720706"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (1.1ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "anticipation"], ["definition", "an emotion involving pleasure, excitement, or anxiety in considering or awaiting an expected event"], ["created_at", "2019-05-10 15:27:34.731407"], ["updated_at", "2019-05-10 15:27:34.731407"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (1.0ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "sadness"], ["definition", "an emotional pain associated with, or characterized by, feelings of disadvantage, loss, despair, grief, helplessness, disappointment and sorrow"], ["created_at", "2019-05-10 15:27:34.737190"], ["updated_at", "2019-05-10 15:27:34.737190"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (1.3ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "disgust"], ["definition", "an emotional response of rejection or revulsion to something potentially contagious or something considered offensive, distasteful, or unpleasant"], ["created_at", "2019-05-10 15:27:34.742192"], ["updated_at", "2019-05-10 15:27:34.742192"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (1.0ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "surprise"], ["definition", "a brief emotional state experienced as the result of an unexpected significant event"], ["created_at", "2019-05-10 15:27:34.752235"], ["updated_at", "2019-05-10 15:27:34.752235"]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFeeling Load (112.7ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" LIMIT ?[0m  [["LIMIT", 11]]

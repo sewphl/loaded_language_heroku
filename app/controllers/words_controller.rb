@@ -10,7 +10,7 @@ class WordsController < ApplicationController
   end
 
   def new
-    @word = Word.new(user_id: current_user.id)
+    @word = Word.new(user_id: current_user.id)## 
   end
 
   def create

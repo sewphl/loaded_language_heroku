@@ -1,0 +1,8 @@
+Feeling.create(name: 'acceptance', definition: "a person's assent to the reality of a situation, recognizing a process or condition without attempting to change it or protest it")
+Feeling.create(name: 'anger', definition: "an intense emotional state; involves a strong uncomfortable and hostile response to a perceived provocation, hurt or threat")
+Feeling.create(name: 'fear', definition: "a feeling induced by perceived danger or threat, which causes a change in metabolic and organ functions and ultimately a change in behavior, such as fleeing, hiding, or freezing from perceived traumatic events")
+Feeling.create(name: 'joy', definition: "a feeling of great pleasure and happiness")
+Feeling.create(name: 'anticipation', definition: "an emotion involving pleasure, excitement, or anxiety in considering or awaiting an expected event")
+Feeling.create(name: 'sadness', definition: "an emotional pain associated with, or characterized by, feelings of disadvantage, loss, despair, grief, helplessness, disappointment and sorrow")
+Feeling.create(name: 'disgust', definition: "an emotional response of rejection or revulsion to something potentially contagious or something considered offensive, distasteful, or unpleasant")
+Feeling.create(name: 'surprise', definition: "a brief emotional state experienced as the result of an unexpected significant event")
