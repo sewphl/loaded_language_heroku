@@ -8,12 +8,26 @@ class Word < ApplicationRecord
   def compute_avg(word,feeling=nil)
     if feeling !=nil
       ##compute average OF ALL FEELINGS FOR A SINGLE WORD.
-      mywords = WordFeeling.where(word_id: word.id, feeling_id: feeling.id)
+      myword = WordFeeling.where(word_id: word.id, feeling_id: feeling.id)
     else
       ##compute average FOR A SINGLE FEELING FOR A SINGLE WORD.
-      mywords = WordFeeling.where(word_id: word.id)
+      myword = WordFeeling.where(word_id: word.id)
     end
-    mywords.average(:feeling_rating).round(2)
+    myword.average(:feeling_rating).round(2)
+  end
+
+  def self.find_most_loaded_words
+    ##returns 10 most loaded words
+    @words = Word.all
+    @avgs = []
+    @words.each do |w|
+      myword = WordFeeling.where(word_id: w.id)
+      @avgs << myword.average(:feeling_rating)
+    end
+    @top10 = @words.sort_by{|x| @avgs.index x.id}.first 10
+    @top10.each do |t|
+      puts(t.entry + ": " + compute_avg(t).to_s)
+    end
   end
 
 end
