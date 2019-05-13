@@ -10,18 +10,23 @@ class WordsController < ApplicationController
   end
 
   def new
-    @word = Word.new(user_id: current_user.id)## 
+    @word = Word.new(user_id: current_user.id)##
+    @feelings = Feeling.all
   end
 
   def create
     user = current_user
     @word = Word.create(word_params)
-    #binding.pry
+
     if !@word.errors.full_messages.empty?
       flash[:notice] = "That word is already in the database"
       redirect_to words_path
     else
       @word.update(word_params)
+      @feelings = Feeling.all
+      @feelings.each do |feel|
+        WordFeeling.create(feeling_id: feel.id, word_id: @word.id, feeling_rating: params[feel.name][:feeling_rating].to_f)
+      end
       redirect_to user_word_path(user, @word)
     end
   end
@@ -54,7 +59,7 @@ class WordsController < ApplicationController
   private
 
   def word_params
-    params.require(:word).permit(:entry, :loaded_rating, :user_id)
+    params.require(:word).permit(:entry, :loaded_rating, :user_id, feeling_ids:[], word_feelings_attributes: [:id, :feeling_rating])
   end
 
 end

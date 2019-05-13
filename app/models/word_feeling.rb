@@ -1,4 +1,4 @@
 class WordFeeling < ApplicationRecord
-  has_many :words
-  has_many :feelings
+  belongs_to :words
+  belongs_to :feelings
 end
