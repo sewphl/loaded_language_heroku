@@ -9,6 +9,7 @@ include WordsHelper
 
   def show
     @word = Word.find_by(id: params[:id])
+    @feelings = Feeling.all
   end
 
   def new
