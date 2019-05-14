@@ -1,9 +1,15 @@
 <%=flash.notice %>
 
-<h3>Words</h3>
-
+<h2>Current top 10 most loaded words</h2>
 <ul>
-<% @words.each do |w| %>
-  <li><%= link_to w.entry, w %></li>
-<% end %>
+  <%@topwords.each do |t| %>
+    <li><%=link_to t.entry, t%> (<%=compute_avg(t).to_s%>) <br></li>
+  <%end%>
+</ul>
+
+<h2>All words</h2>
+<ul>
+  <% @words_.each do |w| %>
+    <li><%= link_to w.entry, w %></li>
+  <% end %>
 </ul>

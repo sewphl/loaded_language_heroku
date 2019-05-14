@@ -1,8 +1,10 @@
 require 'pry'
 class WordsController < ApplicationController
-  def index
+include WordsHelper
 
-    @words = Word.all
+  def index
+    @words_ = Word.all
+    @topwords = find_most_loaded_words
   end
 
   def show
