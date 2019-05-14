@@ -62,7 +62,7 @@ include WordsHelper
   private
 
   def word_params
-    params.require(:word).permit(:entry, :loaded_rating, :user_id, feeling_ids:[], word_feelings_attributes: [:id, :feeling_rating])
+    params.require(:word).permit(:entry, :user_id, feeling_ids:[], word_feelings_attributes: [:id, :feeling_rating])
   end
 
 end

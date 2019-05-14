@@ -3,9 +3,6 @@
   <%= f.hidden_field :user_id %>
   <%= f.text_field :entry %><br>
 
-  <label>Overall, how loaded is it?</label><br>
-  <%= range_field(:word, :loaded_rating, in: 1..9, step: 0.1) %><br>
-
   <label>How high does it rate for each of these eight emotions?</label><br>
   <%@feelings.each do |feel|%>
     <label><%=feel.name%></label><br>

@@ -1,6 +1,6 @@
 <h3><%=@word.entry%></h3>
 
-<p>Current loaded rating: <%=compute_avg(@word)%></p><br>
+<p>Current loaded rating (averaged over eight feelings): <%=compute_avg(@word)%></p><br>
 <p>Breakdown by eight feelings:</p>
 <ul>
 <%@feelings.each do |feel|%>
