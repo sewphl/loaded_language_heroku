@@ -1,3 +1,4 @@
+require 'pry'
 class FeelingsController < ApplicationController
 
   def index
@@ -5,7 +6,13 @@ class FeelingsController < ApplicationController
   end
 
   def show
-    @feeling = Feeling.find_by(params[:id])
+    @feeling = Feeling.find(params[:id])
+  end
+
+  private
+
+  def feeling_params
+    params.require(:feeling).permit(:name, :definition)
   end
 
 end

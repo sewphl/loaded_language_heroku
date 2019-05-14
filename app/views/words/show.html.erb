@@ -4,10 +4,11 @@
 <p>Breakdown by eight feelings:</p>
 <ul>
 <%@feelings.each do |feel|%>
-    <p><%=feel.name%>: <%=compute_avg(@word,feel)%></p>
+  <p><%=link_to feel.name, feel%>: <%=compute_avg(@word,feel)%></p>
 <%end%>
 <ul>
 <br>
+
 
 
 <%=link_to "Log Out", logout_path%><br>
