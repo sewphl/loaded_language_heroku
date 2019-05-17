@@ -1,11 +1,22 @@
 <%=flash.notice %>
 
-<h2>Current top 10 most loaded words</h2>
+<h2>Most recently added words</h2>
 <ul>
-  <%@topwords.each do |t| %>
+  <%@recent_words.each do |r|%>
+    <li><%=link_to r.entry, r%> <br>
+    added <%=create_day(r)%>, at <%=create_time(r)%>
+  <%end%>
+</ul>
+
+<h2>Current top 10 most loaded words</h2>
+
+<ul>
+  <%@top10.each do |t| %>
     <li><%=link_to t.entry, t%> (<%=compute_avg(t).to_s%>) <br></li>
   <%end%>
 </ul>
+
+
 
 <h2>All words</h2>
 <ul>

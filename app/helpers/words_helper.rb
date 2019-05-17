@@ -1,4 +1,13 @@
 module WordsHelper
+
+  def create_day(word)
+    word.created_at.strftime("%B %d, %Y")
+  end
+
+  def create_time(word)
+    word.created_at.strftime("%I:%M %p")
+  end
+
   def compute_avg(word,feeling=nil)
     if feeling !=nil
       ##compute average OF ALL FEELINGS FOR A SINGLE WORD.
@@ -18,6 +27,7 @@ module WordsHelper
       myword = WordFeeling.where(word_id: w.id)
       @avgs << myword.average(:feeling_rating)
     end
-    @words.sort_by{|x| @avgs.index x.id}.first 10
+    @topwords = @words.sort_by{|x| @avgs.index x.id}.first 10
+    @topwords
   end
 end

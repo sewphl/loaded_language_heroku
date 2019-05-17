@@ -4,7 +4,8 @@ include WordsHelper
 
   def index
     @words_ = Word.all
-    @topwords = find_most_loaded_words
+    @top10 = find_most_loaded_words
+    @recent_words = Word.most_recent(5)
   end
 
   def show
