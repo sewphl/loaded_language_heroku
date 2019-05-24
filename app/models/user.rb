@@ -1,8 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
-  validates_uniqueness_of :username
-  validates_uniqueness_of :email
-  validates :username, :first_name, :email, :password, :presence => true
+  validates_uniqueness_of :username, :message=>"that username already exists"
+  validates_uniqueness_of :email, :message=>"that email address already exists"
+  validates :username, :first_name, :email, :password,
+    :presence => {:message=>"please fill out all fields"}
   has_many :words
   has_many :feelings, through: :words
   accepts_nested_attributes_for :words
