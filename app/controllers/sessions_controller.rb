@@ -1,5 +1,4 @@
 require 'pry'
-require 'yaml'
 class SessionsController < ApplicationController
 
 def create
@@ -8,9 +7,7 @@ def create
   else
     @user = User.find_by(email: params[:session][:email])
   end
-
   log_in(@user)
-  binding.pry
   redirect_to('/')
 end
 
