@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   get '/words/new' => 'words#new'
 
-
+  get "auth/google/callback" => 'sessions#create'
+  get "auth/failure" => redirect('/')  ##, to:
 
   resources :users do
     resources :words, only: [:index, :new, :show]
@@ -15,7 +16,4 @@ Rails.application.routes.draw do
   resources :words, only: [:index, :show, :create, :edit, :update]
   resources :feelings, only: [:index, :show]
 
-  # Routes for Google authentication
-  get ‘auth/:provider/callback’, to: ‘sessions#googleAuth’
-  get ‘auth/failure’, to: redirect(‘/’)
 end

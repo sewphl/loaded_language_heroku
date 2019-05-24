@@ -1,4 +1,4 @@
-<%= flash[:notice]%> 
+<%= flash[:notice]%>
 
 <h3>Log in</h3>
 
@@ -18,3 +18,11 @@
     <p>New user? <%= link_to "Sign up", signup_path %></p>
   </div>
 </div>
+
+<% if session[:user_id] %>
+  <h1><%= @user.name %></h1>
+  <h2>Email: <%= @user.email %></h2>
+  <h2>Google UID: <%= @user.uid %></h2>
+<% else %>
+  <%= link_to('Log in with Google!', '/auth/google') %>
+<% end %>
