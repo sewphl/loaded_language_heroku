@@ -9,10 +9,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    @user.save
-    log_in(@user)
-    redirect_to root_path
+    if (params[:user][:username]=="" ||  params[:user][:password]=="" || params[:user][:email]=="" || params[:user][:first_name]=="" || params[:user][:last_name]=="")
+      flash[:notice] = "Please fill out all fields"
+      redirect_to signup_path
+    end
+    if @user
+      @user = User.create(user_params)
+      @user.save
+      log_in(@user)
+      redirect_to root_path
+    end
   end
 
   def edit

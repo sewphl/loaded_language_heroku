@@ -12,7 +12,7 @@ def create
   if auth
     @user = User.from_omniauth(request.env["omniauth.auth"])
   else
-    if (params[:session][:email]=="" ||  params[:session]=="")
+    if (params[:session][:email]=="" ||  params[:session][:password]=="")
       flash[:notice] = "Please fill out all fields"
       redirect_to login_path
     else

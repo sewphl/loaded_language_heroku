@@ -20871,3 +20871,159 @@ Started GET "/auth/google" for ::1 at 2019-05-24 16:16:23 -0400
 (google) Request phase initiated.
 Started GET "/auth/google" for ::1 at 2019-05-24 16:16:23 -0400
 (google) Request phase initiated.
+Started POST "/users" for ::1 at 2019-05-24 16:20:13 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"42P/Wy8X4atmqemin0oGhvvvSTLA0LamN0jhAsarAaqfKHeSjL+nYSY6FfIdGOA22S5+zd8M0uuVIrGjjLhZJw==", "user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>""}, "commit"=>"Create User"}
+  [1m[35m (2.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 271ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 16:20:13 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 930ms (Views: 887.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-24 16:23:01 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (14.9ms)
+  Rendered users/new.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 1102ms (Views: 950.6ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/users" for ::1 at 2019-05-24 16:23:04 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lwL6NpcuYUabPhc/YaJUknzUrmdZzqBepUlvnRIRrpTrSXL/NIYnjNut62/j8LIiXhWZmEYSxBMHIz88WAL2GQ==", "user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>""}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/users_controller.rb:12:in `create'
+Started GET "/signup" for ::1 at 2019-05-24 16:23:39 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.4ms)
+  Rendered users/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 393ms (Views: 318.4ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/users" for ::1 at 2019-05-24 16:23:44 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5XLjANZICwu965fXQaWqEmTqhf/92Fu9sJltgXRAyNqZOWvJdeBNwf14a4fD90yiRiuyAOIEP/AS8z0gPlOQVw==", "user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>""}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/users_controller.rb:12:in `create'
+Started GET "/signup" for ::1 at 2019-05-24 16:31:45 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (15.4ms)
+  Rendered users/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 1230ms (Views: 901.2ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/users" for ::1 at 2019-05-24 16:32:31 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+U46AgyUvAIGUNdppmiNMb1FjwwQbfrcV1jTq4fOjO+FBbLLrzz6yEbDKzkkOmuBn4S48w+xnpH1MoMKzd3UYg==", "user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>""}, "commit"=>"Create User"}
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/signup" for ::1 at 2019-05-24 16:35:05 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (41.1ms)
+  Rendered users/new.html.erb within layouts/application (127.7ms)
+Completed 200 OK in 3442ms (Views: 3250.3ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-24 16:36:54 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (11.3ms)
+  Rendered users/new.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 261ms (Views: 257.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-05-24 16:37:00 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FPrGtdO5N6Vf2s/OFkdcPuVLhRtjO+aG7pd2ZW1pAwRosU58cBFxbx9JM56UFbqOx4qy5HzngstM/SbEJ3pbiQ==", "user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>""}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 35ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-05-24 16:37:00 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (129.9ms)
+Completed 200 OK in 1423ms (Views: 1248.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-24 16:37:12 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.0ms)
+  Rendered users/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 582ms (Views: 455.0ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/users" for ::1 at 2019-05-24 16:37:14 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"waug8qtEFby5zH56ygMEMkB7A6MAOVuwJuezStrnHJW94Cg7COxTdvlfgipIUeKCYro0XB/lP/2EjePrkPREGA==", "user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>""}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-24 16:37:14 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.9ms)
+  Rendered users/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 599ms (Views: 596.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-05-24 16:37:20 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IjnTKgiRdtNG6G+s1KoBtAGLuX8y3VeXV69+R/vthL5eclvjqzkwGQZ7k/xW+OcEI0qOgC0BM9r1xS7msf7cMw==", "user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>"poo"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-24 16:37:20 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (7.0ms)
+  Rendered users/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 715ms (Views: 711.5ms | ActiveRecord: 0.0ms)
+
+
