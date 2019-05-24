@@ -3,16 +3,15 @@ require 'yaml'
 class SessionsController < ApplicationController
 
 def create
-  @user = User.find_or_create_by(uid: auth['uid']) do |u|
-    #binding.pry
-    u.id = u.uid
-    u.first_name = auth['info']['name']
-    u.email = auth['info']['email']
-    #u.image = auth['info']['image']
+  if auth
+    @user = User.from_omniauth(request.env["omniauth.auth"])
+  else
+    @user = User.find_by(email: params[:session][:email])
   end
 
-  session[:user_id] = @user.id
-  redirect_to('/words')
+  log_in(@user)
+  binding.pry
+  redirect_to('/')
 end
 
   def new
