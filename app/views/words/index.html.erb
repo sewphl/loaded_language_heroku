@@ -1,6 +1,6 @@
 <%=flash.notice %>
 
-<h2>Most recently added words</h2>
+<h3>Most recently added words</h3>
 <ul>
   <%@recent_words.each do |r|%>
     <li><%=link_to r.entry, r%> <br>
@@ -8,7 +8,7 @@
   <%end%>
 </ul>
 
-<h2>Current top 10 most loaded words</h2>
+<h3>Current top 10 most loaded words</h3>
 
 <ul>
   <%@top10.each do |t| %>
@@ -18,7 +18,7 @@
 
 
 
-<h2>All words</h2>
+<h3>All words</h3>
 <ul>
   <% @words_.each do |w| %>
     <li><%= link_to w.entry, w %></li>

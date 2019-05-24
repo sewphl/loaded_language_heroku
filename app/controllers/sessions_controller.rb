@@ -22,6 +22,9 @@ def create
   if @user
     log_in(@user)
     redirect_to('/')
+  else
+    flash[:notice] = "User not found; please try again."
+    redirect_to(login_path)
   end
 end
 

@@ -21027,3 +21027,549 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 715ms (Views: 711.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/login" for ::1 at 2019-05-24 16:38:28 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 670ms (Views: 649.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/auth/google" for ::1 at 2019-05-24 16:38:52 -0400
+(google) Request phase initiated.
+Started GET "/auth/google" for ::1 at 2019-05-24 16:38:53 -0400
+(google) Request phase initiated.
+Started GET "/auth/google/callback?state=83c5940438b840ee23b931a97f0cf3dbb765ccea61176ac7&code=4%2FVAGYlNQbV3bDNeHJ9Z6GuSJblo7f9CDetN4GpGU9u7rYnzbciYEzVYyPByp84n5990f7hxcy5sGkTrAXpR2peHw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile" for ::1 at 2019-05-24 16:39:10 -0400
+(google) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"83c5940438b840ee23b931a97f0cf3dbb765ccea61176ac7", "code"=>"4/VAGYlNQbV3bDNeHJ9Z6GuSJblo7f9CDetN4GpGU9u7rYnzbciYEzVYyPByp84n5990f7hxcy5sGkTrAXpR2peHw", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google"], ["uid", "106883442381523804268"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "s."], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "sharonoptsout@gmail.com"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$10$u88rNnDuf.gsEolIRwvdKeyecuJ5/rrLyaaUJVAyOAvAE8aBDB58u"], ["updated_at", "2019-05-24 20:39:11.086418"], ["id", 7]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 303ms (ActiveRecord: 22.3ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 16:39:11 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 417ms (Views: 406.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/users/7/words" for ::1 at 2019-05-24 16:39:16 -0400
+Processing by WordsController#index as HTML
+  Parameters: {"user_id"=>"7"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 9]]
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.7ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 9]]
+  [1m[35mCACHE  (1.5ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 6]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 7]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 8]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  Rendered words/index.html.erb within layouts/application (136.4ms)
+Completed 200 OK in 1148ms (Views: 1041.2ms | ActiveRecord: 8.8ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-05-24 16:39:54 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UOnS0eePtkPWEOENqUQ4vFPULzo9Tudeg3Ty/Ffqb7osoloYRCfwiZaDHV0rFt4McRUYxSKSgxMhHqJdHfk3Nw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 16:39:55 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 602ms (Views: 461.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/words" for ::1 at 2019-05-24 16:39:59 -0400
+Processing by WordsController#index as HTML
+  [1m[36mWord Load (2.2ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[35m (23.1ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 9]]
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.7ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 9]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 6]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 7]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 8]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  Rendered words/index.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 857ms (Views: 776.7ms | ActiveRecord: 31.3ms)
+
+
+Started GET "/words/9" for ::1 at 2019-05-24 16:51:11 -0400
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mWord Load (1.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 9]]
+  [1m[36mFeeling Load (0.6ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 9], ["feeling_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 9], ["feeling_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 9], ["feeling_id", 3]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 9], ["feeling_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 9], ["feeling_id", 5]]
+  [1m[35m (10.8ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 9], ["feeling_id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 9], ["feeling_id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 9], ["feeling_id", 8]]
+  Rendered words/show.html.erb within layouts/application (441.7ms)
+Completed 200 OK in 1857ms (Views: 1592.7ms | ActiveRecord: 25.9ms)
+
+
+Started GET "/feelings/8" for ::1 at 2019-05-24 16:51:19 -0400
+Processing by FeelingsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mFeeling Load (0.6ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" WHERE "feelings"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering feelings/show.html.erb within layouts/application
+  Rendered feelings/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 878ms (Views: 806.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 16:51:22 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (28.5ms)
+Started GET "/words" for ::1 at 2019-05-24 16:51:24 -0400
+Processing by WordsController#index as HTML
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 8]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 9]]
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.7ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 9]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 6]]
+Completed 200 OK in 1910ms (Views: 1897.8ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 7]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 8]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  Rendered words/index.html.erb within layouts/application (217.0ms)
+Completed 200 OK in 942ms (Views: 917.0ms | ActiveRecord: 4.4ms)
+
+
+  [1m[36mUser Destroy (64.9ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mWord Destroy (8.1ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mFeeling Destroy (21.9ms)[0m  [1m[31mDELETE FROM "feelings"[0m
+  [1m[36mWordFeeling Destroy (4.9ms)[0m  [1m[31mDELETE FROM "word_feelings"[0m
+Started GET "/" for ::1 at 2019-05-24 17:04:24 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (553.0ms)
+Completed 500 Internal Server Error in 1132ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <%=flash.notice %>
+    2: 
+    3: <% if session[:user_id] %>
+    4:   <h1><%= @user.first_name %></h1>
+    5:   <h2>Email: <%= @user.email %></h2>
+    6: 
+    7: <% else %>
+  
+app/views/welcome/index.html.erb:4:in `_app_views_welcome_index_html_erb__1828759454669692788_70284875351160'
+Started GET "/" for ::1 at 2019-05-24 17:07:08 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (103.9ms)
+Completed 500 Internal Server Error in 207ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <%=flash.notice %>
+    2: 
+    3: <% if session[:user_id] %>
+    4:   <h1><%= @user.first_name %></h1>
+    5:   <h2>Email: <%= @user.email %></h2>
+    6: 
+    7: <% else %>
+  
+app/views/welcome/index.html.erb:4:in `_app_views_welcome_index_html_erb__1828759454669692788_70284874076380'
+Started GET "/" for ::1 at 2019-05-24 17:07:15 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (12.2ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <%=flash.notice %>
+    2: 
+    3: <% if session[:user_id] %>
+    4:   <h1><%= @user.first_name %></h1>
+    5:   <h2>Email: <%= @user.email %></h2>
+    6: 
+    7: <% else %>
+  
+app/views/welcome/index.html.erb:4:in `_app_views_welcome_index_html_erb__1828759454669692788_70284860668840'
+Started GET "/" for ::1 at 2019-05-24 17:07:48 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (9.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 1304ms (Views: 1230.9ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2019-05-24 17:07:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+Started GET "/" for ::1 at 2019-05-24 17:09:08 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (54.4ms)
+Completed 200 OK in 818ms (Views: 699.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:09:30 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 2010ms (Views: 2003.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:10:24 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 759ms (Views: 752.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for ::1 at 2019-05-24 17:10:49 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (244.7ms)
+Completed 200 OK in 670ms (Views: 664.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-24 17:10:53 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (21.1ms)
+  Rendered users/new.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 521ms (Views: 325.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:11:29 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 193ms (Views: 187.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for ::1 at 2019-05-24 17:11:33 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 451ms (Views: 445.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-24 17:11:39 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.9ms)
+  Rendered users/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 420ms (Views: 415.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/words" for ::1 at 2019-05-24 17:11:42 -0400
+Processing by WordsController#index as HTML
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered words/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 352ms (Views: 336.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/login" for ::1 at 2019-05-24 17:15:30 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 218ms (Views: 213.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/login" for ::1 at 2019-05-24 17:15:47 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"flrVhrc2tXWTPXwMTER1eNkbyj+kXbekpTD5a/GF2tuBXZkwdbkcF/D/XRiVrK1DvupQnjvv+jqC9aQeoMWPTw==", "session"=>{"email"=>"sharonoptsout@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sharonoptsout@gmail.com"], ["LIMIT", 1]]
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 139ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for ::1 at 2019-05-24 17:16:00 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 249ms (Views: 243.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for ::1 at 2019-05-24 17:16:09 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZKd/OsQok2Vke2WX5MMpM2S511rIEff2DY+DCv/tjZuboDOMBqc6Bwe5RIM9K/EIA0hN+1ejumgqSt5/rq3YDw==", "session"=>{"email"=>"sharonoptsout@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sharonoptsout@gmail.com"], ["LIMIT", 1]]
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 58ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for ::1 at 2019-05-24 17:16:16 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 287ms (Views: 283.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/words.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-05-24 17:16:17 -0400
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-05-24 17:16:17 -0400
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2019-05-24 17:16:17 -0400
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/feelings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/feelings.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/bootstrap/affix.self-ffef5831dcf7a4d43a9620f0786e3be0130548db46f747ca2a904ac5a863fd18.js?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/bootstrap/collapse.self-d51cbeaf7f5ada1eb58a677ebeae512e315a02f545d5c7b252e7a79202913b32.js?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/bootstrap/alert.self-08f6e94a49ab0a922ef14d42862fcfb04b20b7fb57d3d2d3c868522cab811d6b.js?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/bootstrap/button.self-a5a9eae6660da739d4ae35473360346363ddd4af777c77d4cef8d01771bf25a2.js?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/words.self-a4ea3391306ba4bcfdfc8db8ca0dedf2647c25cd9713bce9e18fac334bf45a33.js?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/bootstrap/carousel.self-5db2d16d5e04db4950c1aebd2496045acf0c3cc889e5ad0647589fbc85d463e6.js?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/bootstrap/tab.self-52433fba05f8c09386efdfd67dc876623a9f630e72cdebc232c5de7e8f9789b5.js?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/bootstrap/scrollspy.self-7496072b8c0dd40f5d88076e7e3788487ec5b0aa9f9a04e71434194cb6250f08.js?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/bootstrap/transition.self-0c6ebea816a743abc763e631df1641c3400ff38e647776d0faba7d31b414ce4f.js?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/bootstrap/dropdown.self-cd540439aa8dbb7db30618794daa83f0dd6bb0f84a763bd1b2bc69449be68712.js?body=1" for ::1 at 2019-05-24 17:16:18 -0400
+Started GET "/assets/bootstrap/modal.self-2b3f3fdebdb4f9ee9737d99cfc4cf2dc2ba54c83f2164c7836ef0b4d81f34b1f.js?body=1" for ::1 at 2019-05-24 17:16:19 -0400
+Started GET "/assets/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2019-05-24 17:16:19 -0400
+Started GET "/assets/bootstrap/tooltip.self-198806da8d1c06616d7e9d7be92d96eadca8159640a7dc21eb3121cb2b8a215a.js?body=1" for ::1 at 2019-05-24 17:16:19 -0400
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for ::1 at 2019-05-24 17:16:19 -0400
+Started GET "/assets/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" for ::1 at 2019-05-24 17:16:19 -0400
+Started GET "/assets/bootstrap/popover.self-36391474d61036c11b65bbb21b5847f57e6b195d8cb278b669accb3ac73e9626.js?body=1" for ::1 at 2019-05-24 17:16:19 -0400
+Started POST "/login" for ::1 at 2019-05-24 17:16:31 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pCZoi/OCsiQiFTnR80HHbWbcjxEcrqDJp0Ge7FUdGpryZWKS0pGkb9VcMhrhVAuw5D7r1iFdzy4h7x/WqN96yw==", "session"=>{"email"=>"sharonoptsout@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sharonoptsout@gmail.com"], ["LIMIT", 1]]
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 63ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/auth/google" for ::1 at 2019-05-24 17:16:49 -0400
+(google) Request phase initiated.
+Started GET "/auth/google" for ::1 at 2019-05-24 17:16:49 -0400
+(google) Request phase initiated.
+Started GET "/auth/google/callback?state=b711bec73d580868e3f5943e71fa868541c5993713952fc6&code=4/VQEBYDSb0UGKuYRZ8UxuophCxy7ovdMWlIEl5u65IS7cg8rhxocYhEgw7P9192_h6R3vo4EcCxLdtvdjne_PlYE&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email" for ::1 at 2019-05-24 17:16:50 -0400
+(google) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"b711bec73d580868e3f5943e71fa868541c5993713952fc6", "code"=>"4/VQEBYDSb0UGKuYRZ8UxuophCxy7ovdMWlIEl5u65IS7cg8rhxocYhEgw7P9192_h6R3vo4EcCxLdtvdjne_PlYE", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google"], ["uid", "104443629364234007672"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Sharon"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sharon.alajajian@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (51.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "first_name", "email", "created_at", "updated_at", "uid", "provider") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "Sharon"], ["password_digest", "$2a$10$Zt/N3fUjw4a9cfKIhqUG9O6ydGS01xTeFNKgbk37D/6P1xTmIpuqS"], ["first_name", "Sharon"], ["email", "sharon.alajajian@gmail.com"], ["created_at", "2019-05-24 21:16:51.071593"], ["updated_at", "2019-05-24 21:16:51.071593"], ["uid", "104443629364234007672"], ["provider", "google"]]
+  [1m[35m (125.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 580ms (ActiveRecord: 178.2ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:16:51 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 624ms (Views: 620.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for ::1 at 2019-05-24 17:20:40 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 477ms (ActiveRecord: 14.2ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:20:42 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 898ms (Views: 882.5ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-05-24 17:20:49 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kfipOSSu/94ruMw/RB1GdZ9ktp3adil9Kx+DuqBCvcVu/+WP5iFWvEh67Sud9Z5O+JUsPEXEZOMM2t7P8QLoUQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:20:49 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (39.3ms)
+Completed 200 OK in 771ms (Views: 765.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for ::1 at 2019-05-24 17:20:53 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 692ms (Views: 687.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for ::1 at 2019-05-24 17:20:59 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"55NMYYOFTSLW3E8rp7JipjU11D0jrUrWJwjXwV/L1gcYlADXQQrkQLUebj9+WrqdUsROnLwfB0gAzYq0DouDkw==", "session"=>{"email"=>"sharonoptsout@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sharonoptsout@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 14ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for ::1 at 2019-05-24 17:20:59 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 534ms (Views: 530.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/words" for ::1 at 2019-05-24 17:22:17 -0400
+Processing by WordsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered words/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 311ms (Views: 216.5ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-05-24 17:22:24 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JNMZRNQu7mwseSS6Vvex/T4Qp5ziBztc58SgkkKTdCPb1FXyFqFHDk+7Ba6PH2nGWeE9PX21dsLAAf3nE9Mhtw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:22:25 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (23.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 832ms (Views: 784.4ms | ActiveRecord: 23.4ms)
+
+
+Started GET "/words" for ::1 at 2019-05-24 17:22:31 -0400
+Processing by WordsController#index as HTML
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered words/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 316ms (Views: 310.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/words" for ::1 at 2019-05-24 17:23:02 -0400
+Processing by WordsController#index as HTML
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (2.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered words/index.html.erb within layouts/application (47.6ms)
+Completed 200 OK in 689ms (Views: 681.8ms | ActiveRecord: 2.9ms)
+
+
