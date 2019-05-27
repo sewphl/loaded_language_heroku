@@ -1,8 +1,7 @@
 <%=flash.notice %>
 
 <% if session[:user_id] %>
-  <h1><%= @user.first_name %></h1>
-  <h2>Email: <%= @user.email %></h2>
+  <h3>Welcome <%= @user.first_name %></h3>
 
 <% else %>
   <%= link_to('Log in', login_path) %> or <%= link_to('Sign up', signup_path)%><br>

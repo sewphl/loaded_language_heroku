@@ -10,6 +10,8 @@
 <br>
 
 
-
+<% if logged_in?%>
+    <%=link_to "Add a new word", new_user_word_path(current_user.id)%><br>
+<%end%>
 <%=link_to "Log Out", logout_path%><br>
 <%=link_to "Home", root_path%>

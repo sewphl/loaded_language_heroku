@@ -22859,3 +22859,225 @@ Processing by WordsController#new as HTML
   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
   Rendering words/new.html.erb within layouts/application
   [1m[36mFeeling Load (2.9ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/users/5/words/new" for ::1 at 2019-05-27 13:03:07 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  [1m[36mFeeling Load (1.1ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  Rendered words/_form.html.erb (76.7ms)
+  Rendered words/new.html.erb within layouts/application (104.4ms)
+Completed 200 OK in 3943ms (Views: 3674.8ms | ActiveRecord: 6.3ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from block in execute at /Users/sharonalajajian/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (7.8ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "acceptance"], ["definition", "a person's assent to the reality of a situation, recognizing a process or condition without attempting to change it or protest it"], ["created_at", "2019-05-27 17:10:53.409079"], ["updated_at", "2019-05-27 17:10:53.409079"]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (2.5ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "anger"], ["definition", "an intense emotional state; involves a strong uncomfortable and hostile response to a perceived provocation, hurt or threat"], ["created_at", "2019-05-27 17:10:53.431065"], ["updated_at", "2019-05-27 17:10:53.431065"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (1.6ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "fear"], ["definition", "a feeling induced by perceived danger or threat, which causes a change in metabolic and organ functions and ultimately a change in behavior, such as fleeing, hiding, or freezing from perceived traumatic events"], ["created_at", "2019-05-27 17:10:53.441086"], ["updated_at", "2019-05-27 17:10:53.441086"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (5.6ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "joy"], ["definition", "a feeling of great pleasure and happiness"], ["created_at", "2019-05-27 17:10:53.449096"], ["updated_at", "2019-05-27 17:10:53.449096"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (2.9ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "anticipation"], ["definition", "an emotion involving pleasure, excitement, or anxiety in considering or awaiting an expected event"], ["created_at", "2019-05-27 17:10:53.460556"], ["updated_at", "2019-05-27 17:10:53.460556"]]
+  [1m[35m (108.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (16.1ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "sadness"], ["definition", "an emotional pain associated with, or characterized by, feelings of disadvantage, loss, despair, grief, helplessness, disappointment and sorrow"], ["created_at", "2019-05-27 17:10:53.727624"], ["updated_at", "2019-05-27 17:10:53.727624"]]
+  [1m[35m (31.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (7.0ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "disgust"], ["definition", "an emotional response of rejection or revulsion to something potentially contagious or something considered offensive, distasteful, or unpleasant"], ["created_at", "2019-05-27 17:10:53.820208"], ["updated_at", "2019-05-27 17:10:53.820208"]]
+  [1m[35m (46.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (4.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeeling Create (1.4ms)[0m  [1m[32mINSERT INTO "feelings" ("name", "definition", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "surprise"], ["definition", "a brief emotional state experienced as the result of an unexpected significant event"], ["created_at", "2019-05-27 17:10:53.881975"], ["updated_at", "2019-05-27 17:10:53.881975"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFeeling Load (65.7ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mFeeling Load (5.3ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" WHERE "feelings"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mFeeling Load (0.4ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" WHERE "feelings"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Started GET "/users/5/words/new" for ::1 at 2019-05-27 13:16:47 -0400
+  
+SyntaxError (/Users/sharonalajajian/Desktop/flatiron/rails_portfolio_loaded_language/app/controllers/words_controller.rb:22: syntax error, unexpected '<', expecting end
+    <% require 'pry'; binding.pry ...
+    ^
+/Users/sharonalajajian/Desktop/flatiron/rails_portfolio_loaded_language/app/controllers/words_controller.rb:73: unterminated string meets end of file
+/Users/sharonalajajian/Desktop/flatiron/rails_portfolio_loaded_language/app/controllers/words_controller.rb:73: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/words_controller.rb:22: syntax error, unexpected '<', expecting end
+app/controllers/words_controller.rb:73: unterminated string meets end of file
+app/controllers/words_controller.rb:73: syntax error, unexpected end-of-input, expecting end
+Started GET "/users/5/words/new" for ::1 at 2019-05-27 13:17:11 -0400
+Processing by WordsController#new as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFeeling Load (1.4ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/users/5/words/new" for ::1 at 2019-05-27 13:18:26 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  [1m[36mFeeling Load (0.6ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  Rendered words/_form.html.erb (92.1ms)
+  Rendered words/new.html.erb within layouts/application (101.1ms)
+Completed 200 OK in 3026ms (Views: 2807.1ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/words" for ::1 at 2019-05-27 13:20:56 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wupY2t1iDfFiU6T7F5wc9sssHlkYHjkEbrOUGfN/Cg097RRsH+2kkwGRhe/OdMTNrN2E+IesdJpJdslsoj9fmQ==", "word"=>{"user_id"=>"5", "entry"=>"bruise"}, "acceptance"=>{"feeling_rating"=>"7.1"}, "anger"=>{"feeling_rating"=>"6.4"}, "fear"=>{"feeling_rating"=>"5"}, "joy"=>{"feeling_rating"=>"1"}, "anticipation"=>{"feeling_rating"=>"2.8"}, "sadness"=>{"feeling_rating"=>"6.5"}, "disgust"=>{"feeling_rating"=>"5"}, "surprise"=>{"feeling_rating"=>"2.8"}, "commit"=>"Add Word"}
+  [1m[36mUser Load (9.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "bruise"], ["LIMIT", 1]]
+  [1m[36mWord Create (4.3ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["entry", "bruise"], ["created_at", "2019-05-27 17:20:56.885278"], ["updated_at", "2019-05-27 17:20:56.885278"], ["user_id", 5]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? AND "words"."id" != ? LIMIT ?[0m  [["entry", "bruise"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFeeling Load (0.4ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.4ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 9], ["feeling_rating", 7.1], ["created_at", "2019-05-27 17:20:57.004956"], ["updated_at", "2019-05-27 17:20:57.004956"]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (6.1ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 10], ["feeling_rating", 6.4], ["created_at", "2019-05-27 17:20:57.014969"], ["updated_at", "2019-05-27 17:20:57.014969"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.8ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 11], ["feeling_rating", 5.0], ["created_at", "2019-05-27 17:20:57.026744"], ["updated_at", "2019-05-27 17:20:57.026744"]]
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (5.2ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 12], ["feeling_rating", 1.0], ["created_at", "2019-05-27 17:20:57.047568"], ["updated_at", "2019-05-27 17:20:57.047568"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (2.9ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 13], ["feeling_rating", 2.8], ["created_at", "2019-05-27 17:20:57.059649"], ["updated_at", "2019-05-27 17:20:57.059649"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.7ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 14], ["feeling_rating", 6.5], ["created_at", "2019-05-27 17:20:57.068547"], ["updated_at", "2019-05-27 17:20:57.068547"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.4ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 15], ["feeling_rating", 5.0], ["created_at", "2019-05-27 17:20:57.078231"], ["updated_at", "2019-05-27 17:20:57.078231"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (2.4ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 16], ["feeling_rating", 2.8], ["created_at", "2019-05-27 17:20:57.087672"], ["updated_at", "2019-05-27 17:20:57.087672"]]
+  [1m[35m (18.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/5/words/1
+Completed 302 Found in 515ms (ActiveRecord: 110.0ms)
+
+
+Started GET "/users/5/words/1" for ::1 at 2019-05-27 13:20:57 -0400
+Processing by WordsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"1"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[36mFeeling Load (0.3ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 9]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 10]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 12]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 13]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 14]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 15]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 16]]
+  Rendered words/show.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 448ms (Views: 423.7ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/users/5/words/1" for ::1 at 2019-05-27 13:21:44 -0400
+Processing by WordsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"1"}
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[36mFeeling Load (0.3ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 9]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 10]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 12]]
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 13]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 14]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 15]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 16]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered words/show.html.erb within layouts/application (109.7ms)
+Completed 200 OK in 879ms (Views: 862.5ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/feelings/9" for ::1 at 2019-05-27 13:21:51 -0400
+Processing by FeelingsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mFeeling Load (0.5ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" WHERE "feelings"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering feelings/show.html.erb within layouts/application
+  Rendered feelings/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 527ms (Views: 400.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-27 13:22:05 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 284ms (Views: 273.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-05-27 13:22:35 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 482ms (Views: 477.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-05-27 13:22:45 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 559ms (Views: 553.8ms | ActiveRecord: 0.4ms)
+
+

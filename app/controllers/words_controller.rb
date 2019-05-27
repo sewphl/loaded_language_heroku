@@ -24,13 +24,12 @@ include WordsHelper
   def create
     user = current_user
     @word = Word.create(word_params)
-
+    @feelings = Feeling.all
     if !@word.errors.full_messages.empty?
       flash[:notice] = "That word is already in the database"
       redirect_to words_path
     else
       @word.update(word_params)
-      @feelings = Feeling.all
       @feelings.each do |feel|
         WordFeeling.create(feeling_id: feel.id, word_id: @word.id, feeling_rating: params[feel.name][:feeling_rating].to_f)
       end
