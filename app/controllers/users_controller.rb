@@ -12,8 +12,10 @@ class UsersController < ApplicationController
     if (params[:user][:username]=="" ||  params[:user][:password]=="" || params[:user][:email]=="" || params[:user][:first_name]=="" || params[:user][:last_name]=="")
       flash[:notice] = "Please fill out all fields"
       redirect_to signup_path
-    end
-    if @user
+    elsif (User.find_by(email: params[:user][:email]).present? || User.find_by(email: params[:user][:username]).present?)
+      flash[:notice] = "Email and/or username already taken."
+      redirect_to signup_path
+    else
       @user = User.create(user_params)
       @user.save
       log_in(@user)

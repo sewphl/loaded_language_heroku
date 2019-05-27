@@ -21573,3 +21573,990 @@ Processing by WordsController#index as HTML
 Completed 200 OK in 689ms (Views: 681.8ms | ActiveRecord: 2.9ms)
 
 
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/words" for ::1 at 2019-05-24 17:27:46 -0400
+Processing by WordsController#index as HTML
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.7ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered words/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 1361ms (Views: 1353.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/words" for ::1 at 2019-05-24 17:29:45 -0400
+Processing by WordsController#index as HTML
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered words/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 315ms (Views: 310.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/words" for ::1 at 2019-05-24 17:30:50 -0400
+Processing by WordsController#index as HTML
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered words/index.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 796ms (Views: 786.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:30:53 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 436ms (Views: 425.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-24 17:30:57 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (7.7ms)
+  Rendered users/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 447ms (Views: 442.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-05-24 17:31:01 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 570ms (Views: 556.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth/google" for ::1 at 2019-05-24 17:31:04 -0400
+(google) Request phase initiated.
+Started GET "/auth/google" for ::1 at 2019-05-24 17:31:05 -0400
+(google) Request phase initiated.
+Started GET "/auth/google/callback?state=114f96b711e9b8e3f7ba4421b4435ae4c9b8f505f6a5fd60&code=4/VQHPUjwXaNIp5l4Yi5DliGKkMylQaZXmVxFH1MhgYpTNBUY08UQILUXUQ7eI15oBcAK30Mhbrbvfb-CxHG0HnAs&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile" for ::1 at 2019-05-24 17:31:05 -0400
+(google) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"114f96b711e9b8e3f7ba4421b4435ae4c9b8f505f6a5fd60", "code"=>"4/VQHPUjwXaNIp5l4Yi5DliGKkMylQaZXmVxFH1MhgYpTNBUY08UQILUXUQ7eI15oBcAK30Mhbrbvfb-CxHG0HnAs", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google"], ["uid", "104443629364234007672"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "Sharon"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "sharon.alajajian@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (134.9ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$10$Fl04s05yy2EyxpbqC.xgU.0Cw4PZeyAU9QKkfiHVALIolGOsA7BI."], ["updated_at", "2019-05-24 21:31:06.443358"], ["id", 1]]
+  [1m[35m (174.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 574ms (ActiveRecord: 312.6ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:31:06 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 736ms (Views: 731.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-05-24 17:31:11 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"724LMy3I4N2iPJxxkNIFnh0A72LUX984e89eOGtVrpwQaUeF70dJv8H+vWVJOt2levF1w0vtkqZcCgNNOhX7CA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:31:11 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 697ms (Views: 679.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/login" for ::1 at 2019-05-24 17:31:19 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 815ms (Views: 808.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/auth/google" for ::1 at 2019-05-24 17:31:23 -0400
+(google) Request phase initiated.
+Started GET "/auth/google" for ::1 at 2019-05-24 17:31:23 -0400
+(google) Request phase initiated.
+Started GET "/auth/google/callback?state=385f31050fa063f6df1778cf8b0854fb14e7a532d4f62e37&code=4%2FVQHi7HmD8GE3Iw4g_9PoLsqubqxskwR2UdNqH-VTsfdAHHQYXOJFKUpE4bR-APgwQIE6OtqwB581yfnKf6vvvpA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile" for ::1 at 2019-05-24 17:31:37 -0400
+(google) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"385f31050fa063f6df1778cf8b0854fb14e7a532d4f62e37", "code"=>"4/VQHi7HmD8GE3Iw4g_9PoLsqubqxskwR2UdNqH-VTsfdAHHQYXOJFKUpE4bR-APgwQIE6OtqwB581yfnKf6vvvpA", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google"], ["uid", "106883442381523804268"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "s."], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sharonoptsout@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (5.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "first_name", "email", "created_at", "updated_at", "uid", "provider") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "s."], ["password_digest", "$2a$10$2LCJTWtof3.3zTvive0fFO2N4c1F7d3Eq0Qy1d5Br8CV4Ba4K5tRO"], ["first_name", "s."], ["email", "sharonoptsout@gmail.com"], ["created_at", "2019-05-24 21:31:38.072921"], ["updated_at", "2019-05-24 21:31:38.072921"], ["uid", "106883442381523804268"], ["provider", "google"]]
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 264ms (ActiveRecord: 22.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:31:38 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 552ms (Views: 547.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2/words" for ::1 at 2019-05-24 17:32:01 -0400
+Processing by WordsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (1.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered words/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 516ms (Views: 511.1ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-05-24 17:32:09 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HHkl0zF1edh8WTsa15iGGD6Gqv8QD66xazUyx7891WHjfmll8/rQuh+bGg4OcF4jWXcwXo+94y9M8G+y7n2A9Q=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:32:09 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 611ms (Views: 567.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-24 17:32:20 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.3ms)
+  Rendered users/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 302ms (Views: 293.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-05-24 17:32:37 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d8pFn5t/AcV2gJjae+a2FRvwoa50UiGSYg4/ZH1oPWiIzQkpWfCopxVCuc6iDm4ufAE7D+vgbAxFy2IRLCho/A==", "user"=>{"username"=>"user1", "password"=>"[FILTERED]", "email"=>"sharonoptsout@gmail.com", "first_name"=>"s", "last_name"=>"s"}, "commit"=>"Create User"}
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 117ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-05-24 17:33:49 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 361ms (Views: 354.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for ::1 at 2019-05-24 17:39:56 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q/P4j1NZU3+4viRp0wlw95TP8WlKHdJfO4UEfXV83J5U9LQ5kdb6Hdt8BX0K4ajM8z5ryNWvn8EcQFkIJDyJCg==", "session"=>{"email"=>"sharonoptsout@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sharonoptsout@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 116ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:39:57 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (45.6ms)
+Completed 200 OK in 610ms (Views: 582.1ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-05-24 17:39:59 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KOh4kZtkS4uTK6kj1NJA/P5Ty6DN6bcvDfQKMkfmWDrX7zQnWevi6fDpiDcNOpjHmaJRAVJb+rEqMVdHFqYNrg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:39:59 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (49.4ms)
+Completed 200 OK in 289ms (Views: 273.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/words" for ::1 at 2019-05-24 17:40:03 -0400
+Processing by WordsController#index as HTML
+  [1m[36mWord Load (0.8ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (1.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered words/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 470ms (Views: 460.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/login" for ::1 at 2019-05-24 17:40:06 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 279ms (Views: 275.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for ::1 at 2019-05-24 17:40:08 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3KlEOX4byWxMDoPGjdtN/AYeyHWtq0OmMT4hwYNqMfAjrgiPvJRgDi/MotJUM5XHYe9S1DIZDjgW+3y00ipkZA==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Redirected to http://localhost:3000/login
+Redirected to 
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/sessions_controller.rb:27:in `create'
+Started POST "/login" for ::1 at 2019-05-24 17:41:07 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWWlbOg2HgdmUmWfSMIuInUT98N9pakzefuJ5T2EgcDiYunaKrm3ZQWQRIuRKvYZEuJtYuIX5K1ePtSQbMTUVA==", "session"=>{"email"=>"sharonoptsout@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sharonoptsout@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:41:07 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 536ms (Views: 529.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/words" for ::1 at 2019-05-24 17:41:16 -0400
+Processing by WordsController#index as HTML
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered words/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 424ms (Views: 405.5ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-05-24 17:41:20 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"G1cc3Wr/XDAA/vl3wmIH4mBR0bKmdoBhmckjoVyv6UnkUFBrqHD1UmM82GMbit/ZB6BLEznEzf++DH7UDe+83Q=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:41:20 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 730ms (Views: 624.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/words" for ::1 at 2019-05-24 17:41:23 -0400
+Processing by WordsController#index as HTML
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.7ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered words/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 296ms (Views: 291.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-24 17:41:27 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.8ms)
+  Rendered users/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 89ms (Views: 84.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-05-24 17:41:31 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 347ms (Views: 313.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-24 17:42:24 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (12.4ms)
+  Rendered users/new.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 450ms (Views: 433.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-24 17:42:56 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.8ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered users/new.html.erb within layouts/application (62.2ms)
+Completed 200 OK in 1069ms (Views: 1066.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-24 17:43:07 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (65.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered users/new.html.erb within layouts/application (77.9ms)
+Completed 200 OK in 773ms (Views: 769.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2019-05-24 17:43:52 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (17.4ms)
+  Rendered users/new.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 826ms (Views: 823.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-05-24 17:44:12 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.0ms)
+  Rendered users/new.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 661ms (Views: 658.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-05-24 17:44:34 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (44.2ms)
+  Rendered users/new.html.erb within layouts/application (48.4ms)
+Completed 200 OK in 650ms (Views: 647.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-05-24 17:44:49 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mUser Load (23.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (edit) LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 23.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: edit: SELECT  "users".* FROM "users" WHERE (edit) LIMIT ?):
+  
+app/controllers/users_controller.rb:42:in `show'
+Started GET "/auth/google" for ::1 at 2019-05-24 17:45:31 -0400
+(google) Request phase initiated.
+Started GET "/auth/google" for ::1 at 2019-05-24 17:45:31 -0400
+(google) Request phase initiated.
+Started GET "/auth/google/callback?state=d1c5fe3bc44b3914295ab8518ee9fa02f698b3dff788efb3&code=4%2FVQHY3B1Ec0RqhB4DaaaiH2d8IaWMl4nb70mfhIu9LboUWyHaFnz6GOgQy-99XGzrId2XHmskMs0FZ2iYAjjRu9I&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile" for ::1 at 2019-05-24 17:45:42 -0400
+(google) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"d1c5fe3bc44b3914295ab8518ee9fa02f698b3dff788efb3", "code"=>"4/VQHY3B1Ec0RqhB4DaaaiH2d8IaWMl4nb70mfhIu9LboUWyHaFnz6GOgQy-99XGzrId2XHmskMs0FZ2iYAjjRu9I", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google"], ["uid", "106883442381523804268"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (6.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "s."], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "sharonoptsout@gmail.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$10$TbytATPWlLvEPw1cGOJYseWRqRel6mJ8dMjmMTtxQV6fodeWf3kJy"], ["updated_at", "2019-05-24 21:45:44.018938"], ["id", 2]]
+  [1m[35m (128.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 457ms (ActiveRecord: 138.2ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:45:44 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 481ms (Views: 411.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-05-24 17:46:12 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (edit) LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: edit: SELECT  "users".* FROM "users" WHERE (edit) LIMIT ?):
+  
+app/controllers/users_controller.rb:42:in `show'
+Started GET "/users/1/edit" for ::1 at 2019-05-24 17:46:16 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-24 17:46:16 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.5ms)
+  Rendered users/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 459ms (Views: 452.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-05-24 17:46:28 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (edit) LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: edit: SELECT  "users".* FROM "users" WHERE (edit) LIMIT ?):
+  
+app/controllers/users_controller.rb:42:in `show'
+Started GET "/users/2/edit" for ::1 at 2019-05-24 17:46:37 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.1ms)
+  Rendered users/edit.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 245ms (Views: 236.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:47:50 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 364ms (Views: 350.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:47:53 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 748ms (Views: 743.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:48:19 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (46.5ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users"}, missing required keys: [:id]):
+    16: 
+    17: <br>
+    18: <%if logged_in?%>
+    19:   <%= link_to "Edit my info", user_path%><br>
+    20: <%end%>
+    21: <%if logged_in?%>
+    22:   <%= link_to "Log out", logout_path, method: :delete %><br>
+  
+app/views/welcome/index.html.erb:19:in `_app_views_welcome_index_html_erb__1828759454669692788_70284874930000'
+Started GET "/" for ::1 at 2019-05-24 17:50:16 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users"}, missing required keys: [:id]):
+    16: 
+    17: <br>
+    18: <%if logged_in?%>
+    19:   <%= link_to "Edit my info", user_path, method: get%><br>
+    20: <%end%>
+    21: <%if logged_in?%>
+    22:   <%= link_to "Log out", logout_path, method: :delete %><br>
+  
+app/views/welcome/index.html.erb:19:in `_app_views_welcome_index_html_erb__1828759454669692788_70284878199340'
+Started GET "/" for ::1 at 2019-05-24 17:50:34 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users"}, missing required keys: [:id]):
+    16: 
+    17: <br>
+    18: <%if logged_in?%>
+    19:   <%= link_to("Edit my info", user_path)%><br>
+    20: <%end%>
+    21: <%if logged_in?%>
+    22:   <%= link_to "Log out", logout_path, method: :delete %><br>
+  
+app/views/welcome/index.html.erb:19:in `_app_views_welcome_index_html_erb__1828759454669692788_70284875775480'
+Started GET "/" for ::1 at 2019-05-24 17:51:11 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (45.9ms)
+Completed 200 OK in 1226ms (Views: 1219.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/2" for ::1 at 2019-05-24 17:51:16 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (183.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 237ms (ActiveRecord: 183.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-24 17:51:17 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (73.6ms)
+Completed 200 OK in 833ms (Views: 825.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-05-27 11:27:44 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XuAi6lK7ZEj9WvQhkcRRoU1rmEppB6nbNN8dtWxaZsmh525ckDTNKp6Y1TVILImaKpoC6/a15EUTGkDAPRozXQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 161ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-27 11:27:45 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (8.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (83.6ms)
+Completed 200 OK in 1153ms (Views: 1081.4ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-27 11:35:13 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (132.8ms)
+  Rendered users/new.html.erb within layouts/application (154.4ms)
+Completed 200 OK in 1785ms (Views: 1321.6ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/users" for ::1 at 2019-05-27 11:35:23 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q4b0/99NHPCc4fPpZzmvjS32yQY9+5eeOe/UKqg115NUgbhJHcK1kv8j0v2+0Xe2SgdTp6JJ2gAeKolf+XWCBw==", "user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>"lastname"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-27 11:35:23 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (33.9ms)
+  Rendered users/new.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 998ms (Views: 973.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-27 11:37:58 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (7.8ms)
+  Rendered users/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 2102ms (Views: 904.5ms | ActiveRecord: 11.6ms)
+
+
+Started POST "/users" for ::1 at 2019-05-27 11:38:04 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FcK86SQvaZysbaw6+p55/uZZq8SRpbf1RcDJrzZ/8UnqxfBf5qDA/s+vjS4jdqHFgagxZQ4X+mtiBZTaZz+k3Q==", "user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>""}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-27 11:38:04 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (8.9ms)
+  Rendered users/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 920ms (Views: 916.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-05-27 11:47:29 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"28ZEe3z76goBxSgxXJrqAv2AO6ONyfgy8TDC57/4fDkkwQjNvnRDaGIHCSWFcjI5mnGhAhJ7tazW9Z+S7rgprQ==", "user"=>{"username"=>"user10", "password"=>"[FILTERED]", "email"=>"user10@gmail.com", "first_name"=>"user", "last_name"=>"ten"}, "commit"=>"Create User"}
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 200ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-27 11:48:22 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (17.6ms)
+  Rendered users/new.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 959ms (Views: 753.8ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users" for ::1 at 2019-05-27 11:48:32 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xpEbOrc1MfQFIeW5o1wb4uKYQi0K68higCtx9BwB86o5lleMdbqYlmbjxK16tMPZhWnYjJVZhfyn7iyBTUGmPg==", "user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"", "first_name"=>"", "last_name"=>""}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-27 11:48:32 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (15.8ms)
+  Rendered users/new.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 1106ms (Views: 995.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-27 11:49:10 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.5ms)
+  Rendered users/new.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 845ms (Views: 733.1ms | ActiveRecord: 16.0ms)
+
+
+Started POST "/users" for ::1 at 2019-05-27 11:49:27 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jUgFP5McnXU8MYs8kkcrNnmcCkx4/0X4rAYoJsYSjRdyT0mJUZM0F1/zqihLr/MNHm2Q7edNCGaLw3VTl1LYgw==", "user"=>{"username"=>"user10", "password"=>"[FILTERED]", "email"=>"user10@gmail.com", "first_name"=>"user", "last_name"=>"ten"}, "commit"=>"Create User"}
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 103ms (ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/signup" for ::1 at 2019-05-27 11:50:20 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (20.5ms)
+  Rendered users/new.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 2984ms (Views: 2858.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/users" for ::1 at 2019-05-27 11:50:53 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1WIT3INDG+mUU5yj/PIzEGCM7ZVtJrELRm9TF7N866YqZV9qQcyyi/eRvbclGusrB313NPKU/JVhqg5i4jy+Mg==", "user"=>{"username"=>"user10", "password"=>"[FILTERED]", "email"=>"user10@gmail.com", "first_name"=>"user", "last_name"=>"ten"}, "commit"=>"Create User"}
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 208ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-27 11:51:51 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.7ms)
+  Rendered users/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 1588ms (Views: 1398.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users" for ::1 at 2019-05-27 11:52:03 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pog/SNmzVi+uxLL9hYYCscrC+4DR233HNDyfGuYYZJnBj3P+Gzz/Tc0Gk+lcbtqKrTNhIU5pMFkT+cJvt1gxDQ==", "user"=>{"username"=>"user10", "password"=>"[FILTERED]", "email"=>"user10@gmail.com", "first_name"=>"user", "last_name"=>"ten"}, "commit"=>"Create User"}
+Completed   in 69222ms (ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/signup" for ::1 at 2019-05-27 11:53:47 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (19.7ms)
+  Rendered users/new.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 2630ms (Views: 2463.4ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users" for ::1 at 2019-05-27 11:54:08 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CoPWVEiIKRozZADQF6KV0PfidKBSHVR1SmoFXXhR9/T1hJriigeAeFCmIcTOSk3rkBPuAc2vGettr1goKRGiYA==", "user"=>{"username"=>"user10", "password"=>"[FILTERED]", "email"=>"user10@gmail.com", "first_name"=>"user", "last_name"=>"ten"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user10"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user10@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (14.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "user10"], ["password_digest", "$2a$10$gCdHaxGMo.3SvwAuXpDRQuq4JYWT1gV6m5fwdGCE6ag0O5mtKCQNC"], ["first_name", "user"], ["last_name", "ten"], ["email", "user10@gmail.com"], ["created_at", "2019-05-27 15:54:21.161144"], ["updated_at", "2019-05-27 15:54:21.161144"]]
+  [1m[35m (31.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "user10"], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "user10@gmail.com"], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started POST "/users" for ::1 at 2019-05-27 11:56:10 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CoPWVEiIKRozZADQF6KV0PfidKBSHVR1SmoFXXhR9/T1hJriigeAeFCmIcTOSk3rkBPuAc2vGettr1goKRGiYA==", "user"=>{"username"=>"user10", "password"=>"[FILTERED]", "email"=>"user10@gmail.com", "first_name"=>"user", "last_name"=>"ten"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user10"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user10@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user10"], ["LIMIT", 1]]
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user10@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 447ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/" for ::1 at 2019-05-27 11:56:11 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (130.8ms)
+Completed 200 OK in 2934ms (Views: 2923.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for ::1 at 2019-05-27 11:56:26 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 1122ms (Views: 1115.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-27 11:56:31 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (12.9ms)
+  Rendered users/new.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 495ms (Views: 425.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-05-27 11:56:54 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0m4BbjViZzzvlhMwdB1rtdIkJGBxbybclNukFrhYpvItaU3Y9+3OXoxUMiSt9bOOtdW+we7da0KzHvlj6RjzZg==", "user"=>{"username"=>"user10", "password"=>"[FILTERED]", "email"=>"user10@gmail.com", "first_name"=>"user", "last_name"=>"ten"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user10"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user10@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user10"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user10@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 347ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2019-05-27 11:56:55 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 430ms (Views: 335.3ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (45.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/signup" for ::1 at 2019-05-27 11:57:23 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.1ms)
+  Rendered users/new.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 531ms (Views: 480.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-05-27 11:57:38 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2SOAcy/+ZhnCAC57K4OcXQwAbZuxT/efdDbzX8fbh0wmJMzF7XHPe6HCD2/ya0Rma/H3Oi79ugFT864qlpvS2A==", "user"=>{"username"=>"user11", "password"=>"[FILTERED]", "email"=>"user11@gmail.com", "first_name"=>"user", "last_name"=>"eleven"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user11"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user11@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "user11"], ["password_digest", "$2a$10$PmWoyeCinROTokhs/mojhOe5Cf0Bm8jWJBj0ecASWIGu.86QT2lem"], ["first_name", "user"], ["last_name", "eleven"], ["email", "user11@gmail.com"], ["created_at", "2019-05-27 15:57:38.587647"], ["updated_at", "2019-05-27 15:57:38.587647"]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "user11"], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "user11@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 513ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-27 11:57:38 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 631ms (Views: 555.6ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-05-27 12:01:51 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"R6PDR6VNhDdImksN6h0w/N7hVjOqCpDq3GFKdAkkNq+4pI/xZ8ItVStYahkz9ejHuRDMkjW43XT7pBcBWGRjOw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-27 12:01:52 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 741ms (Views: 647.5ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-27 12:01:59 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.9ms)
+  Rendered users/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 435ms (Views: 384.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for ::1 at 2019-05-27 12:02:12 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oeDEgQCs4B2Sj5rgd6O+iL1pkXqElxKyeRCoto3rrg5e54g3wiNJf/FNu/SuS2az2pgL2xslXyxe1fXD3Kv7mg==", "user"=>{"username"=>"user10", "password"=>"[FILTERED]", "email"=>"user10@gmail.com", "first_name"=>"user", "last_name"=>"ten"}, "commit"=>"Create User"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user10@gmail.com"], ["LIMIT", 1]]
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 305ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-27 12:02:26 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.9ms)
+  Rendered users/new.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 570ms (Views: 478.0ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users" for ::1 at 2019-05-27 12:08:28 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nsgo2/yspSKBcV7u/w3qaJrxg4O7/bxto5ujH5DUcTbJz2RtPiMMQOKzf/om5TJT/QAZIiRP8fOEXv5qwZQkog==", "user"=>{"username"=>"user10", "password"=>"[FILTERED]", "email"=>"s", "first_name"=>"s", "last_name"=>"s"}, "commit"=>"Create User"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "s"], ["LIMIT", 1]]
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user10"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user10"], ["LIMIT", 1]]
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "s"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user10"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "s"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 895ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/" for ::1 at 2019-05-27 12:08:29 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered welcome/index.html.erb within layouts/application (89.4ms)
+Completed 200 OK in 1016ms (Views: 996.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/signup" for ::1 at 2019-05-27 12:09:31 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (85.1ms)
+  Rendered users/new.html.erb within layouts/application (158.8ms)
+Completed 200 OK in 1463ms (Views: 1371.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-05-27 12:11:12 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6EX4w0otwVVmGro0th0yPaGLPgQx7MY0W06OOcznyGEXQrR1iKJoNwXYmyBv9eoGxnqkpa5ei6p8i9NMnaed9Q==", "user"=>{"username"=>"user12", "password"=>"[FILTERED]", "email"=>"user12@gmail.com", "first_name"=>"user", "last_name"=>"twelve"}, "commit"=>"Create User"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user12@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user12"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user12"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user12@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "first_name", "last_name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "user12"], ["password_digest", "$2a$10$CTxx5EDlwLiskqSGa.MXhOK3cjaW0s1dyo.BDF3BB.z4SAL2R4WNa"], ["first_name", "user"], ["last_name", "twelve"], ["email", "user12@gmail.com"], ["created_at", "2019-05-27 16:11:13.133290"], ["updated_at", "2019-05-27 16:11:13.133290"]]
+  [1m[35m (41.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "user12"], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "user12@gmail.com"], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 822ms (ActiveRecord: 52.8ms)
+
+
+Started GET "/" for ::1 at 2019-05-27 12:11:13 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 952ms (Views: 797.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/words" for ::1 at 2019-05-27 12:11:21 -0400
+Processing by WordsController#index as HTML
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.7ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered words/index.html.erb within layouts/application (173.6ms)
+Completed 500 Internal Server Error in 603ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil}, missing required keys: [:id]):
+    28: <%=link_to('Home', root_path)%><br>
+    29: <%= link_to('Log in', login_path) %> or <%= link_to('Sign up', signup_path)%><br>
+    30: <%if logged_in?%>
+    31:   <%= link_to("Edit my info", user_path(@user))%><br>
+    32: <%end%>
+    33: <% if logged_in?%>
+    34:     <%=link_to "View all of your words", user_words_path(current_user.id)%><br>
+  
+app/views/words/index.html.erb:31:in `_app_views_words_index_html_erb___1179144118518854646_70199693138780'

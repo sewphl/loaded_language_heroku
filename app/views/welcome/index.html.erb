@@ -16,5 +16,8 @@
 
 <br>
 <%if logged_in?%>
+  <%= link_to("Edit my info", user_path(@user))%><br>
+<%end%>
+<%if logged_in?%>
   <%= link_to "Log out", logout_path, method: :delete %><br>
 <%end%>
