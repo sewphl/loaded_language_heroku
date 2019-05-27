@@ -3,6 +3,9 @@ class WordsController < ApplicationController
 include WordsHelper
 
   def index
+    if logged_in?
+      @user = current_user
+    end
     @words_ = Word.all
     @top10 = Word.find_most_loaded_words(@words_)
     @recent_words = Word.most_recent(5)

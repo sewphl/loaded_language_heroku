@@ -22560,3 +22560,73 @@ ActionView::Template::Error (No route matches {:action=>"show", :controller=>"us
     34:     <%=link_to "View all of your words", user_words_path(current_user.id)%><br>
   
 app/views/words/index.html.erb:31:in `_app_views_words_index_html_erb___1179144118518854646_70199693138780'
+Started GET "/words" for ::1 at 2019-05-27 12:12:53 -0400
+Processing by WordsController#index as HTML
+  [1m[36mWord Load (0.8ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.8ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered words/index.html.erb within layouts/application (317.9ms)
+Completed 500 Internal Server Error in 475ms (ActiveRecord: 11.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil}, missing required keys: [:id]):
+    28: <%=link_to('Home', root_path)%><br>
+    29: <%= link_to('Log in', login_path) %> or <%= link_to('Sign up', signup_path)%><br>
+    30: <%if logged_in?%>
+    31:   <%= link_to("Edit my info", user_path(@user))%><br>
+    32: <%end%>
+    33: <% if logged_in?%>
+    34:     <%=link_to "View all of your words", user_words_path(current_user.id)%><br>
+  
+app/views/words/index.html.erb:31:in `_app_views_words_index_html_erb___1179144118518854646_70199669509280'
+Started GET "/words" for ::1 at 2019-05-27 12:14:30 -0400
+Processing by WordsController#index as HTML
+Completed 404 Not Found in 36ms (ActiveRecord: 2.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/words_controller.rb:6:in `index'
+Started GET "/words" for ::1 at 2019-05-27 12:14:50 -0400
+Processing by WordsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (12.9ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered words/index.html.erb within layouts/application (90.8ms)
+Completed 200 OK in 594ms (Views: 379.9ms | ActiveRecord: 17.3ms)
+
+
+Started GET "/words" for ::1 at 2019-05-27 12:16:28 -0400
+Processing by WordsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (1.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered words/index.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 769ms (Views: 599.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/words" for ::1 at 2019-05-27 12:17:20 -0400
+Processing by WordsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered words/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 731ms (Views: 722.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/words" for ::1 at 2019-05-27 12:17:52 -0400
+Processing by WordsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (1.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  Rendered words/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 970ms (Views: 963.4ms | ActiveRecord: 1.9ms)
+
+
