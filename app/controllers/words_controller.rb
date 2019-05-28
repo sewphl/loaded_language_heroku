@@ -2,11 +2,17 @@ require 'pry'
 class WordsController < ApplicationController
 include WordsHelper
 
+def words_
+  #binding.pry
+  User.find(current_user.id).words
+end
+
   def index
     if logged_in?
       @user = current_user
     end
     @words_ = Word.all
+    @userwords = words_ ##see words_ method above; specific to user
     @top10 = Word.find_most_loaded_words(@words_)
     @recent_words = Word.most_recent(5)
   end

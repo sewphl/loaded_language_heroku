@@ -11,15 +11,20 @@ class Word < ApplicationRecord
     #@topwords = words.collect{|x| WordFeeling.where(word_id: x.id).average(:feeling_rating)}
     ##returns 10 most loaded words
     @avgs = []
+    if words
     words.each do |w|
       myword = WordFeeling.where(word_id: w.id)
       @avgs << myword.average(:feeling_rating)
     end
+  #else
+  #  flash[:notice] = "You have not yet added any words to the database."
+
     ##@topwords = words.sort_by{|x| @avgs.index x.id}#.first 10
     ##binding.pry
     words.sort_by do |element|
       @avgs.index(element)
     end
+  end
   end
 
 end
