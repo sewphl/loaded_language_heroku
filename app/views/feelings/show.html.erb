@@ -1,4 +1,11 @@
 <h3><%=@feeling.name%></h3>
 
 <p>Description: <%=@feeling.definition%></p>
+
+<h4>Words sorted by <%=@feeling.name%> (highest to lowest)</h4>
+<ul>
+  <%@feeling_idx.each do |t| %>
+  <li><%=link_to @words.find(t+1).entry, @words.find(t+1)%> (<%=compute_avg(@words.find(t+1), @feeling).to_s%>)<br></li>
+  <%end%>
+</ul>
 <br>

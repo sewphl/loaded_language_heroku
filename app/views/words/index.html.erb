@@ -3,7 +3,7 @@
 <%if logged_in?%>
   <h3>My most recently added words</h3>
   <ul>
-    <%@recent_words.each do |r|%>  <!--@recent_words-->
+    <%@recent_words.each do |r|%>  
       <li><%=link_to r.entry, r%> <br>
         added <%=create_day(r)%>, at <%=create_time(r)%>
         <%end%>
