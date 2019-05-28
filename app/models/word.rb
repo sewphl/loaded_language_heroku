@@ -8,8 +8,6 @@ class Word < ApplicationRecord
   scope :most_recent, -> (limit) { order("created_at desc").limit(limit) }
 
   def self.find_most_loaded_words_idx(words)
-    #@topwords = words.collect{|x| WordFeeling.where(word_id: x.id).average(:feeling_rating)}
-    ##returns 10 most loaded words
     @avgs = []
     if words
       words.each do |w|
@@ -18,6 +16,10 @@ class Word < ApplicationRecord
       end
       @avgs.map.with_index.sort.map(&:last).reverse
     end
+  end
+
+  def self.alphabetize_words_idx(words)
+    words.pluck(:entry).map.with_index.sort.map(&:last)
   end
 
 end

@@ -20,9 +20,10 @@
   <%end%>
 </ul>
 
-<h3>All words</h3>
+<h3>All words (alphabetical order)</h3>
+
 <ul>
-  <% @words_.each do |w| %>
-    <li><%= link_to w.entry, w %></li>
-  <% end %>
+  <%@abcwords_idx.each do |t| %>
+  <li><%=link_to @words_.find(t+1).entry, @words_.find(t+1)%><br></li>
+  <%end%>
 </ul>
