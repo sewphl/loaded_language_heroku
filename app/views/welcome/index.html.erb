@@ -10,16 +10,8 @@
 <%=link_to "View full database of words", words_path%><br>
 
 <% if logged_in?%>
-    <%=link_to "View all of your words", user_words_path(current_user.id)%><br>
-<%end%>
-<% if logged_in?%>
-    <%=link_to "Add a new word", new_user_word_path(current_user.id)%><br>
-<%end%>
-
-<br>
-<%if logged_in?%>
+  <%=link_to "View all of your words", user_words_path(current_user.id)%><br>
+  <%=link_to "Add a new word", new_user_word_path(current_user.id)%><br>
   <%= link_to("Edit my info", edit_user_path(@user))%><br>
-<%end%>
-<%if logged_in?%>
   <%= link_to "Log out", logout_path, method: :delete %><br>
 <%end%>
