@@ -15,7 +15,6 @@ end
     @words_ = Word.all
     @userwords = words_ ##see words_ method above; specific to user
     @top10_idx = Word.find_most_loaded_words_idx(@words_)
-    #binding.pry
     @recent_words = Word.most_recent(5)
 
 

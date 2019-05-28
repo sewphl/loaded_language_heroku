@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_21_161433) do
+ActiveRecord::Schema.define(version: 2019_05_28_185804) do
 
   create_table "feelings", force: :cascade do |t|
     t.string "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_05_21_161433) do
     t.float "feeling_rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "words", force: :cascade do |t|
