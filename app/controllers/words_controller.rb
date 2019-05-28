@@ -3,8 +3,9 @@ class WordsController < ApplicationController
 include WordsHelper
 
 def words_
-  #binding.pry
-  User.find(current_user.id).words
+  if current_user
+    User.find(current_user.id).words
+  end
 end
 
   def index
@@ -32,8 +33,8 @@ end
     @word = Word.create(word_params)
     @feelings = Feeling.all
     if !@word.errors.full_messages.empty?
-      flash[:notice] = "That word is already in the database"
-      redirect_to words_path
+      flash[:notice] = "That word is already in the database. Please add a different word."
+      redirect_to new_user_word_path(user)
     else
       @word.update(word_params)
       @feelings.each do |feel|
