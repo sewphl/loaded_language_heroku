@@ -7,24 +7,17 @@ class Word < ApplicationRecord
   validates_uniqueness_of :entry, :message=>"that word already exists"
   scope :most_recent, -> (limit) { order("created_at desc").limit(limit) }
 
-  def self.find_most_loaded_words(words)
+  def self.find_most_loaded_words_idx(words)
     #@topwords = words.collect{|x| WordFeeling.where(word_id: x.id).average(:feeling_rating)}
     ##returns 10 most loaded words
     @avgs = []
     if words
-    words.each do |w|
-      myword = WordFeeling.where(word_id: w.id)
-      @avgs << myword.average(:feeling_rating)
+      words.each do |w|
+        myword = WordFeeling.where(word_id: w.id)
+        @avgs << myword.average(:feeling_rating)
+      end
+      @avgs.map.with_index.sort.map(&:last).reverse
     end
-  #else
-  #  flash[:notice] = "You have not yet added any words to the database."
-
-    ##@topwords = words.sort_by{|x| @avgs.index x.id}#.first 10
-    ##binding.pry
-    words.sort_by do |element|
-      @avgs.index(element)
-    end
-  end
   end
 
 end
