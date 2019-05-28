@@ -9,7 +9,5 @@
 <label>Email: </label>
 <%=@user.email%><br>
 
-<div>
-  <%=link_to "View all of your words", user_words_path(current_user.id)%><br>
-  <%= link_to "Add a new word", new_user_word_path(@user) %>
-</div>
+<h6><%= link_to("Edit my info", edit_user_path(current_user.id))%><br></h6>
+<br>
