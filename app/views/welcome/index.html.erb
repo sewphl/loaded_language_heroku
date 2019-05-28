@@ -1,17 +1,5 @@
 <%=flash.notice %>
 
 <% if session[:user_id] %>
-  <h3>Welcome <%= @user.first_name %></h3>
-
-<% else %>
-  <%= link_to('Log in', login_path) %> or <%= link_to('Sign up', signup_path)%><br>
+  <h3>Welcome <%= @user.username %></h3>
 <% end %>
-
-<%=link_to "View full database of words", words_path%><br>
-
-<% if logged_in?%>
-  <%=link_to "View all of your words", user_words_path(current_user.id)%><br>
-  <%=link_to "Add a new word", new_user_word_path(current_user.id)%><br>
-  <%= link_to("Edit my info", edit_user_path(@user))%><br>
-  <%= link_to "Log out", logout_path, method: :delete %><br>
-<%end%>
