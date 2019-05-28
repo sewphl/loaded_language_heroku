@@ -12,10 +12,14 @@ end
     if logged_in?
       @user = current_user
     end
-    @words_ = Word.all
+    ##user-added words only!
     @userwords = words_ ##see words_ method above; specific to user
+    @recent_words = @userwords.most_recent(5)
+    ##all words
+    @words_ = Word.all
     @top10_idx = Word.find_most_loaded_words_idx(@words_)
-    @recent_words = Word.most_recent(5)
+
+
 
 
   end
@@ -39,8 +43,9 @@ end
       redirect_to new_user_word_path(user)
     else
       @word.update(word_params)
+      #binding.pry
       @feelings.each do |feel|
-        WordFeeling.create(feeling_id: feel.id, word_id: @word.id, feeling_rating: params[feel.name][:feeling_rating].to_f)
+        WordFeeling.create(user_id: params[:word][:user_id], feeling_id: feel.id, word_id: @word.id, feeling_rating: params[feel.name][:feeling_rating].to_f)
       end
       redirect_to user_word_path(user, @word)
     end

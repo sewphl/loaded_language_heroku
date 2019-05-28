@@ -25796,3 +25796,810 @@ Migrating to AddColumnToWordFeelings (20190528185804)
   [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWord Destroy (306.1ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mWordFeeling Destroy (7.0ms)[0m  [1m[31mDELETE FROM "word_feelings"[0m
+Started GET "/words/" for ::1 at 2019-05-28 15:01:09 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWord Load (0.8ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered words/index.html.erb within layouts/application (120.0ms)
+Completed 200 OK in 2777ms (Views: 1591.4ms | ActiveRecord: 60.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-28 15:01:18 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (40.5ms)
+Completed 200 OK in 1383ms (Views: 1354.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/6/words" for ::1 at 2019-05-28 15:01:24 -0400
+Processing by WordsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWord Load (0.8ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered words/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 1369ms (Views: 1304.3ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/users/6/words/new" for ::1 at 2019-05-28 15:01:28 -0400
+Processing by WordsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  [1m[36mFeeling Load (0.5ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  Rendered words/_form.html.erb (101.9ms)
+  Rendered words/new.html.erb within layouts/application (162.5ms)
+Completed 200 OK in 2998ms (Views: 2844.5ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/words" for ::1 at 2019-05-28 15:01:54 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V9j+KseMoOmfDKai1yE8lVsOoNWDV2BkZ0PwBE/WzeuQpowaXDzzM5TrSoMe6wKuOsmDpBqGLif7JU1h796eXA==", "word"=>{"user_id"=>"6", "entry"=>"bruise"}, "acceptance"=>{"feeling_rating"=>"6.5"}, "anger"=>{"feeling_rating"=>"5.4"}, "fear"=>{"feeling_rating"=>"3.6"}, "joy"=>{"feeling_rating"=>"1"}, "anticipation"=>{"feeling_rating"=>"2.2"}, "sadness"=>{"feeling_rating"=>"7"}, "disgust"=>{"feeling_rating"=>"5"}, "surprise"=>{"feeling_rating"=>"2.5"}, "commit"=>"Add Word"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "bruise"], ["LIMIT", 1]]
+  [1m[36mWord Create (30.4ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["entry", "bruise"], ["created_at", "2019-05-28 19:01:54.510241"], ["updated_at", "2019-05-28 19:01:54.510241"], ["user_id", 6]]
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? AND "words"."id" != ? LIMIT ?[0m  [["entry", "bruise"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFeeling Load (0.4ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (17.2ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 9], ["feeling_rating", 6.5], ["created_at", "2019-05-28 19:01:55.346649"], ["updated_at", "2019-05-28 19:01:55.346649"]]
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (5.4ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 10], ["feeling_rating", 5.4], ["created_at", "2019-05-28 19:01:55.428429"], ["updated_at", "2019-05-28 19:01:55.428429"]]
+  [1m[35m (36.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (17.1ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 11], ["feeling_rating", 3.6], ["created_at", "2019-05-28 19:01:55.475175"], ["updated_at", "2019-05-28 19:01:55.475175"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (7.0ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 12], ["feeling_rating", 1.0], ["created_at", "2019-05-28 19:01:55.500082"], ["updated_at", "2019-05-28 19:01:55.500082"]]
+  [1m[35m (192.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (66.8ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 13], ["feeling_rating", 2.2], ["created_at", "2019-05-28 19:01:55.830455"], ["updated_at", "2019-05-28 19:01:55.830455"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (2.8ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 14], ["feeling_rating", 7.0], ["created_at", "2019-05-28 19:01:55.904400"], ["updated_at", "2019-05-28 19:01:55.904400"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.1ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 15], ["feeling_rating", 5.0], ["created_at", "2019-05-28 19:01:55.913877"], ["updated_at", "2019-05-28 19:01:55.913877"]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (5.4ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 16], ["feeling_rating", 2.5], ["created_at", "2019-05-28 19:01:56.154771"], ["updated_at", "2019-05-28 19:01:56.154771"]]
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/6/words/1
+Completed 302 Found in 1766ms (ActiveRecord: 445.4ms)
+
+
+Started GET "/users/6/words/1" for ::1 at 2019-05-28 15:01:56 -0400
+Processing by WordsController#show as HTML
+  Parameters: {"user_id"=>"6", "id"=>"1"}
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[36mFeeling Load (0.3ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 9]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 10]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 12]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 13]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 14]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 15]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 16]]
+  Rendered words/show.html.erb within layouts/application (272.7ms)
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 1950ms (Views: 1930.8ms | ActiveRecord: 11.0ms)
+
+
+  [1m[36mWordFeeling Load (67.2ms)[0m  [1m[34mSELECT  "word_feelings".* FROM "word_feelings" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mWordFeeling Load (29.5ms)[0m  [1m[34mSELECT  "word_feelings".* FROM "word_feelings" WHERE "word_feelings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWordFeeling Load (0.5ms)[0m  [1m[34mSELECT  "word_feelings".* FROM "word_feelings" WHERE "word_feelings"."id" = ? LIMIT ?[0m  [["id", 147], ["LIMIT", 1]]
+Started GET "/users/6/words/new" for ::1 at 2019-05-28 15:07:33 -0400
+Processing by WordsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  [1m[36mFeeling Load (12.4ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  Rendered words/_form.html.erb (439.8ms)
+  Rendered words/new.html.erb within layouts/application (453.4ms)
+Completed 200 OK in 4225ms (Views: 2279.1ms | ActiveRecord: 21.0ms)
+
+
+  [1m[36mWord Destroy (7.9ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mWordFeeling Destroy (13.9ms)[0m  [1m[31mDELETE FROM "word_feelings"[0m
+  [1m[36mWordFeeling Load (2.1ms)[0m  [1m[34mSELECT  "word_feelings".* FROM "word_feelings" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mWord Load (21.5ms)[0m  [1m[34mSELECT  "words".* FROM "words" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/words" for ::1 at 2019-05-28 15:08:27 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E4rgSQ9GWbPysbKAdaXtrhMBQaDArhLwE0tMTLFIzkDU9JJ5lPYKaflWXqG8b9OVcsZi0Vl/XLOPLfEpEUCd9w==", "word"=>{"user_id"=>"6", "entry"=>"bruise"}, "acceptance"=>{"feeling_rating"=>"6.7"}, "anger"=>{"feeling_rating"=>"8"}, "fear"=>{"feeling_rating"=>"5.9"}, "joy"=>{"feeling_rating"=>"1"}, "anticipation"=>{"feeling_rating"=>"3.8"}, "sadness"=>{"feeling_rating"=>"9"}, "disgust"=>{"feeling_rating"=>"4.4"}, "surprise"=>{"feeling_rating"=>"2.9"}, "commit"=>"Add Word"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "bruise"], ["LIMIT", 1]]
+  [1m[36mWord Create (142.7ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["entry", "bruise"], ["created_at", "2019-05-28 19:08:28.146093"], ["updated_at", "2019-05-28 19:08:28.146093"], ["user_id", 6]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? AND "words"."id" != ? LIMIT ?[0m  [["entry", "bruise"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/words" for ::1 at 2019-05-28 15:11:51 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.8ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = ?[0m  [["user_id", 6]]
+  [1m[36mWord Load (7.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  Rendered words/index.html.erb within layouts/application (716.7ms)
+Completed 500 Internal Server Error in 2165ms (ActiveRecord: 28.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `round' for nil:NilClass):
+    15: 
+    16: <ul>
+    17:   <%@top10_idx.each do |t| %>
+    18:   <li><%=link_to @words_.find(t+1).entry, @words_.find(t+1)%> (<%=compute_avg(@words_.find(t+1)).to_s%>)<br></li>
+    19: 
+    20:   <%end%>
+    21: </ul>
+  
+app/helpers/words_helper.rb:19:in `compute_avg'
+app/views/words/index.html.erb:18:in `block in _app_views_words_index_html_erb___4327998822942107054_70185373700980'
+app/views/words/index.html.erb:17:in `each'
+app/views/words/index.html.erb:17:in `_app_views_words_index_html_erb___4327998822942107054_70185373700980'
+Started GET "/words" for ::1 at 2019-05-28 15:12:59 -0400
+Processing by WordsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.8ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = ?[0m  [["user_id", 6]]
+  [1m[36mWord Load (0.8ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  Rendered words/index.html.erb within layouts/application (648.8ms)
+Completed 500 Internal Server Error in 1530ms (ActiveRecord: 212.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `round' for nil:NilClass):
+    15: 
+    16: <ul>
+    17:   <%@top10_idx.each do |t| %>
+    18:   <li><%=link_to @words_.find(t+1).entry, @words_.find(t+1)%> (<%=compute_avg(@words_.find(t+1)).to_s%>)<br></li>
+    19: 
+    20:   <%end%>
+    21: </ul>
+  
+app/helpers/words_helper.rb:19:in `compute_avg'
+app/views/words/index.html.erb:18:in `block in _app_views_words_index_html_erb___4327998822942107054_70185374318180'
+app/views/words/index.html.erb:17:in `each'
+app/views/words/index.html.erb:17:in `_app_views_words_index_html_erb___4327998822942107054_70185374318180'
+Started GET "/" for ::1 at 2019-05-28 15:13:58 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 8498ms (Views: 7978.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/6/words/new" for ::1 at 2019-05-28 15:14:13 -0400
+Processing by WordsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  [1m[36mFeeling Load (0.6ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  Rendered words/_form.html.erb (244.6ms)
+  Rendered words/new.html.erb within layouts/application (401.9ms)
+Completed 200 OK in 1933ms (Views: 1558.7ms | ActiveRecord: 57.4ms)
+
+
+Started POST "/words" for ::1 at 2019-05-28 15:14:34 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RZ8Be9PGA2355HwDMi7pPs9oNY32WkwXzmix8UBuQUOC4XNLSHZQt/IDkCL75NcFrq8W/G+LAlRSDgyU4GYS9A==", "word"=>{"user_id"=>"6", "entry"=>"bruise"}, "acceptance"=>{"feeling_rating"=>"5"}, "anger"=>{"feeling_rating"=>"5"}, "fear"=>{"feeling_rating"=>"5"}, "joy"=>{"feeling_rating"=>"5"}, "anticipation"=>{"feeling_rating"=>"5"}, "sadness"=>{"feeling_rating"=>"5"}, "disgust"=>{"feeling_rating"=>"5"}, "surprise"=>{"feeling_rating"=>"5"}, "commit"=>"Add Word"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "bruise"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/users/6/words/new
+Completed 302 Found in 2506ms (ActiveRecord: 234.7ms)
+
+
+Started GET "/users/6/words/new" for ::1 at 2019-05-28 15:14:38 -0400
+Processing by WordsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  [1m[36mFeeling Load (2.5ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  Rendered words/_form.html.erb (81.0ms)
+  Rendered words/new.html.erb within layouts/application (90.8ms)
+Completed 200 OK in 1684ms (Views: 1668.8ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/words" for ::1 at 2019-05-28 15:14:51 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gefs6IH/DK5v4sriuoApK2Jj1hbszpB/4CSW0vg14PHemZ7YGk9fdGQFJsNzShcQA6T1Z3Uf3jx8Qiu3WD2zRg==", "word"=>{"user_id"=>"6", "entry"=>"moon"}, "acceptance"=>{"feeling_rating"=>"5"}, "anger"=>{"feeling_rating"=>"5"}, "fear"=>{"feeling_rating"=>"5"}, "joy"=>{"feeling_rating"=>"5"}, "anticipation"=>{"feeling_rating"=>"5"}, "sadness"=>{"feeling_rating"=>"5"}, "disgust"=>{"feeling_rating"=>"5"}, "surprise"=>{"feeling_rating"=>"5"}, "commit"=>"Add Word"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "moon"], ["LIMIT", 1]]
+  [1m[36mWord Create (18.7ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["entry", "moon"], ["created_at", "2019-05-28 19:14:51.951902"], ["updated_at", "2019-05-28 19:14:51.951902"], ["user_id", 6]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? AND "words"."id" != ? LIMIT ?[0m  [["entry", "moon"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFeeling Load (1.0ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  [1m[36mFeeling Load (1.5ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" WHERE "feelings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFeeling Load (61.8ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" WHERE "feelings"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Feeling Load (0.1ms)[0m  [1m[34mSELECT  "feelings".* FROM "feelings" WHERE "feelings"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (91.2ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 2], ["feeling_id", 9], ["feeling_rating", 5.0], ["created_at", "2019-05-28 19:17:07.626618"], ["updated_at", "2019-05-28 19:17:07.626618"], ["user_id", 6]]
+  [1m[35m (142.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWord Destroy (19.0ms)[0m  [1m[31mDELETE FROM "words"[0m
+  [1m[36mWordFeeling Destroy (12.8ms)[0m  [1m[31mDELETE FROM "word_feelings"[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at /Users/sharonalajajian/.rvm/gems/ruby-2.6.0/gems/activesupport-5.2.3/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/users/6/words/new" for ::1 at 2019-05-28 15:53:29 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WordsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  [1m[36mFeeling Load (0.6ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  Rendered words/_form.html.erb (107.1ms)
+  Rendered words/new.html.erb within layouts/application (115.8ms)
+Completed 200 OK in 3368ms (Views: 3085.0ms | ActiveRecord: 25.8ms)
+
+
+Started POST "/words" for ::1 at 2019-05-28 15:54:01 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g9FNiAW/+8HapQozkYeiSHPysFZH7AR/s/WftC7xSzdErz+4ng+oG9FC5hJYTZxzEjWTJ949SjwvkyLRjvkYgA==", "word"=>{"user_id"=>"6", "entry"=>"moon"}, "acceptance"=>{"feeling_rating"=>"3.9"}, "anger"=>{"feeling_rating"=>"1.4"}, "fear"=>{"feeling_rating"=>"2.7"}, "joy"=>{"feeling_rating"=>"9"}, "anticipation"=>{"feeling_rating"=>"2.6"}, "sadness"=>{"feeling_rating"=>"8"}, "disgust"=>{"feeling_rating"=>"1"}, "surprise"=>{"feeling_rating"=>"2.1"}, "commit"=>"Add Word"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "moon"], ["LIMIT", 1]]
+  [1m[36mWord Create (1.3ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["entry", "moon"], ["created_at", "2019-05-28 19:54:01.467369"], ["updated_at", "2019-05-28 19:54:01.467369"], ["user_id", 6]]
+  [1m[35m (16.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? AND "words"."id" != ? LIMIT ?[0m  [["entry", "moon"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFeeling Load (0.3ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (22.2ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 9], ["feeling_rating", 3.9], ["created_at", "2019-05-28 19:54:01.849018"], ["updated_at", "2019-05-28 19:54:01.849018"], ["user_id", 6]]
+  [1m[35m (78.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (2.5ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 10], ["feeling_rating", 1.4], ["created_at", "2019-05-28 19:54:01.989161"], ["updated_at", "2019-05-28 19:54:01.989161"], ["user_id", 6]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (59.2ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 11], ["feeling_rating", 2.7], ["created_at", "2019-05-28 19:54:02.003682"], ["updated_at", "2019-05-28 19:54:02.003682"], ["user_id", 6]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (18.5ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 12], ["feeling_rating", 9.0], ["created_at", "2019-05-28 19:54:02.070853"], ["updated_at", "2019-05-28 19:54:02.070853"], ["user_id", 6]]
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.1ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 13], ["feeling_rating", 2.6], ["created_at", "2019-05-28 19:54:02.128578"], ["updated_at", "2019-05-28 19:54:02.128578"], ["user_id", 6]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (9.8ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 14], ["feeling_rating", 8.0], ["created_at", "2019-05-28 19:54:02.171691"], ["updated_at", "2019-05-28 19:54:02.171691"], ["user_id", 6]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (5.1ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 15], ["feeling_rating", 1.0], ["created_at", "2019-05-28 19:54:02.187306"], ["updated_at", "2019-05-28 19:54:02.187306"], ["user_id", 6]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.4ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 1], ["feeling_id", 16], ["feeling_rating", 2.1], ["created_at", "2019-05-28 19:54:02.198977"], ["updated_at", "2019-05-28 19:54:02.198977"], ["user_id", 6]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/6/words/1
+Completed 302 Found in 760ms (ActiveRecord: 257.1ms)
+
+
+Started GET "/users/6/words/1" for ::1 at 2019-05-28 15:54:02 -0400
+Processing by WordsController#show as HTML
+  Parameters: {"user_id"=>"6", "id"=>"1"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[36mFeeling Load (0.3ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 10]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 12]]
+  [1m[35m (23.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 13]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 14]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 15]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 1], ["feeling_id", 16]]
+  Rendered words/show.html.erb within layouts/application (87.9ms)
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 845ms (Views: 757.7ms | ActiveRecord: 32.9ms)
+
+
+  [1m[36mWord Load (1.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mWord Load (14.8ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWordFeeling Load (0.9ms)[0m  [1m[34mSELECT  "word_feelings".* FROM "word_feelings" WHERE "word_feelings"."word_id" = ? LIMIT ?[0m  [["word_id", 1], ["LIMIT", 11]]
+  [1m[36mWordFeeling Load (2.3ms)[0m  [1m[34mSELECT  "word_feelings".* FROM "word_feelings" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mWordFeeling Load (0.5ms)[0m  [1m[34mSELECT  "word_feelings".* FROM "word_feelings" WHERE "word_feelings"."id" = ? LIMIT ?[0m  [["id", 156], ["LIMIT", 1]]
+  [1m[36mWordFeeling Load (0.5ms)[0m  [1m[34mSELECT  "word_feelings".* FROM "word_feelings" WHERE "word_feelings"."id" = ? LIMIT ?[0m  [["id", 157], ["LIMIT", 1]]
+  [1m[36mWordFeeling Load (0.5ms)[0m  [1m[34mSELECT  "word_feelings".* FROM "word_feelings" WHERE "word_feelings"."id" = ? LIMIT ?[0m  [["id", 157], ["LIMIT", 1]]
+Started GET "/users/6/words/new" for ::1 at 2019-05-28 15:55:28 -0400
+Processing by WordsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  [1m[36mFeeling Load (5.4ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  Rendered words/_form.html.erb (13.4ms)
+  Rendered words/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 425ms (Views: 414.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/" for ::1 at 2019-05-28 15:55:33 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 224ms (Views: 218.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/6/words" for ::1 at 2019-05-28 15:55:39 -0400
+Processing by WordsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = ?[0m  [["user_id", 6]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  Rendered words/index.html.erb within layouts/application (40.5ms)
+Completed 200 OK in 447ms (Views: 348.2ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/users/6/words/new" for ::1 at 2019-05-28 15:55:43 -0400
+Processing by WordsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  [1m[36mFeeling Load (0.4ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  Rendered words/_form.html.erb (14.9ms)
+  Rendered words/new.html.erb within layouts/application (105.7ms)
+Completed 200 OK in 627ms (Views: 621.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/words" for ::1 at 2019-05-28 15:56:13 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XomBg9Q1YrjsKExbJt/gghi3AwysUBeRN0DTtydwdReZ9/OzT4UxYufPoHrvFd65eXAgfTWBWdKrJm7Sh3gmoA==", "word"=>{"user_id"=>"6", "entry"=>"vacant"}, "acceptance"=>{"feeling_rating"=>"7.1"}, "anger"=>{"feeling_rating"=>"1.9"}, "fear"=>{"feeling_rating"=>"1.5"}, "joy"=>{"feeling_rating"=>"1"}, "anticipation"=>{"feeling_rating"=>"1.7"}, "sadness"=>{"feeling_rating"=>"9"}, "disgust"=>{"feeling_rating"=>"1.7"}, "surprise"=>{"feeling_rating"=>"1"}, "commit"=>"Add Word"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "vacant"], ["LIMIT", 1]]
+  [1m[36mWord Create (5.6ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["entry", "vacant"], ["created_at", "2019-05-28 19:56:13.599633"], ["updated_at", "2019-05-28 19:56:13.599633"], ["user_id", 6]]
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (21.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? AND "words"."id" != ? LIMIT ?[0m  [["entry", "vacant"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFeeling Load (6.0ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (14.1ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 2], ["feeling_id", 9], ["feeling_rating", 7.1], ["created_at", "2019-05-28 19:56:13.713444"], ["updated_at", "2019-05-28 19:56:13.713444"], ["user_id", 6]]
+  [1m[35m (20.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (5.5ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 2], ["feeling_id", 10], ["feeling_rating", 1.9], ["created_at", "2019-05-28 19:56:13.955956"], ["updated_at", "2019-05-28 19:56:13.955956"], ["user_id", 6]]
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.1ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 2], ["feeling_id", 11], ["feeling_rating", 1.5], ["created_at", "2019-05-28 19:56:13.976687"], ["updated_at", "2019-05-28 19:56:13.976687"], ["user_id", 6]]
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.2ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 2], ["feeling_id", 12], ["feeling_rating", 1.0], ["created_at", "2019-05-28 19:56:13.996849"], ["updated_at", "2019-05-28 19:56:13.996849"], ["user_id", 6]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (6.2ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 2], ["feeling_id", 13], ["feeling_rating", 1.7], ["created_at", "2019-05-28 19:56:14.034241"], ["updated_at", "2019-05-28 19:56:14.034241"], ["user_id", 6]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.1ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 2], ["feeling_id", 14], ["feeling_rating", 9.0], ["created_at", "2019-05-28 19:56:14.046370"], ["updated_at", "2019-05-28 19:56:14.046370"], ["user_id", 6]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.1ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 2], ["feeling_id", 15], ["feeling_rating", 1.7], ["created_at", "2019-05-28 19:56:14.057380"], ["updated_at", "2019-05-28 19:56:14.057380"], ["user_id", 6]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (2.1ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 2], ["feeling_id", 16], ["feeling_rating", 1.0], ["created_at", "2019-05-28 19:56:14.151374"], ["updated_at", "2019-05-28 19:56:14.151374"], ["user_id", 6]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/6/words/2
+Completed 302 Found in 599ms (ActiveRecord: 139.6ms)
+
+
+Started GET "/users/6/words/2" for ::1 at 2019-05-28 15:56:14 -0400
+Processing by WordsController#show as HTML
+  Parameters: {"user_id"=>"6", "id"=>"2"}
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[36mFeeling Load (0.2ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 2], ["feeling_id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 2], ["feeling_id", 10]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 2], ["feeling_id", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 2], ["feeling_id", 12]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 2], ["feeling_id", 13]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 2], ["feeling_id", 14]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 2], ["feeling_id", 15]]
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 2], ["feeling_id", 16]]
+  Rendered words/show.html.erb within layouts/application (232.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 742ms (Views: 729.5ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/users/6/words/new" for ::1 at 2019-05-28 15:56:18 -0400
+Processing by WordsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  [1m[36mFeeling Load (2.1ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  Rendered words/_form.html.erb (19.6ms)
+  Rendered words/new.html.erb within layouts/application (30.8ms)
+Completed 200 OK in 569ms (Views: 562.7ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/words" for ::1 at 2019-05-28 15:57:06 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ORRfI1T0Htqohchwq3Int9huN0jgMWKhmA4ZIVid92H+ai0Tz0RNAKNiJFFiuBmMuakUOXngLOIEaKRE+JWk1g==", "word"=>{"user_id"=>"6", "entry"=>"bony"}, "acceptance"=>{"feeling_rating"=>"7.1"}, "anger"=>{"feeling_rating"=>"1.3"}, "fear"=>{"feeling_rating"=>"1.6"}, "joy"=>{"feeling_rating"=>"4.7"}, "anticipation"=>{"feeling_rating"=>"2.4"}, "sadness"=>{"feeling_rating"=>"9"}, "disgust"=>{"feeling_rating"=>"2.3"}, "surprise"=>{"feeling_rating"=>"1"}, "commit"=>"Add Word"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "bony"], ["LIMIT", 1]]
+  [1m[36mWord Create (1.0ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["entry", "bony"], ["created_at", "2019-05-28 19:57:06.266566"], ["updated_at", "2019-05-28 19:57:06.266566"], ["user_id", 6]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? AND "words"."id" != ? LIMIT ?[0m  [["entry", "bony"], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFeeling Load (0.3ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.0ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 3], ["feeling_id", 9], ["feeling_rating", 7.1], ["created_at", "2019-05-28 19:57:06.297919"], ["updated_at", "2019-05-28 19:57:06.297919"], ["user_id", 6]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.0ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 3], ["feeling_id", 10], ["feeling_rating", 1.3], ["created_at", "2019-05-28 19:57:06.313106"], ["updated_at", "2019-05-28 19:57:06.313106"], ["user_id", 6]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.1ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 3], ["feeling_id", 11], ["feeling_rating", 1.6], ["created_at", "2019-05-28 19:57:06.338257"], ["updated_at", "2019-05-28 19:57:06.338257"], ["user_id", 6]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.4ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 3], ["feeling_id", 12], ["feeling_rating", 4.7], ["created_at", "2019-05-28 19:57:06.344127"], ["updated_at", "2019-05-28 19:57:06.344127"], ["user_id", 6]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (5.2ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 3], ["feeling_id", 13], ["feeling_rating", 2.4], ["created_at", "2019-05-28 19:57:06.350223"], ["updated_at", "2019-05-28 19:57:06.350223"], ["user_id", 6]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.2ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 3], ["feeling_id", 14], ["feeling_rating", 9.0], ["created_at", "2019-05-28 19:57:06.361617"], ["updated_at", "2019-05-28 19:57:06.361617"], ["user_id", 6]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.2ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 3], ["feeling_id", 15], ["feeling_rating", 2.3], ["created_at", "2019-05-28 19:57:06.376267"], ["updated_at", "2019-05-28 19:57:06.376267"], ["user_id", 6]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (4.2ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 3], ["feeling_id", 16], ["feeling_rating", 1.0], ["created_at", "2019-05-28 19:57:06.557639"], ["updated_at", "2019-05-28 19:57:06.557639"], ["user_id", 6]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/6/words/3
+Completed 302 Found in 310ms (ActiveRecord: 48.0ms)
+
+
+Started GET "/users/6/words/3" for ::1 at 2019-05-28 15:57:06 -0400
+Processing by WordsController#show as HTML
+  Parameters: {"user_id"=>"6", "id"=>"3"}
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[36mFeeling Load (0.3ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 3], ["feeling_id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 3], ["feeling_id", 10]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 3], ["feeling_id", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 3], ["feeling_id", 12]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 3], ["feeling_id", 13]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 3], ["feeling_id", 14]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 3], ["feeling_id", 15]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 3], ["feeling_id", 16]]
+  Rendered words/show.html.erb within layouts/application (95.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 418ms (Views: 410.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/users/6/words/new" for ::1 at 2019-05-28 15:57:09 -0400
+Processing by WordsController#new as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering words/new.html.erb within layouts/application
+  [1m[36mFeeling Load (0.4ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  Rendered words/_form.html.erb (10.1ms)
+  Rendered words/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 105ms (Views: 100.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/words" for ::1 at 2019-05-28 15:57:25 -0400
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iJasP3RBJmJCuknqYkDIMRufz0XOxzr049HYnVCKcfNP6N4P7/F1uEldpcurivYKeljsNFcWdLd/t2X48IIiRA==", "word"=>{"user_id"=>"6", "entry"=>"delight"}, "acceptance"=>{"feeling_rating"=>"1"}, "anger"=>{"feeling_rating"=>"1"}, "fear"=>{"feeling_rating"=>"1"}, "joy"=>{"feeling_rating"=>"9"}, "anticipation"=>{"feeling_rating"=>"2.4"}, "sadness"=>{"feeling_rating"=>"1"}, "disgust"=>{"feeling_rating"=>"1"}, "surprise"=>{"feeling_rating"=>"2.2"}, "commit"=>"Add Word"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? LIMIT ?[0m  [["entry", "delight"], ["LIMIT", 1]]
+  [1m[36mWord Create (0.9ms)[0m  [1m[32mINSERT INTO "words" ("entry", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["entry", "delight"], ["created_at", "2019-05-28 19:57:25.760829"], ["updated_at", "2019-05-28 19:57:25.760829"], ["user_id", 6]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWord Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "words" WHERE "words"."entry" = ? AND "words"."id" != ? LIMIT ?[0m  [["entry", "delight"], ["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFeeling Load (0.4ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.1ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 4], ["feeling_id", 9], ["feeling_rating", 1.0], ["created_at", "2019-05-28 19:57:25.873981"], ["updated_at", "2019-05-28 19:57:25.873981"], ["user_id", 6]]
+  [1m[35m (17.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (27.7ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 4], ["feeling_id", 10], ["feeling_rating", 1.0], ["created_at", "2019-05-28 19:57:25.898353"], ["updated_at", "2019-05-28 19:57:25.898353"], ["user_id", 6]]
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.4ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 4], ["feeling_id", 11], ["feeling_rating", 1.0], ["created_at", "2019-05-28 19:57:25.946712"], ["updated_at", "2019-05-28 19:57:25.946712"], ["user_id", 6]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (8.7ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 4], ["feeling_id", 12], ["feeling_rating", 9.0], ["created_at", "2019-05-28 19:57:25.964289"], ["updated_at", "2019-05-28 19:57:25.964289"], ["user_id", 6]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.1ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 4], ["feeling_id", 13], ["feeling_rating", 2.4], ["created_at", "2019-05-28 19:57:25.979485"], ["updated_at", "2019-05-28 19:57:25.979485"], ["user_id", 6]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.1ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 4], ["feeling_id", 14], ["feeling_rating", 1.0], ["created_at", "2019-05-28 19:57:25.990500"], ["updated_at", "2019-05-28 19:57:25.990500"], ["user_id", 6]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (4.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.6ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 4], ["feeling_id", 15], ["feeling_rating", 1.0], ["created_at", "2019-05-28 19:57:26.004074"], ["updated_at", "2019-05-28 19:57:26.004074"], ["user_id", 6]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWordFeeling Create (1.6ms)[0m  [1m[32mINSERT INTO "word_feelings" ("word_id", "feeling_id", "feeling_rating", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["word_id", 4], ["feeling_id", 16], ["feeling_rating", 2.2], ["created_at", "2019-05-28 19:57:26.141725"], ["updated_at", "2019-05-28 19:57:26.141725"], ["user_id", 6]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/6/words/4
+Completed 302 Found in 406ms (ActiveRecord: 117.4ms)
+
+
+Started GET "/users/6/words/4" for ::1 at 2019-05-28 15:57:26 -0400
+Processing by WordsController#show as HTML
+  Parameters: {"user_id"=>"6", "id"=>"4"}
+  [1m[36mWord Load (1.9ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering words/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  [1m[36mFeeling Load (0.4ms)[0m  [1m[34mSELECT "feelings".* FROM "feelings"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 4], ["feeling_id", 9]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 4], ["feeling_id", 10]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 4], ["feeling_id", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 4], ["feeling_id", 12]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 4], ["feeling_id", 13]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 4], ["feeling_id", 14]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 4], ["feeling_id", 15]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ? AND "word_feelings"."feeling_id" = ?[0m  [["word_id", 4], ["feeling_id", 16]]
+  Rendered words/show.html.erb within layouts/application (81.5ms)
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 419ms (Views: 404.3ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/users/6/words" for ::1 at 2019-05-28 15:57:29 -0400
+Processing by WordsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = ?[0m  [["user_id", 6]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  Rendered words/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 408ms (Views: 282.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/6/words" for ::1 at 2019-05-28 15:58:50 -0400
+Processing by WordsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[35m (29.6ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = ?[0m  [["user_id", 6]]
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[36mWord Load (52.5ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  Rendered words/index.html.erb within layouts/application (128.8ms)
+Completed 200 OK in 1192ms (Views: 677.9ms | ActiveRecord: 89.1ms)
+
+
+Started GET "/users/6/words" for ::1 at 2019-05-28 15:58:55 -0400
+Processing by WordsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = ?[0m  [["user_id", 6]]
+  [1m[36mWord Load (4.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  Rendered words/index.html.erb within layouts/application (317.6ms)
+Completed 200 OK in 910ms (Views: 884.9ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/users/6/words" for ::1 at 2019-05-28 16:00:19 -0400
+Processing by WordsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  [1m[36mWord Load (0.8ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = ?[0m  [["user_id", 6]]
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.7ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[36mWord Load (1.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  Rendered words/index.html.erb within layouts/application (108.2ms)
+Completed 200 OK in 1091ms (Views: 755.3ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/users/6/words" for ::1 at 2019-05-28 16:00:24 -0400
+Processing by WordsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWord Load (1.3ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT  "words".* FROM "words" ORDER BY created_at desc LIMIT ?[0m  [["LIMIT", 5]]
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = ?[0m  [["user_id", 6]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  Rendered words/index.html.erb within layouts/application (169.5ms)
+Completed 200 OK in 830ms (Views: 813.1ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/users/6/words" for ::1 at 2019-05-28 16:02:20 -0400
+Processing by WordsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWord Load (6.7ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.7ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."user_id" = ? ORDER BY created_at desc LIMIT ?[0m  [["user_id", 6], ["LIMIT", 5]]
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.9ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 1]]
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 3]]
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 2]]
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT AVG("word_feelings"."feeling_rating") FROM "word_feelings" WHERE "word_feelings"."word_id" = ?[0m  [["word_id", 4]]
+  Rendered words/index.html.erb within layouts/application (134.5ms)
+Completed 200 OK in 1227ms (Views: 841.1ms | ActiveRecord: 75.5ms)
+
+
