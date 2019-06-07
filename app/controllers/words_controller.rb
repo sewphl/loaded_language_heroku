@@ -11,10 +11,10 @@ end
   def index
     if logged_in?
       @user = current_user
+      ##user-added words only!
+      @userwords = words_ ##see words_ method above; specific to user
+      @recent_words = @userwords.most_recent(5)
     end
-    ##user-added words only!
-    @userwords = words_ ##see words_ method above; specific to user
-    @recent_words = @userwords.most_recent(5)
     ##all words
     @words_ = Word.all
     @top10_idx = Word.find_most_loaded_words_idx(@words_)
@@ -33,18 +33,15 @@ end
 
   def create
     user = current_user
-    @word = Word.create(word_params)
+    @word = Word.new(word_params)
     @feelings = Feeling.all
-    if !@word.errors.full_messages.empty?
-      flash[:notice] = "That word is already in the database. Please add a different word."
-      redirect_to new_user_word_path(user)
-    else
-      @word.update(word_params)
-      #binding.pry
+    if @word.save
       @feelings.each do |feel|
         WordFeeling.create(user_id: params[:word][:user_id], feeling_id: feel.id, word_id: @word.id, feeling_rating: params[feel.name][:feeling_rating].to_f)
       end
       redirect_to user_word_path(user, @word)
+    else
+      render :new
     end
   end
 

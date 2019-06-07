@@ -1,2 +1,7 @@
+<%if @word.errors%>
+  <%@word.errors.full_messages.each do |m|%>
+  <%=m%>
+  <%end%>
+<%end%>
 <%=flash.notice %>
 <%= render "form" %>
