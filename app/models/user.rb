@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include ActiveModel::SecurePassword
   has_secure_password
   validates_uniqueness_of :username, :message=>"that username already exists"
   validates_uniqueness_of :email, :message=>"that email address already exists"
@@ -7,6 +8,8 @@ class User < ApplicationRecord
   has_many :words
   has_many :feelings, through: :words
   accepts_nested_attributes_for :words
+  validates :password, length: { minimum: 8 }, allow_nil: true
+
 
   def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
