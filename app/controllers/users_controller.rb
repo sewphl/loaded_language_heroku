@@ -50,6 +50,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def user_with_most_words
+    @users = User.all
+    @top_user = @users.top_user
+  end
+
+
   private
   def user_params
     params.require(:user).permit(:username, :password, :email, :provider, :first_name, :last_name, :uid, word_ids:[])
