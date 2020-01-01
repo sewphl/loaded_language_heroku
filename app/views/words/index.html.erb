@@ -3,7 +3,7 @@
 <%if logged_in?%>
   <h3>My most recently added words</h3>
   <ul>
-    <%@recent_words.each do |r|%>  
+    <%@recent_words.each do |r|%>
       <li><%=link_to r.entry, r%> <br>
         added <%=create_day(r)%>, at <%=create_time(r)%>
         <%end%>
@@ -14,9 +14,8 @@
 <h3>Current top 10 most loaded words</h3>
 
 <ul>
-  <%@top10_idx.each do |t| %>
-  <li><%=link_to @words_.find(t+1).entry, @words_.find(t+1)%> (<%=compute_avg(@words_.find(t+1)).to_s%>)<br></li>
-
+  <%@top10_ids.each do |t| %>
+    <li><%=link_to @words_.find(t).entry, @words_.find(t)%> (<%=compute_avg(@words_.find(t)).to_s%>)<br></li>
   <%end%>
 </ul>
 
