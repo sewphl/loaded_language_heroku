@@ -31,8 +31,19 @@ class Word < ApplicationRecord
     end
   end
 
-  def self.alphabetize_words_idx(words)
-    words.pluck(:entry).map.with_index.sort.map(&:last)
+  ##return word IDs (not indices) of array of words
+  ##after sorting alphabetically.
+  def self.alphabetize_words_ids(words)
+    @word_ids_abc = []
+    ##indices of words array after sorting alphabetically:
+    @indices = words.pluck(:entry).map.with_index.sort.map(&:last)
+    ##words array, sorted alphabetically:
+    @words_abc = @indices.map { |index| words[index] }
+    ##return just the word IDs of abc-sorted words array:
+    @words_abc.each do |w|
+      @word_ids_abc << w.id
+    end
+    @word_ids_abc
   end
 
 end

@@ -22,7 +22,7 @@
 <h3>All words (alphabetical order)</h3>
 
 <ul>
-  <%@abcwords_idx.each do |t| %>
-  <li><%=link_to @words_.find(t+1).entry, @words_.find(t+1)%><br></li>
+  <%@abcwords_ids.each do |t| %>
+  <li><%=link_to @words_.find(t).entry, @words_.find(t)%><br></li>
   <%end%>
 </ul>
