@@ -16,6 +16,10 @@
 
  = require bootstrap_shim.scss
 
+ .navbar-collapse.in {
+     display: block !important;
+ }
+ 
 .flash {
   color: red;
 }
