@@ -1,6 +1,6 @@
-omniauth.rb
-secrets.yml
-.env
+*omniauth.rb
+*secrets.yml
+*.env
 
 # Ignore application configuration
 /config/application.yml
