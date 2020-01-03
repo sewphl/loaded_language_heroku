@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
   end
 
 def create
+  ##binding.pry
   if auth
     @user = User.from_omniauth(request.env["omniauth.auth"])
     log_in(@user)
