@@ -11,7 +11,7 @@
       </li>
     </ul>
     <%else%>
-      <p><%=@user.first_name%>, it looks like you haven't added any words. <%=link_to "Add some now!", new_user_word_path(@user)%></p>
+      <p><%=@user.first_name%>, it looks like you haven't added any words. <%=link_to "Add some now!", new_user_word_path(@user), class: "link_to"%></p>
     <%end%>
   <%end%>
 

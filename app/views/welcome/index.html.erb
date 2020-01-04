@@ -2,4 +2,18 @@
 
 <% if session[:user_id] %>
   <h3>Welcome <%= @user.username %></h3>
+  <%else%>
+    <h3>Hi.</h3>
 <% end %>
+
+<p>
+  We're working to create a crowd-sourced database of words
+  that are ranked by how strongly they evoke <a href="https://en.wikipedia.org/wiki/Contrasting_and_categorization_of_emotions#Plutchik.27s_wheel_of_emotions">
+  8 emotions</a>.
+  You can view the full database of words, as well as the 8 emotions, at the links above.
+<% if !session[:user_id] %>
+  To add words to the database, please <%=link_to "log in", login_path%>.
+  <%else%>
+  You are logged in, and can add new words to the database. Thanks for participating in this project!
+<%end%>
+</p>

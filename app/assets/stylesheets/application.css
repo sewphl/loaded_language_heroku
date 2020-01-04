@@ -16,6 +16,10 @@
 
  = require bootstrap_shim.scss
 
+.link_to {
+  font-weight: bold;
+}
+
 .flash {
   color: red;
 }
