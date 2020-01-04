@@ -3,17 +3,17 @@
 <%if logged_in?%>
   <h3>My most recently added words</h3>
   <%if @recent_words.length > 0%>
-  <ul>
-    <%@recent_words.each do |r|%>
+    <ul>
+      <%@recent_words.each do |r|%>
       <li><%=link_to r.entry, r%> <br>
-        added <%=create_day(r)%>, at <%=create_time(r)%>
-        <%end%>
+          added <%=create_day(r)%>, at <%=create_time(r)%>
+      <%end%>
       </li>
     </ul>
     <%else%>
-      <p><%=@user.first_name%>, it looks like you haven't added any words. <%=link_to "Add some now!", new_user_word_path%></p>
+      <p><%=@user.first_name%>, it looks like you haven't added any words. <%=link_to "Add some now!", new_user_word_path(@user)%></p>
     <%end%>
-<%end%>
+  <%end%>
 
 <h3>Current top 10 most loaded words</h3>
 
