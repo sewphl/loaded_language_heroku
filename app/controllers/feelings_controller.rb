@@ -8,7 +8,7 @@ class FeelingsController < ApplicationController
   def show
     @feeling = Feeling.find(params[:id])
     @words = Word.all
-    @feeling_idx = Feeling.avg_feeling_idx(@words,@feeling)
+    @word_feeling_ids = Feeling.avg_word_feeling_ids(@words,@feeling)
   end
 
   private
