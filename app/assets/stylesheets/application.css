@@ -14,7 +14,7 @@
  *= require_self
  */
 
- = require bootstrap_shim.scss
+*= require bootstrap_shim.scss
 
 .link_to {
   font-weight: bold;
