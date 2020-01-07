@@ -1,6 +1,6 @@
 <%=flash.notice %>
 
-<% if session[:user_id] %>
+<% if logged_in? %>
   <h3>Welcome <%= @user.first_name %></h3>
   <%else%>
     <h3>Hi.</h3>
