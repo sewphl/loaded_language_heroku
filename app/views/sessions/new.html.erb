@@ -23,5 +23,5 @@
   <h1><%= @user.first_name %></h1>
   <h2>Email: <%= @user.email %></h2>
 <% else %>
-  <%= link_to('Or log in with Google!', auth_google_callback_path) %>
+  <%= link_to('Or log in with Google!', '/auth/google') %>
 <% end %>
