@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/words/new' => 'words#new'
 
   get "auth/google/callback" => 'sessions#create' ##/auth/google/callback
-  get "/auth/failure" => redirect('/')  ##, to:
+  get "auth/failure" => redirect('/')  ##, to:
   get "/users/user_with_most_words" => 'users#user_with_most_words'
 
   resources :users do
