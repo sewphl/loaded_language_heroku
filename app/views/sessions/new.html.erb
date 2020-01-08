@@ -2,26 +2,25 @@
 
 <h3>Log in</h3>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
-
-      <%= f.label :email %>
-      <%= f.text_field :email , class: 'form-control' %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-      <br/>
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-      <br/>
-    <p>New user? <%= link_to "Sign up", signup_path %></p>
+<div class="row with-margin">
+  <%= link_to '/auth/google', class: " btn darken-4 white black-text" do %>
+    Login with Google
+    <%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png', width:20, class: "margin-top:7px margin-right:8px", alt: 'Google sign-in'%>
+  <% end %>
   </div>
-</div>
 
-<% if logged_in? %>
-  <h1><%= @user.first_name %></h1>
-  <h2>Email: <%= @user.email %></h2>
-<% else %>
-  <%= link_to('Or log in with Google!', '/auth/google') %>
-<% end %>
+<h6>Or log in with email:</h6>
+    <div class="row with-margin">
+      <div class="col-md-6 col-md-offset-3">
+      <%= form_for(:session, url: login_path) do |f| %>
+        <%= f.label :email %>
+        <%= f.text_field :email , class: 'form-control' %>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+        <%= f.submit "Log in", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    </div>
+
+
+<h6>New user? <%= link_to "Sign up", signup_path %></h6>
