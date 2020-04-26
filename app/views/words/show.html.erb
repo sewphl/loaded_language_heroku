@@ -3,15 +3,18 @@
 
 <canvas id='spider'></canvas>
 <script>
-const ctx = document.getElementById('spider');
-const spider = new Chart(ctx, {
+let ctx = document.getElementById('spider');
+let spider = new Chart(ctx, {
     type: 'radar',
     data: {
         labels: <%=raw @feels%>,
         datasets: [{
             //label: 'add here to create legend if more than one feeling displayed',
             data: <%=@avgs%>,
-            borderWidth: 1
+            borderWidth: 1,
+            pointHoverBackgroundColor: '#C8C8C8',
+            pointHoverBorderColor: '#C8C8C8',
+            pointHoverRadius: 5
         }]
     },
     options: {
