@@ -51,6 +51,8 @@ GEM
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
     builder (3.2.4)
+    chart-js-rails (0.1.7)
+      railties (> 3.1)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
@@ -202,6 +204,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   bootstrap (~> 4.0.0)
+  chart-js-rails
   dalli
   dotenv-rails
   figaro

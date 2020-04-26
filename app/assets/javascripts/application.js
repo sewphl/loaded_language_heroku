@@ -6,3 +6,4 @@
 //= require words
 //= require bootstrap
 //= require turbolinks
+//= require Chart.min
