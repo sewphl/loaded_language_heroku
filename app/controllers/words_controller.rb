@@ -23,7 +23,16 @@ end
 
   def show
     @word = Word.find_by(id: params[:id])
+    @word_avg = compute_avg(@word)
     @feelings = Feeling.all
+    ##array of 8 feeling names
+    @feels = []
+    ##array of avgs for respective feelings in @feels array
+    @avgs = []
+    Feeling.all.each do |feel|
+     @feels << feel.name
+     @avgs << compute_avg(@word,feel)
+   end
   end
 
   def new
