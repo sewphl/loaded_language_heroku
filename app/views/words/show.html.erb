@@ -3,8 +3,8 @@
 
 <canvas id='spider'></canvas>
 <script>
-let ctx = document.getElementById('spider');
-let spider = new Chart(ctx, {
+var ctx = document.getElementById('spider');
+var spider = new Chart(ctx, {
     type: 'radar',
     data: {
         labels: <%=raw @feels%>,
