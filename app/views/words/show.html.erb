@@ -1,10 +1,40 @@
 <h3><%=@word.entry%></h3>
+<p>Loadedness breakdown by eight feelings (range of 0 to 9):</p>
 
-<p>Current loaded rating (averaged over eight feelings): <%=compute_avg(@word)%></p><br>
-<p>Breakdown by eight feelings:</p>
-<ul>
-<%@feelings.each do |feel|%>
-  <p><%=link_to feel.name, feel%>: <%=compute_avg(@word,feel)%></p>
-<%end%>
-<ul>
-<br>
+<canvas id='spider'></canvas>
+<script>
+const ctx = document.getElementById('spider');
+const spider = new Chart(ctx, {
+    type: 'radar',
+    data: {
+        labels: <%=raw @feels%>,
+        datasets: [{
+            //label: 'add here to create legend if more than one feeling displayed',
+            data: <%=@avgs%>,
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scale: {
+            angleLines: {
+                display: false
+            },
+            ticks: {
+                suggestedMin: 0,
+                suggestedMax: 9
+            }
+        },
+      //don't display label since only one feeling is displayed
+      legend: {
+        display: false
+      },
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem) {
+            return tooltipItem.yLabel;
+          }
+        }
+      }
+    }
+});
+</script>
