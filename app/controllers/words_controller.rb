@@ -22,17 +22,18 @@ end
   end
 
   def show
+    @user = current_user
     @word = Word.find_by(id: params[:id])
-    @word_avg = compute_avg(@word)
     @feelings = Feeling.all
-    ##array of 8 feeling names
     @feels = []
-    ##array of avgs for respective feelings in @feels array
     @avgs = []
+    @medians = []
     Feeling.all.each do |feel|
-     @feels << feel.name
-     @avgs << compute_avg(@word,feel)
-   end
+	     @feels << feel.name
+       @avgs << compute_avg(@word,feel)
+       @medians << compute_median(@word,feel)
+    end
+    @num_users = WordFeeling.where(word_id:@word.id).distinct.pluck(:user_id).length
   end
 
   def new
