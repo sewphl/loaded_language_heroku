@@ -20,11 +20,15 @@ var spider = new Chart(ctx, {
           label: 'average rating',
           backgroundColor: "rgba(220,0,115,0.4)",
           borderColor: "rgba(220,0,115,0.2)",
+          pointBackgroundColor: "rgba(220,0,115,0.4)",
+          pointBorderColor: "rgba(220,0,115,0.4)",
           data: <%=@avgs%>
           }, {
           label: 'median rating',
           backgroundColor: "rgba(245,183,0,0.4)",
           borderColor: "rgba(245,183,0,0.2)",
+          pointBackgroundColor: "rgba(245,183,0,0.2)",
+          pointBorderColor: "rgba(245,183,0,0.2)",
           data: <%=@medians%>
         }]
     },
