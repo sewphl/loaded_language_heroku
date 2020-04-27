@@ -1,6 +1,14 @@
-<h3><%=@word.entry%></h3>
-<p>Loadedness breakdown by eight feelings (range of 0 to 9):</p>
-
+<h2><%=@word.entry%></h2>
+<%if logged_in? && already_ranked?(@word,@user)%>
+  <h4>Congrats, you have already ranked this word.</h4>
+<%elsif logged_in?%>
+  <h4>Help us by ranking this word!</h4>
+  <%else%>
+  <h4><%=link_to "Log in", login_path%> to rank this word!</h4>
+<%end%>
+<br/>
+<h5>Loadedness of eight emotions based on <%=@num_users%> users</h5>
+<p>Users rank words on a scale of 0 to 9 for each of the eight emotions on the chart.</p>
 <canvas id='spider'></canvas>
 <script>
 var ctx = document.getElementById('spider');
@@ -9,12 +17,15 @@ var spider = new Chart(ctx, {
     data: {
         labels: <%=raw @feels%>,
         datasets: [{
-            //label: 'add here to create legend if more than one feeling displayed',
-            data: <%=@avgs%>,
-            borderWidth: 1,
-            pointHoverBackgroundColor: '#C8C8C8',
-            pointHoverBorderColor: '#C8C8C8',
-            pointHoverRadius: 5
+          label: 'average rating',
+          backgroundColor: "rgba(220,0,115,0.4)",
+          borderColor: "rgba(220,0,115,0.2)",
+          data: <%=@avgs%>
+          }, {
+          label: 'median rating',
+          backgroundColor: "rgba(245,183,0,0.4)",
+          borderColor: "rgba(245,183,0,0.2)",
+          data: <%=@medians%>
         }]
     },
     options: {
@@ -24,15 +35,15 @@ var spider = new Chart(ctx, {
             },
             ticks: {
                 suggestedMin: 0,
-                suggestedMax: 9
+                suggestedMax: 9,
             },
             pointLabels: {
               fontSize: 18
             }
         },
-      //don't display label since only one feeling is displayed
+      //display legend or not
       legend: {
-        display: false
+        display: true
       },
       tooltips: {
         callbacks: {
