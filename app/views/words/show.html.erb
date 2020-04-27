@@ -11,9 +11,9 @@
 <p>Users rank words on a scale of 0 to 9 for each of the eight emotions on the chart.</p>
 <canvas id='spider'></canvas>
 <script>
-//var ctx = document.getElementById('spider');
-//var spider = new Chart(ctx, {
-new Chart(document.getElementById('spider'), {
+var ctx = document.getElementById('spider').getContext('2d');
+var spider = new Chart(ctx, {
+//new Chart(document.getElementById('spider'), {
     type: 'radar',
     data: {
         labels: <%=raw @feels%>,
