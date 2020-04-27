@@ -10,6 +10,7 @@
 <h5>Loadedness of eight emotions based on <%=@num_users%> users</h5>
 <p>Users rank words on a scale of 0 to 9 for each of the eight emotions on the chart.</p>
 <canvas id='spider'></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>      
 <script>
 var ctx = document.getElementById('spider').getContext('2d');
 var spider = new Chart(ctx, {
