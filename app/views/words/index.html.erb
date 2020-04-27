@@ -1,8 +1,12 @@
 <%=flash.notice %>
 
 <%if logged_in?%>
-  <h3>My most recently added words</h3>
+  <h3>Hi <%=@user.first_name%>,</h3>
+  <h3>Don't see a word listed in the database below?</h3>
+  <h3><%=link_to "Add it now!", new_user_word_path(@user), class: "link_to"%></h3>
+  <br/>
   <%if @recent_words.length > 0%>
+    <h3>My most recently added words</h3>
     <ul>
       <%@recent_words.each do |r|%>
       <li><%=link_to r.entry, r%> <br>
@@ -10,21 +14,12 @@
       <%end%>
       </li>
     </ul>
-    <%else%>
-      <p><%=@user.first_name%>, it looks like you haven't added any words. <%=link_to "Add some now!", new_user_word_path(@user), class: "link_to"%></p>
-    <%end%>
+    <br/>
+    <h5>Click on a word to view or rank its emotional loadings.</h5>
+  <%else%>
+    <h5>Click on a word to view its emotional loadings.</h5>
   <%end%>
-
-<h3>Current top 10 most loaded words</h3>
-
-<ul>
-  <%@top10_ids.each do |t| %>
-    <li><%=link_to @words_.find(t).entry, @words_.find(t)%> (<%=compute_avg(@words_.find(t)).to_s%>)<br></li>
-  <%end%>
-</ul>
-
-<h3>All words (alphabetical order)</h3>
-
+<%end%>
 <ul>
   <%@abcwords_ids.each do |t| %>
   <li><%=link_to @words_.find(t).entry, @words_.find(t)%><br></li>
