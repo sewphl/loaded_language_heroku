@@ -2,7 +2,7 @@
 <%if logged_in? && already_ranked?(@word,@user)%>
   <h4>Congrats, you have already ranked this word.</h4>
 <%elsif logged_in?%>
-  <h4>Help us by <%=link_to "ranking this word", edit_word_path%>!</h4>
+  <h4>Help us by <%=link_to "ranking this word", new_word_word_feeling_path(@word)%>!</h4>
 <%else%>
   <h4><%=link_to "Log in", login_path%> to rank this word!</h4>
 <%end%>
