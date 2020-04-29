@@ -1,7 +1,5 @@
-<%= form_for(@word) do |f| %>
-  <label>Word:</label><br>
-  <%= f.hidden_field :user_id %>
-  <%= f.text_field :entry %><br>
+<h2><%=@word.entry%></h2>
+<%= form_with url: word_word_feelings_path(@word) do |f| %>
 
   <label>How does it rank for each of these emotions?</label><br>
   <%@feelings.each do |feel|%>
@@ -9,5 +7,5 @@
     <%= range_field(feel.name, :feeling_rating, in: 1..9, step: 0.1) %><br>
   <%end%>
 
-  <%= f.submit action_name == 'new' ? 'Add Word' : 'Update Word'%>
+  <%= f.submit action_name == 'new' ? 'Rank Word' : 'Update Word'%>
 <% end %>
