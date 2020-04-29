@@ -12,8 +12,8 @@
   8 emotions</a>.
   You can view the full database of words, as well as the 8 emotions, at the links above.
 <% if !session[:user_id] %>
-  To add words to the database, please <%=link_to "log in", login_path%>.
+  To add words to the database or rank existing words, please <%=link_to "log in", login_path%>.
   <%else%>
-  You are logged in, and can add new words to the database. Thanks for participating in this project!
+  You are logged in, and can add new words to the database and rank existing words. Thanks for participating in this project!
 <%end%>
 </p>
