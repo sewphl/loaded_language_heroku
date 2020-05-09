@@ -36,7 +36,7 @@ class Word < ApplicationRecord
   def self.alphabetize_words_ids(words)
     @word_ids_abc = []
     ##indices of words array after sorting alphabetically:
-    @indices = words.pluck(:entry).map.with_index.sort.map(&:last)
+    @indices = words.pluck(:entry).map.with_index.sort_by{|x| x.first.downcase}.map(&:last)
     ##words array, sorted alphabetically:
     @words_abc = @indices.map { |index| words[index] }
     ##return just the word IDs of abc-sorted words array:
