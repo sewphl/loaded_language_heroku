@@ -28,7 +28,7 @@ end
     @feels = []
     @avgs = []
     @medians = []
-    Feeling.all.each do |feel|
+    Feeling.all.sort_by(&:name).each do |feel|
 	     @feels << feel.name
        @avgs << compute_avg(@word,feel)
        @medians << compute_median(@word,feel)

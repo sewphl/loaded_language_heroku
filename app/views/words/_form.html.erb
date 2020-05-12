@@ -4,7 +4,7 @@
   <%= f.text_field :entry %><br>
 
   <label>How does it rank for each of these emotions?</label><br>
-  <%@feelings.each do |feel|%>
+  <%@feelings.sort_by(&:name).each do |feel|%>
     <label><%=link_to feel.name, feel%></label><br>
     <%= range_field(feel.name, :feeling_rating, in: 1..9, step: 0.1) %><br>
   <%end%>
