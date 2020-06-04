@@ -1,22 +1,22 @@
+$unvisited:#0066CC;
+$visited:#800080;
+$mouseover:#000000;
+$underln: underline;
+
 /* unvisited link */
 div[role=main] a:link {
-  color: #0066CC;
-  text-decoration: underline;
+  color: $unvisited;
+  text-decoration: $underln;
 }
 
 /* visited link */
 div[role=main] a:visited {
-  color: #800080;
-  text-decoration: underline;
+  color: $visited;
+  text-decoration: $underln;
 }
 
 /* mouse over link */
 div[role=main] a:hover {
-  color: #000000;
-  text-decoration: underline;
-  /*
-  text-decoration: none;
-	padding-bottom: 3px;
-	border-bottom: 1px solid;
-  */
+  color: $mouseover;
+  text-decoration: $underln;
 }
