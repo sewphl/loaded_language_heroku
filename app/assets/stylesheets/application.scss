@@ -1,3 +1,6 @@
+@import require_tree;
+@import require_self;
+
 /*! Themestr.app `Monotony` Bootstrap 4.3.1 theme*/
 @import url(https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700);
 $font-family-base:Montserrat;
@@ -42,4 +45,5 @@ div[role=main] {
   }
 }
 
+@import "bootstrap-sprockets";
 @import "bootstrap";
