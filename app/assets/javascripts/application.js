@@ -7,3 +7,4 @@
 //= require bootstrap
 //= require turbolinks
 //= require Chart.min
+//= require Chart.bundle.min
