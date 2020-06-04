@@ -159,8 +159,6 @@ GEM
       thor (>= 0.19.0, < 2.0)
     rake (13.0.1)
     rdoc (4.3.0)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.2.1)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -214,7 +212,6 @@ DEPENDENCIES
   rack-flash3
   rails
   rails_12factor
-  sass-rails (>= 3.2)
   sdoc (~> 0.4.0)
   sprockets-rails (~> 2.3.2)
   turbolinks (~> 5)
