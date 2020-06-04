@@ -1,0 +1,22 @@
+/* unvisited link */
+div[role=main] a:link {
+  color: #0066CC;
+  text-decoration: underline;
+}
+
+/* visited link */
+div[role=main] a:visited {
+  color: #800080;
+  text-decoration: underline;
+}
+
+/* mouse over link */
+div[role=main] a:hover {
+  color: #000000;
+  text-decoration: underline;
+  /*
+  text-decoration: none;
+	padding-bottom: 3px;
+	border-bottom: 1px solid;
+  */
+}
