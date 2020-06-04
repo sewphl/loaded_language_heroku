@@ -9,7 +9,9 @@
 <br/>
 <h5>Loadedness of eight emotions based on <%=@num_users%> users</h5>
 <p>Users rank words on a sliding scale from 1 to 9 (with .1 intervals) for each of the emotions on the chart.</p>
-<canvas id='spider'></canvas>
+<div>
+    <canvas id='spider'></canvas>
+</div>
 <script>
 var ctx = document.getElementById('spider').getContext('2d');
 var spider = new Chart(ctx, {
@@ -33,7 +35,7 @@ var spider = new Chart(ctx, {
         }]
     },
     options: {
-        responsive: true, 
+        responsive: true,
         maintainAspectRatio: false,
         scale: {
             angleLines: {
