@@ -7,12 +7,11 @@
 <% end %>
 
 <p>
-  We're working to create a crowd-sourced database of words
+  We're working to create a crowd-sourced <%=link_to "database of words", words_path%>
   that are ranked by how strongly they evoke <%=link_to "eight emotions", feelings_path%>.
-  You can view the full database of words, as well as the 8 emotions, at the links above.
 <% if !session[:user_id] %>
-  To add words to the database or rank existing words, please <%=link_to "log in", login_path%>.
-  <%else%>
+  To add words to the database or rank existing words, please <%=link_to "log in", login_path%> or <%=link_to "sign up", signup_path%>.
+<%else%>
   You are logged in, and can add new words to the database and rank existing words. Thanks for participating in this project!
 <%end%>
 </p>
