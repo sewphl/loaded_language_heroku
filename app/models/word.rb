@@ -4,7 +4,8 @@ class Word < ApplicationRecord
   has_many :word_feelings
   has_many :feelings, through: :word_feelings
   accepts_nested_attributes_for :word_feelings
-  validates_uniqueness_of :entry, :message=>"that word already exists"
+  validates :entry, presence: true, format: { with: /(^[-a-zA-Z-()]+(\s+[-a-zA-Z-()]+)*$)/i, message: "cannot begin or end with spaces, and cannot contain numbers or special characters."}
+  validates_uniqueness_of :entry, :case_sensitive => false, :message=>"is already in the database."
   scope :most_recent, -> (limit) { order("created_at desc").limit(limit) }
 
   ##return the IDs (not indices) of an array of words,
