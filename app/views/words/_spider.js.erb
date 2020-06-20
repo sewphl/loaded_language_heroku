@@ -1,0 +1,51 @@
+<script>
+var ctx = document.getElementById('spider').getContext('2d');
+var spider = new Chart(ctx, {
+    type: 'radar',
+    data: {
+        labels: <%=raw @feels%>,
+        datasets: [{
+          label: 'average rating',
+          backgroundColor: "rgba(220,0,115,0.4)",
+          borderColor: "rgba(220,0,115,0.2)",
+          pointBackgroundColor: "rgba(220,0,115,0.4)",
+          pointBorderColor: "rgba(220,0,115,0.4)",
+          data: <%=@avgs%>
+          }, {
+          label: 'median rating',
+          backgroundColor: "rgba(245,183,0,0.4)",
+          borderColor: "rgba(245,183,0,0.2)",
+          pointBackgroundColor: "rgba(245,183,0,0.2)",
+          pointBorderColor: "rgba(245,183,0,0.2)",
+          data: <%=@medians%>
+        }]
+    },
+    options: {
+        //responsive: true,
+        maintainAspectRatio: false,
+        scale: {
+            angleLines: {
+                display: false
+            },
+            ticks: {
+                suggestedMin: 0,
+                suggestedMax: 9,
+            },
+            pointLabels: {
+              fontSize: 18
+            }
+        },
+      //display legend or not
+      legend: {
+        display: true
+      },
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem) {
+            return tooltipItem.yLabel;
+          }
+        }
+      }
+    }
+});
+</script>
