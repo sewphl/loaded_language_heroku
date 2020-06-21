@@ -17,7 +17,6 @@ end
     end
     ##all words
     @words_ = Word.all
-    @top10_ids = Word.find_most_loaded_words_ids(@words_)
     @abcwords_ids = Word.alphabetize_words_ids(@words_)
   end
 

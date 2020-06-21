@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :username, :first_name, :email, :password,
     :presence => {:message=>"please fill out all fields"}
   has_many :words
+  has_many :word_feelings
   has_many :feelings, through: :words
   accepts_nested_attributes_for :words
   validates :password, length: { minimum: 8 }, allow_nil: true

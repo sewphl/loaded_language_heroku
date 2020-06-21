@@ -12,12 +12,12 @@ Rails.application.routes.draw do
   get "/users/user_with_most_words" => 'users#user_with_most_words'
 
   resources :users do
-    resources :words, only: [:index, :new, :show]
+    resources :words, only: [:index, :new, :create, :show]
   end
   resources :words do
     resources :word_feelings, only: [:new, :create]
   end
-  resources :words, only: [:index, :show, :create, :edit, :update]
+  resources :words, only: [:index, :show]
   resources :feelings, only: [:index, :show]
 
 end
