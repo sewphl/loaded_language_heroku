@@ -23,4 +23,4 @@ The database of words is public; visitors can view a spider plot depicting the m
 
 <img src="app/assets/images/class_diagram.jpg" alt="class_diagram" width="385"/>
 
->Solid one-directional arrows denote a `has_many`/`belongs_to` association. Dotted one-directional arrows denote a `has_many :through` relationship, or a many-to-many association via a join table. The <span style="color:#0000FF;"> blue text</span> denotes user-submitted attributes.
+>Solid one-directional arrows denote a `has_many`/`belongs_to` association. Dotted one-directional arrows denote a `has_many :through` relationship, or a many-to-many association via a join table. The blue text denotes user-submitted attributes.

@@ -7,7 +7,7 @@ class User < ApplicationRecord
     :presence => {:message=>"please fill out all fields"}
   has_many :words
   has_many :word_feelings
-  has_many :feelings, through: :words
+  has_many :feelings, through: :word_feelings
   accepts_nested_attributes_for :words
   validates :password, length: { minimum: 8 }, allow_nil: true
   scope :top_user, -> {User.joins(:words).group("users.id").order("count(users.id) DESC").limit(1).take}
