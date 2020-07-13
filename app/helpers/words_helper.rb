@@ -28,6 +28,13 @@ module WordsHelper
     WordFeeling.where(word_id: word.id, user_id: user.id).exists?
   end
 
-
+  ##returns links for words starting with letter (see words index view <a> tag)
+  def returnURLs(letter)
+    @myErb = []
+    @words_.select { |word| word.entry.upcase.start_with?(letter) }.each do |w|
+      @myErb.push(link_to w.entry, @words_.find(w.id))
+    end
+    @myErb
+  end
 
 end

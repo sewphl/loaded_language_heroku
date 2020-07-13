@@ -24,8 +24,21 @@
   <br/>
   <h5>Click on a word to view its emotional loadings.</h5>
 <%end%>
-<ul>
-  <%@abcwords_ids.each do |t| %>
-  <li><%=link_to @words_.find(t).entry, @words_.find(t)%><br></li>
-  <%end%>
-</ul>
+
+<div class="container">
+  <nav class="pagination-container">
+      <ul class="pagination">
+        <span class="pagination-inner">
+        <%("A".."Z").each do |t| %>
+          <a href="#" class="<%='pagination-active' if t == 'T'%>" onclick="makeList(<%=t%>);return false;"  id=<%=t%> data-display_words='<%=returnURLs(t)%>' data-use_letter=<%=t%>><%=t%></a>
+        <%end%>
+      </span>
+      </ul>
+  </nav>
+  <div class="card">
+    <div class="card-body" id="list_words">
+    </div>
+  </div>
+</div>
+
+<%= render :partial => 'words/pagination.js' %>

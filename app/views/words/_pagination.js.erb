@@ -1,0 +1,35 @@
+<script>
+  //This block adapted from https://codepen.io/wouterbles/pen/gpaMRd
+  $('.pagination-inner a').on('click', function() {
+    $(this).siblings().removeClass('pagination-active');
+    $(this).addClass('pagination-active');
+  })
+
+  //Words starting with T are displayed when words index loads.
+  document.getElementById("list_words").addEventListener("load", makeList(<%="T"%>));
+
+  //Display list of word links for a letter (A-Z) in innerHTML of words index "list_words" div.
+  function makeList(myData){
+    let myList = document.getElementById("list_words");
+    //If there are words...
+    if (myData.dataset.display_words.length > 2) {
+      //...convert string to array: replace escaped double quotes with single quotes, replace brackets and remaining quotes, split by commas
+      let myArray = myData.dataset.display_words.replace(/\\\"/g,"\'").replace(/[\[\]"]+/g,"").split(",");
+      const n = (myArray.length);
+      let myLIs="";
+      //...create a list item for each word
+      for(i = 0; i <= (n-1); i++){
+        let list = myArray[i];
+        myLIs += "<li>" + list + "</li>"
+      }
+      //...and display the words in an unordered list.
+      myList.innerHTML =
+      "<ul class='word_list'>" + myLIs + "</ul>";
+    }
+    //If no words for letter, leave a note.
+    else{
+      let myLetter = myData.dataset.use_letter;
+      myList.innerHTML = "<p> No one has added any words starting with " + myLetter + ".</p>";
+    }
+  }
+</script>
